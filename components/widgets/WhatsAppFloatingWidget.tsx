@@ -20,7 +20,7 @@ export function WhatsAppFloatingWidget() {
           isHovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2"
         }`}
       >
-        <div className="h-2 w-2 rounded-full bg-emerald-400 motion-safe:animate-ping motion-reduce:animate-none" />
+        <div className="h-2 w-2 rounded-full bg-emerald-400" />
         <div className="text-left">
           <p className="text-xs font-semibold leading-tight flex items-center gap-1.5">
             <span>Vizag Dispatch Officer</span>
@@ -30,7 +30,7 @@ export function WhatsAppFloatingWidget() {
         </div>
       </div>
 
-      {/* Main Interactive Button with Pulsating Glowing Ambience */}
+      {/* Main Interactive Button with Organic Multi-Layered Green Ambience */}
       <a
         href={whatsappUrl}
         target="_blank"
@@ -40,33 +40,29 @@ export function WhatsAppFloatingWidget() {
         aria-label="Chat with A1 Pest Control on WhatsApp"
         className="group relative flex items-center justify-center h-14 w-14 rounded-full bg-whatsapp hover:bg-whatsapp-hover text-white shadow-xl hover:shadow-2xl transition-transform duration-150 hover:scale-105 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp-hover focus-visible:ring-offset-2"
       >
-        {/* Soft Ambient Breathing Halo Glow (Anti-AI slop organic pulse) */}
+        {/* Rich Multi-Layered Green Ambience Glow (Anti-AI Slop Organic Halo) */}
         <span
-          className="absolute -inset-2 rounded-full bg-whatsapp/30 blur-md motion-safe:animate-pulse motion-reduce:animate-none pointer-events-none"
+          className="absolute -inset-4 rounded-full bg-emerald-500/30 blur-xl motion-safe:animate-pulse pointer-events-none"
           aria-hidden="true"
         />
         <span
-          className="absolute -inset-3.5 rounded-full bg-whatsapp/15 blur-lg pointer-events-none"
+          className="absolute -inset-2.5 rounded-full bg-whatsapp/40 blur-lg pointer-events-none"
+          aria-hidden="true"
+        />
+        <span
+          className="absolute -inset-1 rounded-full bg-emerald-400/50 blur-sm pointer-events-none"
           aria-hidden="true"
         />
 
-        {/* WhatsApp Brand Icon */}
+        {/* Official Symmetrical WhatsApp Brand Icon */}
         <svg
           viewBox="0 0 24 24"
           fill="currentColor"
           className="h-7 w-7 relative z-10 transition-transform duration-150 group-hover:scale-110"
           aria-hidden="true"
         >
-          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.03C9.33 7.03 9 7.11 8.76 7.37C8.48 7.67 7.67 8.44 7.67 10.02C7.67 11.6 8.82 13.12 8.98 13.33C9.14 13.55 11.23 16.78 14.44 18.16C15.2 18.49 15.79 18.69 16.26 18.84C17.03 19.08 17.73 19.05 18.28 18.96C18.9 18.87 20.18 18.18 20.45 17.43C20.71 16.67 20.71 16.03 20.63 15.89C20.55 15.75 20.35 15.67 20.05 15.52C19.74 15.37 18.25 14.64 17.97 14.54C17.7 14.44 17.5 14.39 17.3 14.69C17.1 14.99 16.53 15.67 16.35 15.87C16.18 16.07 16 16.1 15.7 15.95C15.39 15.8 14.1 15.38 12.56 14.01C11.36 12.94 10.55 11.62 10.32 11.22C10.09 10.82 10.3 10.6 10.45 10.45C10.59 10.32 10.76 10.09 10.91 9.92C11.06 9.74 11.11 9.62 11.21 9.41C11.31 9.21 11.26 9.04 11.18 8.89C11.11 8.74 10.53 7.31 10.28 6.72C10.05 6.15 9.81 6.22 9.63 6.22C9.46 6.22 9.26 6.22 9.06 6.22C8.86 6.22 8.53 6.3 8.33 6.52" />
+          <path d="M17.472 14.382c-.301-.15-1.767-.867-2.04-.967-.275-.101-.475-.15-.675.15-.2.3-.775.967-.95 1.167-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.485-.893-.795-1.496-1.778-1.67-2.078-.175-.3-.018-.462.13-.611.134-.133.3-.349.45-.524.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.584-.492-.505-.675-.514-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5 0 1.475 1.075 2.9 1.225 3.1.15.2 2.115 3.23 5.124 4.53 3.01 1.3 3.01.867 3.56.817.55-.05 1.767-.725 2.017-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35zm-5.467 7.42c-1.954 0-3.867-.525-5.547-1.52l-.397-.235-4.125 1.08 1.1-4.02-.259-.413A11.758 11.758 0 0 1 .8 12.046C.8 5.748 5.948.6 12.247.6c3.05 0 5.918 1.19 8.075 3.346a11.33 11.33 0 0 1 3.346 8.077c-.001 6.302-5.148 11.45-11.447 11.45zm0-20.916C6.732.886 2.4 5.218 2.4 10.733a9.8 9.8 0 0 0 1.5 5.26l.16.27-.66 2.41 2.47-.65.26.15a9.82 9.82 0 0 0 5.09 1.42c5.514 0 9.847-4.332 9.847-9.847s-4.333-9.847-9.847-9.847z" />
         </svg>
-
-        {/* Live Active Duty Status Pulse Badge */}
-        <span
-          className="absolute -top-1 -right-1 h-3.5 w-3.5 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center z-20"
-          aria-hidden="true"
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-white motion-safe:animate-ping motion-reduce:animate-none" />
-        </span>
       </a>
     </aside>
   );

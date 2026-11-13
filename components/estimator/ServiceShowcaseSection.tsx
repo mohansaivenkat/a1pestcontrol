@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { LineSidebar } from "@/components/react-bits/LineSidebar";
 import { MagicBentoCard } from "@/components/react-bits/MagicBento";
 import { TechnicalSchematic, SchematicType } from "@/components/ui/TechnicalSchematic";
@@ -9,7 +9,7 @@ import { PEST_CATALOG } from "@/components/estimator/pricingData";
 import { SplitText } from "@/components/react-bits/SplitText";
 import { BlurText } from "@/components/react-bits/BlurText";
 import { DecryptedText } from "@/components/react-bits/DecryptedText";
-import { Shield, ArrowRight, CheckCircle2, Award, Calendar, Sparkles } from "lucide-react";
+import { Shield, ShieldCheck, ArrowRight, CheckCircle2, Award, Calendar, Sparkles, MessageSquare } from "lucide-react";
 
 interface ServiceShowcaseSectionProps {
   onSelectPestForEstimator: (pestId: string) => void;
@@ -40,6 +40,33 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
     { id: "woodborers", index: "06", label: "Wood Borers", badge: "Syringe" },
     { id: "annual-amc", index: "07", label: "Whole Home AMC", badge: "365-Day" },
   ];
+
+  useEffect(() => {
+    const cardIds = sidebarItems.map((item) => item.id);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id.replace("service-card-", "");
+            if (id) {
+              setActiveSidebarId(id);
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0,
+      }
+    );
+
+    cardIds.forEach((id) => {
+      const el = document.getElementById(`service-card-${id}`);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleSelectService = (id: string) => {
     setActiveSidebarId(id);
@@ -73,15 +100,50 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
           </div>
         </div>
 
-        {/* Asymmetric Desktop Layout: 22% Line Sidebar + 78% Bento Grid */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
-          {/* Left Rail: Line Sidebar (Desktop Only) */}
-          <div className="hidden lg:block w-1/4 shrink-0 sticky top-24">
-            <LineSidebar
-              items={sidebarItems}
-              activeId={activeSidebarId}
-              onSelectItem={handleSelectService}
-            />
+        {/* Asymmetric Desktop Layout: Sticky Line Sidebar Rail + Bento Grid */}
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
+          {/* Left Rail: Line Sidebar following full scroll (Desktop Only) */}
+          <div className="hidden lg:block w-1/4 shrink-0 relative self-stretch">
+            <div className="sticky top-28 space-y-4">
+              <LineSidebar
+                items={sidebarItems}
+                activeId={activeSidebarId}
+                onSelectItem={handleSelectService}
+              />
+
+              {/* Quick Clinical Assurance & Action Module */}
+              <div className="p-3.5 rounded-2xl bg-surface-card border border-neutral-300 shadow-sm space-y-2.5">
+                <div className="flex items-center gap-1.5 text-xs font-sans font-bold text-brand-700 uppercase tracking-wide">
+                  <ShieldCheck className="w-4 h-4 text-brand-700 shrink-0" />
+                  <span>Protocol Standards</span>
+                </div>
+                <ul className="text-xs text-neutral-600 space-y-1.5 font-sans">
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-brand-700 font-bold">•</span>
+                    <span>100% CIBRC registered Bayer &amp; Syngenta actives</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-brand-700 font-bold">•</span>
+                    <span>Safe for infants, asthmatic elders &amp; pets</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-brand-700 font-bold">•</span>
+                    <span>Stamped written warranty card on completion</span>
+                  </li>
+                </ul>
+                <div className="pt-2 border-t border-neutral-200">
+                  <a
+                    href="https://wa.me/919494281100?text=Hello%20A1%20Pest%20Control.%20I%20would%20like%20to%20send%20a%20photo%20for%20pest%20identification."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-brand-100 hover:bg-brand-200 text-brand-700 text-xs font-semibold transition-colors duration-150"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5" />
+                    <span>Send Photo for ID</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Right Canvas: Mobile 2-Col (2x2) / Tablet 2-Col / Desktop 3-Col Bento Grid */}
@@ -187,7 +249,7 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
             </div>
 
             {/* Commercial AMC Banner with Stock Image */}
-            <div className="mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-xl overflow-hidden">
+            <div id="service-card-annual-amc" className="mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-xl overflow-hidden">
               <div className="grid md:grid-cols-12 gap-4 sm:gap-6 items-center">
                 <div className="p-4 sm:p-6 md:p-8 md:col-span-8 space-y-2.5 sm:space-y-3">
                   <span className="text-xs font-sans text-emerald-400 font-medium bg-emerald-950/80 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded border border-emerald-800 inline-block">

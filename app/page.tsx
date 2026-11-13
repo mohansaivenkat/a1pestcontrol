@@ -87,65 +87,65 @@ export default function HomePage() {
               </div>
 
               {/* 2x2 Responsive Trust Metrics Grid with DecryptedText */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pt-1 max-w-2xl">
-                <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 lg:gap-4 pt-1 max-w-2xl">
+                <div className="p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
                   <div className="flex items-center gap-1.5 text-xs font-mono text-brand-700 font-bold uppercase tracking-wider">
                     <Star className="w-3.5 h-3.5 fill-brand-700 text-brand-700" />
                     <span>RATING</span>
                   </div>
-                  <p className="font-mono text-xl sm:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
+                  <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
                     <DecryptedText text="4.9 / 5.0" />
                   </p>
-                  <span className="text-[11px] lg:text-xs text-neutral-600 font-sans block mt-0.5">
+                  <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
                     1,840+ Local Reviews
                   </span>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
+                <div className="p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
                   <div className="flex items-center gap-1.5 text-xs font-mono text-brand-700 font-bold uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5 text-brand-700" />
                     <span>ODORLESS</span>
                   </div>
-                  <p className="font-mono text-xl sm:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
+                  <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
                     <DecryptedText text="100% GEL" />
                   </p>
-                  <span className="text-[11px] lg:text-xs text-neutral-600 font-sans block mt-0.5">
+                  <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
                     Kitchen Intact
                   </span>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
+                <div className="p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
                   <div className="flex items-center gap-1.5 text-xs font-mono text-accent-700 font-bold uppercase tracking-wider">
                     <Award className="w-3.5 h-3.5 text-accent-700" />
                     <span>WARRANTY</span>
                   </div>
-                  <p className="font-mono text-xl sm:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
+                  <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
                     <DecryptedText text="5-YEAR" />
                   </p>
-                  <span className="text-[11px] lg:text-xs text-neutral-600 font-sans block mt-0.5">
+                  <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
                     Written Stamped Card
                   </span>
                 </div>
 
-                <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
+                <div className="p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
                   <div className="flex items-center gap-1.5 text-xs font-mono text-brand-700 font-bold uppercase tracking-wider">
                     <Clock className="w-3.5 h-3.5 text-brand-700" />
                     <span>DISPATCH</span>
                   </div>
-                  <p className="font-mono text-xl sm:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
+                  <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
                     <DecryptedText text="60 MIN" />
                   </p>
-                  <span className="text-[11px] lg:text-xs text-neutral-600 font-sans block mt-0.5">
+                  <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
                     Direct Zonal Team
                   </span>
                 </div>
               </div>
 
               {/* Live Locality Dispatch Ticker with React Bits TextLoop */}
-              <div className="p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-neutral-100 border border-neutral-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-3 max-w-2xl">
+              <div className="p-3 sm:p-3.5 lg:p-4 rounded-xl sm:rounded-2xl bg-neutral-100 border border-neutral-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-3 max-w-2xl">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-brand-700 shrink-0" />
-                  <span className="text-xs font-mono text-neutral-700 uppercase font-semibold">
+                  <span className="text-xs lg:text-sm font-mono text-neutral-700 uppercase font-semibold">
                     Live Zonal Dispatch:
                   </span>
                 </div>
@@ -201,10 +201,10 @@ export default function HomePage() {
                 {/* Bottom Video Legend with DecryptedText */}
                 <div className="absolute bottom-4 left-4 right-4 z-10 text-white pointer-events-none space-y-1">
                   <p className="text-xs font-mono text-emerald-400 uppercase tracking-widest font-semibold">
-                    <DecryptedText text="MOTORIZED COLD ULV FOGGING • 60 FPS" />
+                    <DecryptedText text="ACTIVE SUBTERRANEAN TERMITE DETECTION • 60 FPS" />
                   </p>
-                  <p className="text-sm font-display font-bold leading-tight drop-shadow-sm">
-                    Water-Based Aerosol Barrier · Zero Diesel Oil Residue
+                  <p className="text-sm lg:text-base font-display font-bold leading-tight drop-shadow-sm">
+                    Direct Zonal Colony Tracking · Non-Repellent Chemical Eradication
                   </p>
                 </div>
               </div>

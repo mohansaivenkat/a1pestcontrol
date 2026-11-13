@@ -40,7 +40,7 @@ export const LineSidebar: React.FC<LineSidebarProps> = ({
       ref={sidebarRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`sticky top-28 flex flex-col gap-2 select-none ${className}`}
+      className={`flex flex-col gap-2 select-none ${className}`}
     >
       <div className="text-xs font-sans text-timber-700/60 pb-2 border-b border-surface-hairline mb-1">
         Index • Protocols
@@ -65,7 +65,7 @@ export const LineSidebar: React.FC<LineSidebarProps> = ({
             key={item.id}
             type="button"
             onClick={() => onSelectItem(item.id)}
-            className={`group flex items-center gap-3 text-left py-1.5 transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 active:scale-[0.98] ${
+            className={`group flex items-center gap-3 text-left py-1.5 transition-colors duration-150 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 active:scale-[0.98] ${
               isActive ? "text-crimson-700 font-semibold" : "text-timber-700 hover:text-timber-950"
             }`}
             style={{
