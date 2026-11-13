@@ -38,6 +38,17 @@ export default function HomePage() {
   const [isSOSOpen, setIsSOSOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [activePestForEstimator, setActivePestForEstimator] = useState("cockroaches");
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {
+        // Autoplay policy handled gracefully
+      });
+    }
+  }, []);
 
   // Rotating telemetry items for TextLoop
   const tickerItems = Object.values(VIZAG_LOCALITIES).map((loc) => ({
@@ -186,14 +197,17 @@ export default function HomePage() {
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-neutral-300 shadow-2xl bg-neutral-950 group">
                 {/* 60fps HTML5 Loop Video */}
                 <video
-                  src="/videos/pest-control-hero.mp4"
+                  ref={videoRef}
                   autoPlay
                   muted
                   loop
                   playsInline
                   preload="auto"
+                  poster="/videos/pest-control-hero-poster.jpg"
                   className="w-full h-[320px] sm:h-[420px] lg:h-[480px] object-cover"
-                />
+                >
+                  <source src="/videos/pest-control-hero.mp4" type="video/mp4" />
+                </video>
 
                 {/* Video Overlay Vignette */}
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-transparent to-neutral-950/20 pointer-events-none" />
