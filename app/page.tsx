@@ -50,9 +50,9 @@ export default function HomePage() {
   const defaultQuote = calculateQuote("cockroaches", "2bhk", "mild");
 
   return (
-    <div className="min-h-screen flex flex-col bg-surface-main text-neutral-900 font-body relative overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-surface-main text-neutral-900 font-body relative">
       {/* Hero Section: 55/45 Split Desktop Grid with 60fps Pest Control Video */}
-      <section className="relative w-full py-8 sm:py-12 md:py-16 lg:py-20 px-3 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative w-full py-8 sm:py-12 md:py-16 lg:py-20 px-3 sm:px-6 lg:px-8">
         {/* Subtle Mathematical Topography Background Contour Lines */}
         <TopographyCanvas lineColor="#8C7365" opacity={0.06} />
 

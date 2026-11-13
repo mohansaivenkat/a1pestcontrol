@@ -78,7 +78,7 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
   };
 
   return (
-    <section className="w-full py-12 md:py-20 lg:py-24 bg-warm-animated-gradient border-y border-neutral-300/80 relative overflow-hidden">
+    <section className="w-full py-12 md:py-20 lg:py-24 bg-warm-animated-gradient border-y border-neutral-300/80 relative">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         {/* Section Intro with React Bits Text Animations */}
         <div className="mb-8 md:mb-12 space-y-3">
@@ -101,10 +101,10 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
         </div>
 
         {/* Asymmetric Desktop Layout: Sticky Line Sidebar Rail + Bento Grid */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start relative">
           {/* Left Rail: Line Sidebar following full scroll (Desktop Only) */}
-          <div className="hidden lg:block w-1/4 shrink-0 relative self-stretch">
-            <div className="sticky top-28 space-y-4">
+          <div className="hidden lg:block w-1/4 shrink-0 sticky top-24 z-20 self-start">
+            <div className="space-y-4">
               <LineSidebar
                 items={sidebarItems}
                 activeId={activeSidebarId}
