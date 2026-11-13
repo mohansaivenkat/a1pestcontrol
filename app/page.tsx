@@ -71,14 +71,6 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column (7 Cols): Clinical Value Proposition */}
             <div className="lg:col-span-7 space-y-5 sm:space-y-6 pt-2">
-              {/* CIBRC Accreditation Badge with DecryptedText */}
-              <div className="inline-flex items-center gap-2 rounded-full bg-brand-100 border border-brand-500/20 px-3 py-1 text-xs font-semibold text-brand-700">
-                <ShieldCheck className="h-4 w-4 text-brand-700 shrink-0" />
-                <span>
-                  <DecryptedText text="CIBRC LICENSED: AP/VSP/2010/8842-P" />
-                </span>
-              </div>
-
               {/* H1 Headline with Masked SplitText Reveal */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.25rem] xl:text-[2.5rem] font-display font-extrabold text-neutral-950 tracking-tight leading-[1.14] lg:leading-[1.18]">
                 <SplitText

@@ -200,12 +200,7 @@ export const AboutPageClient: React.FC = () => {
       <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 mb-12 sm:mb-16">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 space-y-4 sm:space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-brand-100 border border-brand-500/20 px-3 py-1 text-xs font-semibold text-brand-700">
-              <ShieldCheck className="h-4 w-4 text-brand-700 shrink-0" aria-hidden="true" />
-              <span>
-                <DecryptedText text="ENTOMOLOGICAL & STRUCTURAL PEST MANAGEMENT • EST. 2010" />
-              </span>
-            </div>
+            
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-4xl font-display font-extrabold text-neutral-950 tracking-tight leading-[1.14]">
               <SplitText text="Engineered for Visakhapatnam’s Coastal Micro-Climates." as="span" />
@@ -282,9 +277,6 @@ export const AboutPageClient: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent" />
                 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1">
-                  <span className="text-xs font-sans text-emerald-400 font-semibold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/40 inline-block">
-                    Director of Field Entomology
-                  </span>
                   <h4 className="text-sm sm:text-base font-display font-bold leading-tight">
                     Calibrated Micro-Injection & Odorless Gel Protocol
                   </h4>
@@ -296,11 +288,7 @@ export const AboutPageClient: React.FC = () => {
 
               {/* Sub-card with CIBRC License Info */}
               <div className="p-4 bg-surface-card border-t border-neutral-200 flex items-center justify-between text-xs font-sans">
-                <div>
-                  <span className="text-neutral-500 block text-xs">CIBRC License Code:</span>
-                  <span className="font-mono font-bold text-neutral-950">AP/VSP/2010/8842-P</span>
-                </div>
-                <div className="text-right">
+                <div className="text-left">
                   <span className="text-neutral-500 block text-xs">Central Depot:</span>
                   <span className="font-bold text-brand-700">Dwaraka Nagar, Vizag</span>
                 </div>
