@@ -67,6 +67,68 @@ body {
 }
 
 /* ==========================================================================
+   Global Base Paragraph Typography - Increased Readability
+   Applies to all paragraphs both inside and outside cards and containers
+   ========================================================================== */
+p,
+article p,
+section p,
+main p {
+  font-size: 1.0625rem;
+  line-height: 1.68;
+}
+
+/* Paragraphs inside cards, containers, and elevated modules */
+.bg-surface-card p,
+.bg-surface-main p,
+.bg-white p,
+.rounded-lg p,
+.rounded-xl p,
+.rounded-2xl p,
+.rounded-3xl p,
+[class*="border"] p {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+/* Compact paragraphs inside cards & badges */
+p.text-xs,
+.bg-surface-card p.text-xs,
+.rounded-xl p.text-xs,
+.rounded-2xl p.text-xs,
+[class*="border"] p.text-xs {
+  font-size: 0.9375rem !important;
+  line-height: 1.55 !important;
+}
+
+p.text-sm,
+.bg-surface-card p.text-sm,
+.rounded-xl p.text-sm,
+.rounded-2xl p.text-sm,
+[class*="border"] p.text-sm {
+  font-size: 1.0625rem !important;
+  line-height: 1.65 !important;
+}
+
+p.text-base,
+.bg-surface-card p.text-base {
+  font-size: 1.125rem !important;
+  line-height: 1.68 !important;
+}
+
+p.text-lg {
+  font-size: 1.25rem !important;
+  line-height: 1.7 !important;
+}
+
+p.text-\[10px\],
+p.text-\[11px\],
+.text-\[11px\] {
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+/* ==========================================================================
    Tablet Screens Only (768px to 1023px) - Refined Proportions
    Reduces titles and subtitles, and increases paragraphs & body text
    inside cards and containers specifically in tablet view.
@@ -97,29 +159,31 @@ body {
 
   /* Subtitles & lead text on tablet */
   .font-display.text-lg,
-  p.text-lg,
-  p.text-base {
-    font-size: 1rem !important;
-    line-height: 1.55 !important;
+  p.text-lg {
+    font-size: 1.25rem !important;
+    line-height: 1.65 !important;
   }
 
   /* General paragraphs on tablet */
   p, 
   article p, 
-  section p {
-    font-size: 1.0625rem;
-    line-height: 1.65;
+  section p,
+  main p {
+    font-size: 1.125rem !important;
+    line-height: 1.7 !important;
   }
 
   /* Paragraphs and text inside cards and containers for tablet */
   .bg-surface-card p,
   .bg-surface-main p,
+  .bg-white p,
+  .rounded-lg p,
   .rounded-xl p,
   .rounded-2xl p,
   .rounded-3xl p,
   [class*="border"] p {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
+    font-size: 1.075rem !important;
+    line-height: 1.65 !important;
   }
 
   .bg-surface-card p.text-xs,
@@ -127,8 +191,21 @@ body {
   .rounded-2xl p.text-xs,
   p.text-xs,
   .text-\[11px\] {
-    font-size: 0.9375rem !important;
-    line-height: 1.5 !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+  }
+
+  p.text-sm,
+  .bg-surface-card p.text-sm,
+  .rounded-xl p.text-sm,
+  .rounded-2xl p.text-sm {
+    font-size: 1.075rem !important;
+    line-height: 1.65 !important;
+  }
+
+  p.text-base {
+    font-size: 1.15rem !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -157,44 +234,59 @@ body {
   /* Body & paragraph text scaling: Enhances reading comfort */
   p, 
   article p, 
-  section p {
-    font-size: clamp(1rem, 1.05vw, 1.125rem);
-    line-height: 1.65;
+  section p,
+  main p {
+    font-size: clamp(1.075rem, 1.14vw, 1.25rem) !important;
+    line-height: 1.7 !important;
   }
 
   /* Paragraphs inside cards and containers on laptop screens */
   .bg-surface-card p,
   .bg-surface-card p.text-sm,
+  .bg-white p,
+  .rounded-lg p,
   .rounded-xl p,
   .rounded-2xl p,
   .rounded-3xl p,
   [class*="border"] p {
-    font-size: clamp(0.975rem, 1.02vw, 1.075rem);
-    line-height: 1.6;
+    font-size: clamp(1.05rem, 1.1vw, 1.1875rem) !important;
+    line-height: 1.65 !important;
   }
 
   /* Compact paragraphs and card body text */
   p.text-xs,
   .bg-surface-card p.text-xs,
   .rounded-xl p.text-xs,
-  .rounded-2xl p.text-xs {
-    font-size: clamp(0.875rem, 0.92vw, 0.9375rem);
-    line-height: 1.55;
+  .rounded-2xl p.text-xs,
+  [class*="border"] p.text-xs {
+    font-size: clamp(0.95rem, 1vw, 1.025rem) !important;
+    line-height: 1.6 !important;
   }
 
-  p.text-sm {
-    font-size: clamp(0.975rem, 1.02vw, 1.05rem);
-    line-height: 1.6;
+  p.text-sm,
+  .bg-surface-card p.text-sm,
+  .rounded-xl p.text-sm,
+  .rounded-2xl p.text-sm,
+  [class*="border"] p.text-sm {
+    font-size: clamp(1.05rem, 1.1vw, 1.15rem) !important;
+    line-height: 1.65 !important;
   }
 
-  p.text-base {
-    font-size: clamp(1.0625rem, 1.12vw, 1.1875rem);
-    line-height: 1.65;
+  p.text-base,
+  .bg-surface-card p.text-base {
+    font-size: clamp(1.15rem, 1.22vw, 1.275rem) !important;
+    line-height: 1.7 !important;
   }
 
+  p.text-lg {
+    font-size: clamp(1.25rem, 1.35vw, 1.4rem) !important;
+    line-height: 1.7 !important;
+  }
+
+  p.text-\[10px\],
   p.text-\[11px\],
   .text-\[11px\] {
-    font-size: 0.875rem;
+    font-size: clamp(0.925rem, 0.96vw, 0.975rem) !important;
   }
 }
 
