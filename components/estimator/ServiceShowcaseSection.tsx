@@ -61,14 +61,14 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
               <DecryptedText text="CLINICAL ERADICATION CATALOG • VIZAG" />
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
             <SplitText text="Six Specialized Protocols. Zero Generic AI Emptiness." as="span" />
           </h2>
           <div className="max-w-2xl">
             <BlurText
               text="Unlike local unorganized sprayers who use the same smelly agricultural pesticide for every pest, each A1 protocol deploys precision CIBRC-registered chemistry calibrated for Visakhapatnam's humid coastal climate."
               as="p"
-              className="text-xs sm:text-sm font-sans text-neutral-700 leading-relaxed"
+              className="text-xs sm:text-sm lg:text-base font-sans text-neutral-700 leading-relaxed"
             />
           </div>
         </div>
@@ -193,10 +193,10 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
                   <span className="text-xs font-sans text-emerald-400 font-medium bg-emerald-950/80 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded border border-emerald-800 inline-block">
                     <DecryptedText text="FSSAI & Factory Audit Compliance" />
                   </span>
-                  <h3 className="text-base sm:text-lg md:text-2xl font-display font-bold text-white">
+                  <h3 className="text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-display font-bold text-white">
                     Commercial AMC for Vizag Restaurants, Pharma &amp; Gajuwaka Warehouses
                   </h3>
-                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-sans">
+                  <p className="text-xs sm:text-sm lg:text-base text-neutral-300 leading-relaxed font-sans">
                     Monthly scheduled audits, automated tamper-station telemetry logs, and instant FSSAI inspection certificates. Trusted by 140+ commercial establishments across Visakhapatnam.
                   </p>
                   <div className="pt-1 sm:pt-2">

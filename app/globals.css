@@ -66,6 +66,41 @@ body {
   }
 }
 
+/* ==========================================================================
+   Laptop Screens Only (1024px and up) - Refined Typographic Proportions
+   Decreases oversized title sizes and increases body/paragraph font sizes
+   specifically for laptop viewports, keeping mobile & tablet screens intact.
+   ========================================================================== */
+@media (min-width: 1024px) {
+  /* Body & paragraph text scaling: Enhances reading comfort */
+  p, 
+  article p, 
+  section p {
+    font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
+    line-height: 1.65;
+  }
+
+  /* Compact paragraphs and card body text */
+  p.text-xs {
+    font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+    line-height: 1.55;
+  }
+
+  p.text-sm {
+    font-size: clamp(0.9375rem, 1vw, 1.025rem);
+    line-height: 1.6;
+  }
+
+  p.text-base {
+    font-size: clamp(1.0625rem, 1.15vw, 1.1875rem);
+    line-height: 1.65;
+  }
+
+  p.text-\[11px\] {
+    font-size: 0.8125rem;
+  }
+}
+
 /* Google Translate Clean Styling (Suppresses default clunky banner) */
 .goog-te-banner-frame,
 .goog-te-balloon-frame,

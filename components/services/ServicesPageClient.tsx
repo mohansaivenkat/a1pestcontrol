@@ -164,14 +164,14 @@ export const ServicesPageClient: React.FC = () => {
         <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
           <DecryptedText text="CLINICAL TREATMENT PORTFOLIO • CIBRC REGISTERED" />
         </span>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-neutral-950 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
           <SplitText text="Targeted Eradication. Zero Generic Sprays." as="span" />
         </h1>
         <div className="max-w-2xl mx-auto">
           <BlurText
             text="Every treatment is custom-engineered using authenticated CIBRC-registered chemistry from Bayer and Syngenta. Clear pricing, documented warranties, and respectful technicians."
             as="p"
-            className="text-xs sm:text-base text-neutral-700 leading-relaxed font-sans"
+            className="text-xs sm:text-base lg:text-lg text-neutral-700 leading-relaxed font-sans"
           />
         </div>
       </section>
@@ -225,10 +225,10 @@ export const ServicesPageClient: React.FC = () => {
                         {svc.warranty}
                       </span>
                     </div>
-                    <h3 className="text-base sm:text-lg font-display font-bold text-neutral-950 leading-snug">
+                    <h3 className="text-base sm:text-lg lg:text-base font-display font-bold text-neutral-950 leading-snug">
                       {svc.name}
                     </h3>
-                    <p className="text-xs text-neutral-700 leading-relaxed">
+                    <p className="text-xs lg:text-sm text-neutral-700 leading-relaxed font-sans">
                       {svc.tagline}
                     </p>
                   </div>
@@ -275,13 +275,13 @@ export const ServicesPageClient: React.FC = () => {
                 <span className="text-xs font-sans text-accent-700 font-semibold block">
                   <DecryptedText text="Annual Maintenance Contracts (AMC)" />
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-display font-bold text-neutral-950">
+                <h2 className="text-2xl sm:text-3xl lg:text-2xl xl:text-3xl font-display font-bold text-neutral-950">
                   <SplitText text="Year-Round Protection for Homes, Restaurants & Warehouses" as="span" />
                 </h2>
                 <BlurText
                   text="Avoid recurring infestations with our 3-visit or 4-visit annual service plans. Includes emergency callback visits at zero extra charge, free monsoon defense treatments, and priority scheduling."
                   as="p"
-                  className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-sans"
+                  className="text-xs sm:text-sm lg:text-base text-neutral-700 leading-relaxed font-sans"
                 />
                 <div className="space-y-2 pt-2 text-xs sm:text-sm text-neutral-800">
                   <div className="flex items-center gap-2">

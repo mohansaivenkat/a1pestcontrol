@@ -92,13 +92,13 @@ export const ReviewsAndFaqSection: React.FC = () => {
             <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
               <DecryptedText text="VERIFIED VIZAG TESTIMONIALS" />
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-neutral-950">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-bold text-neutral-950">
               <SplitText text="Trusted by 2,500+ Visakhapatnam Families & Businesses" as="span" />
             </h2>
             <BlurText
               text="Real reviews from verified property owners across MVP, Seethammadhara, Madhurawada, and Gajuwaka."
               as="p"
-              className="text-xs sm:text-sm text-neutral-600"
+              className="text-xs sm:text-sm lg:text-base text-neutral-600 lg:text-neutral-700"
             />
           </div>
 
@@ -118,7 +118,7 @@ export const ReviewsAndFaqSection: React.FC = () => {
                     <span className="text-[10px] font-mono text-neutral-500">{rev.date}</span>
                   </div>
 
-                  <p className="text-xs text-neutral-800 leading-relaxed italic">
+                  <p className="text-xs lg:text-sm text-neutral-800 leading-relaxed italic">
                     &quot;{rev.text}&quot;
                   </p>
                 </div>
@@ -141,13 +141,13 @@ export const ReviewsAndFaqSection: React.FC = () => {
             <span className="text-xs font-sans text-accent-700 font-semibold block">
               <DecryptedText text="Clinical Knowledge Base" />
             </span>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-neutral-950">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-xl xl:text-2xl font-display font-bold text-neutral-950">
               <SplitText text="Frequently Asked Questions & Treatment Protocols" as="span" />
             </h3>
             <BlurText
               text="Everything you need to know about preparation, chemical safety, and warranties."
               as="p"
-              className="text-xs sm:text-sm text-neutral-600 font-sans"
+              className="text-xs sm:text-sm lg:text-base text-neutral-600 lg:text-neutral-700 font-sans"
             />
           </div>
 
@@ -180,7 +180,7 @@ export const ReviewsAndFaqSection: React.FC = () => {
                   </button>
 
                   {isOpen && (
-                    <div className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-neutral-700 leading-relaxed border-t border-neutral-100 bg-neutral-50/50 font-sans">
+                    <div className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm lg:text-base text-neutral-700 leading-relaxed border-t border-neutral-100 bg-neutral-50/50 font-sans">
                       <p>{faq.answer}</p>
                     </div>
                   )}

@@ -207,7 +207,7 @@ export const AboutPageClient: React.FC = () => {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-neutral-950 tracking-tight leading-[1.14]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-4xl font-display font-extrabold text-neutral-950 tracking-tight leading-[1.14]">
               <SplitText text="Engineered for Visakhapatnam’s Coastal Micro-Climates." as="span" />
             </h1>
 
@@ -215,7 +215,7 @@ export const AboutPageClient: React.FC = () => {
               <BlurText
                 text="From Seethammadhara to Gajuwaka: Why coastal salinity, red loam soil, and monsoon humidity require scientific chemistry—not uncalibrated toxic spraying."
                 as="p"
-                className="text-sm sm:text-base text-neutral-700 leading-relaxed font-sans"
+                className="text-sm sm:text-base lg:text-lg text-neutral-700 leading-relaxed font-sans"
               />
             </div>
 
@@ -330,13 +330,13 @@ export const AboutPageClient: React.FC = () => {
           <span className="text-xs text-brand-700 font-semibold block">
             Local Geological &amp; Climatic Entomology
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
             <SplitText text="Why Generic Pest Spraying Fails in Visakhapatnam" as="span" />
           </h2>
           <BlurText
             text="Visakhapatnam’s narrow geography between the Eastern Ghats and the Bay of Bengal creates four micro-zones that render one-size-fits-all treatments completely useless."
             as="p"
-            className="text-xs sm:text-sm text-neutral-600"
+            className="text-xs sm:text-sm lg:text-base text-neutral-600 lg:text-neutral-700"
           />
         </div>
 
@@ -353,15 +353,15 @@ export const AboutPageClient: React.FC = () => {
                   </span>
                   <span className="text-xs font-sans text-neutral-500">{factor.neighborhoods}</span>
                 </div>
-                <h3 className="text-base sm:text-lg font-display font-bold text-neutral-950">
+                <h3 className="text-base sm:text-lg lg:text-base font-display font-bold text-neutral-950">
                   {factor.zone}
                 </h3>
                 <div className="p-2.5 rounded-lg bg-neutral-100 border border-neutral-200">
-                  <p className="text-xs font-sans text-neutral-800">
+                  <p className="text-xs lg:text-sm font-sans text-neutral-800">
                     <strong className="text-accent-700">Environmental Stressor:</strong> {factor.challenge}
                   </p>
                 </div>
-                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
+                <p className="text-xs sm:text-sm lg:text-base text-neutral-700 leading-relaxed">
                   {factor.impact}
                 </p>
               </div>
@@ -386,13 +386,13 @@ export const AboutPageClient: React.FC = () => {
             <span className="text-xs text-brand-700 font-semibold block">
               Plane UI Technical Dossier
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
               <SplitText text="The Four Pillars of Clinical Pest Management" as="span" />
             </h2>
             <BlurText
               text="Examine the exact specifications, chemical purity requirements, and hardware calibrations behind every dispatch."
               as="p"
-              className="text-xs sm:text-sm text-neutral-600"
+              className="text-xs sm:text-sm lg:text-base text-neutral-600 lg:text-neutral-700"
             />
           </div>
 
@@ -422,13 +422,13 @@ export const AboutPageClient: React.FC = () => {
             <div className="grid lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 space-y-5">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-display font-bold text-neutral-950">
+                  <h3 className="text-xl sm:text-2xl lg:text-xl font-display font-bold text-neutral-950">
                     {currentPillarData.title}
                   </h3>
                   <p className="text-xs font-semibold text-accent-700 mt-1">
                     {currentPillarData.subtitle}
                   </p>
-                  <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mt-2">
+                  <p className="text-xs sm:text-sm lg:text-base text-neutral-700 leading-relaxed mt-2">
                     {currentPillarData.summary}
                   </p>
                 </div>
@@ -439,7 +439,7 @@ export const AboutPageClient: React.FC = () => {
                   </h4>
                   <ul className="space-y-2">
                     {currentPillarData.details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-800">
+                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm lg:text-base text-neutral-800">
                         <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0 mt-0.5" aria-hidden="true" />
                         <span>{detail}</span>
                       </li>
@@ -479,13 +479,13 @@ export const AboutPageClient: React.FC = () => {
           <span className="text-xs text-brand-700 font-semibold block">
             Physical Infrastructure &amp; Zonal Hubs
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
             <SplitText text="Four Physical Dispatch Depots Across Greater Visakhapatnam" as="span" />
           </h2>
           <BlurText
             text="We do not operate as an internet-only aggregator. Our technicians and motorized equipment are stationed permanently at four key geographic hubs for rapid response."
             as="p"
-            className="text-xs sm:text-sm text-neutral-600"
+            className="text-xs sm:text-sm lg:text-base text-neutral-600 lg:text-neutral-700"
           />
         </div>
 
@@ -506,11 +506,11 @@ export const AboutPageClient: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="text-base sm:text-lg font-display font-bold text-neutral-950">
+                <h3 className="text-base sm:text-lg lg:text-base font-display font-bold text-neutral-950">
                   {hub.hub}
                 </h3>
 
-                <p className="text-xs text-neutral-600 font-sans">
+                <p className="text-xs lg:text-sm text-neutral-600 font-sans">
                   {hub.address}
                 </p>
 
@@ -548,13 +548,13 @@ export const AboutPageClient: React.FC = () => {
               <span className="text-xs text-brand-700 font-semibold block">
                 Government of India Accreditations
               </span>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-neutral-950">
+              <h2 className="text-2xl sm:text-3xl lg:text-2xl font-display font-bold text-neutral-950">
                 <SplitText text="Formally Licensed & Regulatory Audited" as="span" />
               </h2>
               <BlurText
                 text="Every technician on our squad carries verifiable hazardous chemical handling certification under the Insecticides Act. We carry comprehensive general liability coverage and issue stamped CIBRC documentation with every contract."
                 as="p"
-                className="text-xs sm:text-sm text-neutral-700 leading-relaxed"
+                className="text-xs sm:text-sm lg:text-base text-neutral-700 leading-relaxed font-sans"
               />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-sans">

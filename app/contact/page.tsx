@@ -86,14 +86,14 @@ export default function ContactPage() {
         <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
           <DecryptedText text="RAPID DISPATCH HOTLINE • 60-MIN SLA" />
         </span>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-neutral-950 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
           <SplitText text="Get a Fast, Transparent Quote in Visakhapatnam" as="span" />
         </h1>
         <div className="max-w-2xl mx-auto">
           <BlurText
             text="Fill out the form below for an immediate callback or reach out directly via WhatsApp for rapid 60-minute emergency dispatch."
             as="p"
-            className="text-xs sm:text-base text-neutral-700 leading-relaxed font-sans"
+            className="text-xs sm:text-base lg:text-lg text-neutral-700 leading-relaxed font-sans"
           />
         </div>
       </section>
@@ -104,10 +104,10 @@ export default function ContactPage() {
           {/* Form Column (7 Cols) */}
           <div className="lg:col-span-7">
             <div className="bg-surface-card border border-neutral-300 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-sm">
-              <h2 className="text-lg sm:text-xl font-display font-bold text-neutral-950 mb-1">
+              <h2 className="text-lg sm:text-xl lg:text-lg font-display font-bold text-neutral-950 mb-1">
                 Schedule an Inspection
               </h2>
-              <p className="text-xs text-neutral-500 mb-6 font-mono">
+              <p className="text-xs lg:text-sm text-neutral-500 mb-6 font-mono">
                 No upfront payment required. Technician inspects first and provides a fixed price.
               </p>
 

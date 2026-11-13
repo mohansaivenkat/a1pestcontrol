@@ -36,13 +36,13 @@ export const TrustVaultSection: React.FC = () => {
               <DecryptedText text="CLINICAL TRUST & ECO-SAFE VAULT" />
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
             <SplitText text="Transparent Chemistry. No Secret Toxic Sprays." as="span" />
           </h2>
           <BlurText
             text="Every chemical we spray or bait is Central Insecticides Board (CIBRC) certified, WHO-prequalified, and manufactured by Bayer or Syngenta. We make our Material Safety Data Sheets (MSDS) publicly inspectable."
             as="p"
-            className="text-xs sm:text-sm font-sans text-neutral-700 leading-relaxed"
+            className="text-xs sm:text-sm lg:text-base font-sans text-neutral-700 leading-relaxed"
           />
         </div>
 

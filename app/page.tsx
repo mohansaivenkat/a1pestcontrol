@@ -69,7 +69,7 @@ export default function HomePage() {
               </div>
 
               {/* H1 Headline with Masked SplitText Reveal */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-display font-extrabold text-neutral-950 tracking-tight leading-[1.14]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.25rem] xl:text-[2.5rem] font-display font-extrabold text-neutral-950 tracking-tight leading-[1.14] lg:leading-[1.18]">
                 <SplitText
                   text="Clinical-Grade, Odorless Pest Control for Vizag Homes—Dispatched in 60 Minutes."
                   as="span"
@@ -82,7 +82,7 @@ export default function HomePage() {
                 <BlurText
                   text="Zero generic chemical fogging. Safe for infants, asthmatic elders, and indoor pets. Powered by genuine WHO-prequalified Bayer & Syngenta chemistry with up to 5-year stamped written warranties across Visakhapatnam."
                   as="p"
-                  className="text-sm md:text-base text-neutral-700 leading-relaxed font-sans"
+                  className="text-sm md:text-base lg:text-lg text-neutral-700 leading-relaxed font-sans"
                 />
               </div>
 
@@ -96,7 +96,7 @@ export default function HomePage() {
                   <p className="font-mono text-xl sm:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
                     <DecryptedText text="4.9 / 5.0" />
                   </p>
-                  <span className="text-[11px] text-neutral-600 font-sans block mt-0.5">
+                  <span className="text-[11px] lg:text-xs text-neutral-600 font-sans block mt-0.5">
                     1,840+ Local Reviews
                   </span>
                 </div>
@@ -109,7 +109,7 @@ export default function HomePage() {
                   <p className="font-mono text-xl sm:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
                     <DecryptedText text="100% GEL" />
                   </p>
-                  <span className="text-[11px] text-neutral-600 font-sans block mt-0.5">
+                  <span className="text-[11px] lg:text-xs text-neutral-600 font-sans block mt-0.5">
                     Kitchen Intact
                   </span>
                 </div>
@@ -122,7 +122,7 @@ export default function HomePage() {
                   <p className="font-mono text-xl sm:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
                     <DecryptedText text="5-YEAR" />
                   </p>
-                  <span className="text-[11px] text-neutral-600 font-sans block mt-0.5">
+                  <span className="text-[11px] lg:text-xs text-neutral-600 font-sans block mt-0.5">
                     Written Stamped Card
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export default function HomePage() {
                   <p className="font-mono text-xl sm:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
                     <DecryptedText text="60 MIN" />
                   </p>
-                  <span className="text-[11px] text-neutral-600 font-sans block mt-0.5">
+                  <span className="text-[11px] lg:text-xs text-neutral-600 font-sans block mt-0.5">
                     Direct Zonal Team
                   </span>
                 </div>
@@ -222,7 +222,7 @@ export default function HomePage() {
           <ScrollReveal
             text="We replaced diesel mixtures, vague ₹499 directory pricing, and unvetted daily labor with scientific pest eradication calibrated for Visakhapatnam's coastal architecture."
             highlightColor="#2D5A27"
-            className="text-xl md:text-3xl font-bold tracking-tight text-neutral-950"
+            className="text-xl md:text-3xl lg:text-2xl xl:text-[1.75rem] font-bold tracking-tight text-neutral-950"
           />
         </div>
       </section>
@@ -246,13 +246,13 @@ export default function HomePage() {
             <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
               <DecryptedText text="TRANSPARENT PRICING ENGINE" />
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
               <SplitText text="Instant Treatment Estimate Calculator" as="span" />
             </h2>
             <BlurText
               text="Select your pest, property size, and severity to view transparent, all-inclusive pricing before booking."
               as="p"
-              className="text-xs sm:text-sm text-neutral-600"
+              className="text-xs sm:text-sm lg:text-base text-neutral-600 lg:text-neutral-700 lg:leading-normal"
             />
           </div>
 
@@ -274,13 +274,13 @@ export default function HomePage() {
             <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
               <DecryptedText text="CLINICAL PROTOCOL WORKFLOW" />
             </span>
-            <h2 className="text-2xl md:text-4xl font-display font-bold text-neutral-950">
+            <h2 className="text-2xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-bold text-neutral-950">
               <SplitText text="Three Frictionless Steps to a Pest-Free Home" as="span" />
             </h2>
             <BlurText
               text="No endless phone calls with middlemen. Instant transparent pricing and guaranteed technician arrival."
               as="p"
-              className="text-xs md:text-sm text-neutral-600 max-w-xl mx-auto"
+              className="text-xs md:text-sm lg:text-base text-neutral-600 lg:text-neutral-700 max-w-xl lg:max-w-2xl mx-auto"
             />
           </div>
 

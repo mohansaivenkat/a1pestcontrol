@@ -110,32 +110,22 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
 
   return (
     <div id="estimate-calculator" className="relative w-full scroll-mt-24 space-y-6">
-      {/* Top Architectural Header */}
-      <div className="bg-neutral-950 text-white rounded-2xl px-4 sm:px-8 md:px-10 py-5 sm:py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div>
-          <span className="text-xs text-brand-500 font-semibold block mb-1">
-            Plane UI Diagnostic Panel • Visakhapatnam
-          </span>
-          <h2 className="text-lg sm:text-2xl md:text-3xl font-display font-bold text-white tracking-tight">
-            <SplitText text="Instant Treatment Estimate Calculator" as="span" />
-          </h2>
+      {/* Top Locality & SOS Status Bar */}
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-card border border-neutral-300 text-xs font-sans text-neutral-700">
+          <span className="h-2 w-2 rounded-full bg-brand-700 motion-safe:animate-pulse motion-reduce:animate-none" />
+          <span>Active Locality: <strong className="text-neutral-950">{currentLocality}</strong></span>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs text-neutral-300">
-            <span className="h-2 w-2 rounded-full bg-brand-500 motion-safe:animate-pulse motion-reduce:animate-none" />
-            <span>Active Locality: <strong className="text-white">{currentLocality}</strong></span>
-          </div>
-          {onOpenSOS && (
-            <button
-              type="button"
-              onClick={onOpenSOS}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-accent-700 hover:bg-accent-800 active:scale-[0.98] disabled:opacity-50 text-white text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
-            >
-              <AlertTriangle className="h-3.5 w-3.5" aria-hidden="true" />
-              <span>SOS Alert</span>
-            </button>
-          )}
-        </div>
+        {onOpenSOS && (
+          <button
+            type="button"
+            onClick={onOpenSOS}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-accent-700 hover:bg-accent-800 active:scale-[0.98] disabled:opacity-50 text-white text-xs font-semibold transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 whitespace-nowrap"
+          >
+            <AlertTriangle className="h-3.5 w-3.5" aria-hidden="true" />
+            <span>SOS Emergency Dispatch</span>
+          </button>
+        )}
       </div>
 
       {/* Main Interactive Configuration Flow */}
@@ -262,7 +252,7 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
               <BlurText
                 text="Infestation Severity Level"
                 as="h3"
-                className="text-sm sm:text-lg font-display font-bold text-neutral-950"
+                className="text-sm sm:text-lg lg:text-base font-display font-bold text-neutral-950"
               />
             </div>
             <span className="text-xs text-neutral-600 font-sans">
@@ -298,7 +288,7 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                       </span>
                     )}
                   </div>
-                  <p className="text-xs text-neutral-700 leading-relaxed">
+                  <p className="text-xs lg:text-sm text-neutral-700 leading-relaxed font-sans">
                     {sev.description}
                   </p>
                 </button>
@@ -340,16 +330,16 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                       Calculated price range (all-inclusive GST)
                     </span>
                     <div className="flex items-baseline gap-2">
-                      <span className="font-mono text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tabular-nums tracking-tight break-words">
+                      <span className="font-mono text-2xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-4xl font-extrabold text-white tabular-nums tracking-tight break-words">
                         ₹{quote.minPrice.toLocaleString("en-IN")} to ₹{quote.maxPrice.toLocaleString("en-IN")}
                       </span>
                     </div>
-                    <p className="text-xs text-neutral-400 mt-1">
+                    <p className="text-xs lg:text-sm text-neutral-400 mt-1 font-sans">
                       Zero surprise add-ons. Price locked prior to dispatch with stamped certificate.
                     </p>
                   </div>
 
-                  <div className="p-3 sm:p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-1.5 text-xs">
+                  <div className="p-3 sm:p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-1.5 text-xs lg:text-sm font-sans">
                     <div className="flex items-start gap-2">
                       <ShieldCheck className="w-4 h-4 text-brand-500 shrink-0 mt-0.5" aria-hidden="true" />
                       <p className="text-neutral-200">
@@ -362,7 +352,7 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                         <strong className="text-white">Safety Profile:</strong> {quote.pest.safetyProfile}, {quote.pest.preparationAdvice}
                       </p>
                     </div>
-                    <div className="flex items-start gap-2 text-brand-300 text-xs pt-0.5">
+                    <div className="flex items-start gap-2 text-brand-300 text-xs lg:text-sm pt-0.5">
                       <FileCheck className="w-3.5 h-3.5 text-brand-400 shrink-0 mt-0.5" aria-hidden="true" />
                       <span className="truncate">{quote.pest.protocolNotice}</span>
                     </div>

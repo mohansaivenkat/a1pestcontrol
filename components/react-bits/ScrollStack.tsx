@@ -97,20 +97,20 @@ export const ScrollStack: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-display font-bold text-timber-950 tracking-tight">
+                <h3 className="text-xl md:text-2xl lg:text-xl font-display font-bold text-timber-950 tracking-tight">
                   {step.title}
                 </h3>
-                <p className="text-xs md:text-sm font-sans text-timber-700/80 mt-1 mb-4">
+                <p className="text-xs md:text-sm lg:text-base font-sans text-timber-700/80 mt-1 mb-4">
                   {step.subtitle}
                 </p>
 
-                <p className="text-xs md:text-sm text-timber-900 leading-relaxed max-w-2xl mb-6">
+                <p className="text-xs md:text-sm lg:text-base text-timber-900 leading-relaxed max-w-2xl mb-6">
                   {step.description}
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-surface-hairline/60">
                   {step.details.map((detail, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-timber-950 font-medium">
+                    <div key={idx} className="flex items-start gap-2 text-xs lg:text-sm text-timber-950 font-medium">
                       <CheckCircle2 className="w-4 h-4 text-botanical-700 shrink-0 mt-0.5" />
                       <span>{detail}</span>
                     </div>
