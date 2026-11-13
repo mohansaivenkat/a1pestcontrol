@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Solid Architectural Grounding Tile -->
+  <rect width="48" height="48" rx="10" fill="#2C1E18"/>
+  <rect x="1.5" y="1.5" width="45" height="45" rx="8.5" stroke="#E6DFD5" stroke-opacity="0.15" stroke-width="1"/>
+  
+  <!-- Outer Hexagonal Boundary Shield Lines -->
+  <path d="M24 6L38 14V34L24 42L10 34V14L24 6Z" stroke="#2D5A27" stroke-width="1.75" stroke-linejoin="round"/>
+  
+  <!-- Architectural Monogram 'A1' Geometry -->
+  <!-- A left leg -->
+  <path d="M16 34L22 16" stroke="#FAF8F5" stroke-width="2.75" stroke-linecap="round"/>
+  <!-- A crossbar -->
+  <path d="M18.5 27H27.5" stroke="#2D5A27" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- The shared apex & '1' vertical post -->
+  <path d="M22 16L27 16V34" stroke="#FAF8F5" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 1 base serif -->
+  <path d="M24 34H30" stroke="#FAF8F5" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Precision Target Crosshair Indicator (Anti-AI technical focal point) -->
+  <circle cx="24.5" cy="11.5" r="2" fill="#B8332A"/>
+  <line x1="24.5" y1="8" x2="24.5" y2="9.5" stroke="#B8332A" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="24.5" y1="13.5" x2="24.5" y2="15" stroke="#B8332A" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="21" y1="11.5" x2="22.5" y2="11.5" stroke="#B8332A" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="26.5" y1="11.5" x2="28" y2="11.5" stroke="#B8332A" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
