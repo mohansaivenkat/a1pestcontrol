@@ -96,14 +96,14 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
                     <MagicBentoCard
                       isUrgent={isUrgent}
                       glowColor="#2D5A27"
-                      className="h-full rounded-xl sm:rounded-2xl bg-white border border-neutral-300 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden p-0"
+                      className="h-full rounded-xl sm:rounded-2xl bg-white border border-neutral-300 shadow-sm hover:shadow-xl transition-colors duration-150 flex flex-col justify-between overflow-hidden p-0"
                     >
                       {/* Integrated Stock Photo & Priority Header */}
                       <div className="relative aspect-[16/11] w-full overflow-hidden shrink-0 bg-neutral-950">
                         <img
                           src={stockImage}
                           alt={pest.name}
-                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90"
+                          className="h-full w-full object-cover opacity-90"
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/25 to-transparent" />
@@ -113,7 +113,7 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
                             level={pest.id === "bedbugs" ? "urgent" : pest.id === "termites" ? "moderate" : "mild"}
                             className="scale-90 sm:scale-100 origin-left"
                           />
-                          <span className="text-[9px] sm:text-[10px] font-mono px-1.5 sm:px-2 py-0.5 rounded bg-black/75 text-white backdrop-blur-sm border border-white/20 shrink-0">
+                          <span className="text-[10px] sm:text-xs font-mono px-1.5 sm:px-2 py-0.5 rounded bg-neutral-900 text-white border border-white/20 shrink-0">
                             {pest.code}
                           </span>
                         </div>
@@ -156,8 +156,8 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
                         {/* Starting Price & Action */}
                         <div className="pt-2 sm:pt-3 border-t border-neutral-200 flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 sm:gap-2 shrink-0">
                           <div>
-                            <span className="text-[9px] sm:text-[10px] font-mono text-neutral-500 uppercase block leading-tight">
-                              Starts at
+                            <span className="text-[11px] font-sans text-neutral-500 block leading-tight">
+                              Starting from
                             </span>
                             <span className="font-mono text-xs sm:text-base font-extrabold text-neutral-950 tabular-nums">
                               ₹{pest.basePrice.toLocaleString("en-IN")}
@@ -173,7 +173,7 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
                                 estimatorEl.scrollIntoView({ behavior: "smooth" });
                               }
                             }}
-                            className="w-full xs:w-auto inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-brand-700 hover:bg-brand-900 text-white font-mono text-[11px] sm:text-xs font-semibold transition-colors cursor-pointer"
+                            className="w-full xs:w-auto inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-brand-700 hover:bg-brand-900 text-white font-sans text-xs font-semibold whitespace-nowrap transition-colors duration-150 cursor-pointer focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 active:scale-[0.98]"
                           >
                             <span>Estimate</span>
                             <ArrowRight className="w-3 h-3" />
@@ -190,23 +190,23 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
             <div className="mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-xl overflow-hidden">
               <div className="grid md:grid-cols-12 gap-4 sm:gap-6 items-center">
                 <div className="p-4 sm:p-6 md:p-8 md:col-span-8 space-y-2.5 sm:space-y-3">
-                  <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold bg-emerald-950/80 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded border border-emerald-800 inline-block">
-                    <DecryptedText text="FSSAI & FACTORY AUDIT COMPLIANCE" />
+                  <span className="text-xs font-sans text-emerald-400 font-medium bg-emerald-950/80 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded border border-emerald-800 inline-block">
+                    <DecryptedText text="FSSAI & Factory Audit Compliance" />
                   </span>
                   <h3 className="text-base sm:text-lg md:text-2xl font-display font-bold text-white">
                     Commercial AMC for Vizag Restaurants, Pharma &amp; Gajuwaka Warehouses
                   </h3>
-                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-sans">
                     Monthly scheduled audits, automated tamper-station telemetry logs, and instant FSSAI inspection certificates. Trusted by 140+ commercial establishments across Visakhapatnam.
                   </p>
                   <div className="pt-1 sm:pt-2">
                     <button
                       type="button"
                       onClick={onOpenBooking}
-                      className="px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-accent-700 hover:bg-accent-800 text-white font-display font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer inline-flex items-center gap-2"
+                      className="px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-accent-700 hover:bg-accent-800 text-white font-sans font-semibold text-xs whitespace-nowrap transition-colors duration-150 shadow-md cursor-pointer inline-flex items-center gap-2 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-accent-700 active:scale-[0.98]"
                     >
                       <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                      <span>Schedule Commercial Audit</span>
+                      <span>Schedule commercial audit</span>
                     </button>
                   </div>
                 </div>

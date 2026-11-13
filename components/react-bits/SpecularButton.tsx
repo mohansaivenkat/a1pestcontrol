@@ -54,7 +54,7 @@ export const SpecularButton: React.FC<SpecularButtonProps> = ({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative overflow-hidden inline-flex items-center justify-center gap-2 font-display transition-all duration-200 cursor-pointer border select-none focus:outline-none focus:ring-2 focus:ring-botanical-700/50",
+        "relative overflow-hidden inline-flex items-center justify-center gap-2 font-display transition-colors duration-150 cursor-pointer border select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 disabled:opacity-50",
         variantStyles[variant],
         sizeStyles[size],
         className

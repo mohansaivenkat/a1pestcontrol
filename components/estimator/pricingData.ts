@@ -184,6 +184,8 @@ export interface QuoteCalculation {
   warrantyPeriod: string;
 }
 
+export type CalculatedQuote = QuoteCalculation;
+
 export function calculateQuote(pestId: string, propertyId: string, severityId: string): QuoteCalculation {
   const pest = PEST_CATALOG.find((p) => p.id === pestId) || PEST_CATALOG[1];
   const property = PROPERTY_OPTIONS.find((prop) => prop.id === propertyId) || PROPERTY_OPTIONS[1];

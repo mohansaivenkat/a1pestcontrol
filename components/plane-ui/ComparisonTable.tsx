@@ -53,23 +53,23 @@ export const ComparisonTable: React.FC = () => {
       <table className="w-full text-left border-collapse text-xs md:text-sm">
         <thead>
           <tr className="border-b border-surface-hairline bg-surface-travertine/80">
-            <th className="py-3.5 px-4 font-mono uppercase text-[11px] tracking-wider text-timber-700 w-1/4">
-              Diagnostic Parameter
+            <th className="py-3.5 px-4 font-sans text-xs font-semibold text-timber-700 w-1/4">
+              Diagnostic parameter
             </th>
-            <th className="py-3.5 px-4 font-mono uppercase text-[11px] tracking-wider text-crimson-800 bg-crimson-100/40 w-1/3">
-              Unorganized Vizag Sprayers
+            <th className="py-3.5 px-4 font-sans text-xs font-semibold text-crimson-800 bg-crimson-100/40 w-1/3">
+              Unorganized Vizag sprayers
             </th>
-            <th className="py-3.5 px-4 font-mono uppercase text-[11px] tracking-wider text-botanical-900 bg-botanical-100/60 w-5/12">
-              A1 Clinical Protocol (Bayer Certified)
+            <th className="py-3.5 px-4 font-sans text-xs font-semibold text-botanical-900 bg-botanical-100/60 w-5/12">
+              A1 clinical protocol (Bayer certified)
             </th>
           </tr>
         </thead>
         <tbody className="divide-y divide-surface-hairline">
           {COMPARISON_DATA.map((row, index) => (
-            <tr key={index} className="hover:bg-surface-parchment/60 transition-colors">
-              <td className="py-3.5 px-4 font-semibold text-timber-950 align-top">
+            <tr key={index} className="hover:bg-surface-parchment/60 transition-colors duration-150">
+              <td className="py-3.5 px-4 font-semibold text-timber-950 align-top font-sans">
                 {row.parameter}
-                <div className="mt-1 text-[11px] font-mono text-brand-700 font-normal flex items-center gap-1">
+                <div className="mt-1 text-xs font-sans text-brand-700 font-medium flex items-center gap-1">
                   <Check className="w-3 h-3 text-brand-700 shrink-0" />
                   <span>{row.advantage}</span>
                 </div>

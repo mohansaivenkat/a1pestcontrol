@@ -47,11 +47,11 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
         return (
           <span
             key={index}
-            className="inline-block transition-colors duration-300 mr-[0.25em]"
+            className="inline-block transition-colors duration-150 mr-[0.25em]"
             style={{
-              color: isHighlight ? highlightColor : isActive ? "#261811" : "#574B424D",
+              color: isHighlight ? highlightColor : isActive ? "var(--color-timber-950)" : "rgba(87, 75, 66, 0.3)",
               transform: isActive ? "translateY(0)" : "translateY(2px)",
-              transition: "color 0.25s ease, opacity 0.25s ease, transform 0.25s ease",
+              transition: "color 0.15s ease, opacity 0.15s ease, transform 0.15s ease",
             }}
           >
             {word}

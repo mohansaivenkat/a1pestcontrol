@@ -57,7 +57,7 @@ export const SplitText: React.FC<SplitTextProps> = ({
             className="inline-block overflow-hidden mr-[0.26em] align-top"
           >
             <span
-              className={`inline-block transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`inline-block motion-safe:transition-transform motion-reduce:transition-none motion-reduce:transform-none motion-reduce:opacity-100 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 inView ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
               } ${isHighlight ? highlightClass : ""}`}
               style={{

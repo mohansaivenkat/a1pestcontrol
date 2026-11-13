@@ -140,7 +140,7 @@ const PILLARS: PillarStandard[] = [
     details: [
       "Up to 5-Year Stamped Written Warranty for Subterranean Termite barrier treatments",
       "180-Day Comprehensive Retreatment Guarantee for Bed Bug thermal and chemical eradications",
-      "Zero-argument callback policy: if target pests survive beyond the protocol window, we retreat at ₹0",
+      "Zero-argument callback policy: if target pests survive beyond the protocol window, we retreat at zero cost",
       "Digital service record backed up on our server with complete chemical dosage and technician logs",
     ],
     specs: [
@@ -154,8 +154,8 @@ const PILLARS: PillarStandard[] = [
 const LOCAL_FACTORS = [
   {
     zone: "Bay of Bengal Coastal Strip",
-    neighborhoods: "RK Beach • MVP Colony • Sagar Nagar • Rushikonda",
-    challenge: "High Marine Salinity & 85%+ Atmospheric Moisture",
+    neighborhoods: "RK Beach, MVP Colony, Sagar Nagar, Rushikonda",
+    challenge: "High marine salinity and 85%+ atmospheric moisture",
     impact:
       "Sea air corrodes superficial pesticide dusts rapidly. High coastal humidity speeds up dampwood termite fungal decomposition and encourages drain-fly nesting.",
     solution:
@@ -163,8 +163,8 @@ const LOCAL_FACTORS = [
   },
   {
     zone: "Red Loam Foundation Corridor",
-    neighborhoods: "Dwaraka Nagar • Seethammadhara • Maddilapalem • Resapuvanipalem",
-    challenge: "Moisture-Retaining Iron-Rich Clay Soils",
+    neighborhoods: "Dwaraka Nagar, Seethammadhara, Maddilapalem, Resapuvanipalem",
+    challenge: "Moisture-retaining iron-rich clay soils",
     impact:
       "Dense red loam creates deep underground moisture veins where subterranean termites (Odontotermes obesus) thrive and tunnel into concrete foundation cracks.",
     solution:
@@ -172,17 +172,17 @@ const LOCAL_FACTORS = [
   },
   {
     zone: "High-Rise Apartment Shafts",
-    neighborhoods: "Madhurawada • Yendada • Kommadi • IT SEZ",
-    challenge: "Shared Plumbing Ducts & Centralized Shafts",
+    neighborhoods: "Madhurawada, Yendada, Kommadi, IT SEZ",
+    challenge: "Shared plumbing ducts and centralized utility shafts",
     impact:
       "German cockroaches migrate vertically between floors through ductwork and electrical conduits. Standard surface sprays only scatter them to neighbor flats.",
     solution:
       "Cascade domino-effect Indoxacarb gel baiting that cockroaches ingest and carry back to communal hidden nesting voids behind ductwork.",
   },
   {
-    zone: "Industrial & Food Logistics Belt",
-    neighborhoods: "Gajuwaka • Auto Nagar • Kurmannapalem • Industrial Estate",
-    challenge: "Grain Depots, Pharma Warehouses & High Rodent Pressure",
+    zone: "Industrial and Food Logistics Belt",
+    neighborhoods: "Gajuwaka, Auto Nagar, Kurmannapalem, Industrial Estate",
+    challenge: "Grain depots, pharma warehouses, and high rodent pressure",
     impact:
       "Rats gnaw electrical cables, causing industrial downtime and contaminating commercial grain and packaging lots under FSSAI scrutiny.",
     solution:
@@ -201,7 +201,7 @@ export const AboutPageClient: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 space-y-4 sm:space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-brand-100 border border-brand-500/20 px-3 py-1 text-xs font-semibold text-brand-700">
-              <ShieldCheck className="h-4 w-4 text-brand-700 shrink-0" />
+              <ShieldCheck className="h-4 w-4 text-brand-700 shrink-0" aria-hidden="true" />
               <span>
                 <DecryptedText text="ENTOMOLOGICAL & STRUCTURAL PEST MANAGEMENT • EST. 2010" />
               </span>
@@ -222,26 +222,26 @@ export const AboutPageClient: React.FC = () => {
             {/* High-Density Telemetry Strip */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 pt-2">
               <div className="p-3 rounded-xl bg-surface-card border border-neutral-300">
-                <span className="text-[10px] font-mono text-neutral-500 uppercase block">Founded</span>
-                <span className="font-mono text-base font-extrabold text-neutral-950">
+                <span className="text-xs font-sans text-neutral-500 block">Founded</span>
+                <span className="font-mono text-base font-bold text-neutral-950">
                   <DecryptedText text="2010 VIZAG" />
                 </span>
               </div>
               <div className="p-3 rounded-xl bg-surface-card border border-neutral-300">
-                <span className="text-[10px] font-mono text-neutral-500 uppercase block">Licensing</span>
-                <span className="font-mono text-base font-extrabold text-brand-700">
+                <span className="text-xs font-sans text-neutral-500 block">Licensing</span>
+                <span className="font-mono text-base font-bold text-brand-700">
                   <DecryptedText text="CIBRC GOVT" />
                 </span>
               </div>
               <div className="p-3 rounded-xl bg-surface-card border border-neutral-300">
-                <span className="text-[10px] font-mono text-neutral-500 uppercase block">Properties</span>
-                <span className="font-mono text-base font-extrabold text-neutral-950">
+                <span className="text-xs font-sans text-neutral-500 block">Properties</span>
+                <span className="font-mono text-base font-bold text-neutral-950">
                   <DecryptedText text="14,000+ SITES" />
                 </span>
               </div>
               <div className="p-3 rounded-xl bg-surface-card border border-neutral-300">
-                <span className="text-[10px] font-mono text-neutral-500 uppercase block">Organophosphates</span>
-                <span className="font-mono text-base font-extrabold text-accent-700">
+                <span className="text-xs font-sans text-neutral-500 block">Organophosphates</span>
+                <span className="font-mono text-base font-bold text-accent-700">
                   <DecryptedText text="0% BANNED" />
                 </span>
               </div>
@@ -257,14 +257,14 @@ export const AboutPageClient: React.FC = () => {
                 }}
               >
                 <span>Inspect Clinical Standards Dossier</span>
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </SpecularButton>
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-neutral-300 hover:border-brand-700 bg-white text-xs sm:text-sm font-semibold text-neutral-800 transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-neutral-300 hover:border-brand-700 bg-white text-xs sm:text-sm font-semibold text-neutral-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 active:scale-[0.98]"
               >
-                <Phone className="h-4 w-4 text-brand-700" />
+                <Phone className="h-4 w-4 text-brand-700" aria-hidden="true" />
                 <span>Contact Headquarters</span>
               </Link>
             </div>
@@ -272,7 +272,7 @@ export const AboutPageClient: React.FC = () => {
 
           {/* Right Hero Image Card with Authentic Technical Detail */}
           <div className="lg:col-span-5 relative">
-            <div className="rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-neutral-300 shadow-xl bg-white relative">
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-neutral-300 bg-white relative">
               <div className="aspect-[4/3] w-full relative">
                 <img
                   src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
@@ -282,26 +282,26 @@ export const AboutPageClient: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent" />
                 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800 inline-block">
-                    DIRECTOR OF FIELD ENTOMOLOGY
+                  <span className="text-xs font-sans text-emerald-400 font-semibold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/40 inline-block">
+                    Director of Field Entomology
                   </span>
                   <h4 className="text-sm sm:text-base font-display font-bold leading-tight">
                     Calibrated Micro-Injection & Odorless Gel Protocol
                   </h4>
-                  <p className="text-xs text-neutral-300 font-mono">
+                  <p className="text-xs text-neutral-300 font-sans">
                     Zero aerosol dispersion in food preparation spaces
                   </p>
                 </div>
               </div>
 
               {/* Sub-card with CIBRC License Info */}
-              <div className="p-4 bg-surface-card border-t border-neutral-200 flex items-center justify-between text-xs font-mono">
+              <div className="p-4 bg-surface-card border-t border-neutral-200 flex items-center justify-between text-xs font-sans">
                 <div>
-                  <span className="text-neutral-500 block text-[10px]">CIBRC License Code:</span>
-                  <span className="font-bold text-neutral-950">AP/VSP/2010/8842-P</span>
+                  <span className="text-neutral-500 block text-xs">CIBRC License Code:</span>
+                  <span className="font-mono font-bold text-neutral-950">AP/VSP/2010/8842-P</span>
                 </div>
                 <div className="text-right">
-                  <span className="text-neutral-500 block text-[10px]">Central Depot:</span>
+                  <span className="text-neutral-500 block text-xs">Central Depot:</span>
                   <span className="font-bold text-brand-700">Dwaraka Nagar, Vizag</span>
                 </div>
               </div>
@@ -313,8 +313,8 @@ export const AboutPageClient: React.FC = () => {
       {/* 2. Manifesto Section with React Bits ScrollReveal */}
       <section className="bg-surface-card border-y border-neutral-200 py-12 sm:py-16 mb-14 sm:mb-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center space-y-3">
-          <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
-            <DecryptedText text="THE FOUNDING CLINICAL MANDATE" />
+          <span className="text-xs text-brand-700 font-semibold block">
+            The Founding Clinical Mandate
           </span>
           <ScrollReveal
             text="We founded A1 Pest Control Services in 2010 with a singular mission: to eradicate pests from Visakhapatnam homes and commercial facilities using hospital-grade, odorless science—protecting families, infants, and pets from the dangerous toxic fogs of unorganized local sprayers."
@@ -327,8 +327,8 @@ export const AboutPageClient: React.FC = () => {
       {/* 3. Visakhapatnam Coastal Geography & Entomological Realities */}
       <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 mb-16 sm:mb-24">
         <div className="max-w-3xl mb-8 sm:mb-12 space-y-2">
-          <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
-            <DecryptedText text="LOCAL GEOLOGICAL & CLIMATIC ENTOMOLOGY" />
+          <span className="text-xs text-brand-700 font-semibold block">
+            Local Geological &amp; Climatic Entomology
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
             <SplitText text="Why Generic Pest Spraying Fails in Visakhapatnam" as="span" />
@@ -348,16 +348,16 @@ export const AboutPageClient: React.FC = () => {
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="text-xs font-mono font-bold text-accent-700 bg-accent-100 px-2 py-0.5 rounded">
+                  <span className="text-xs font-sans font-bold text-accent-700 bg-accent-100 px-2 py-0.5 rounded">
                     Zone 0{idx + 1}
                   </span>
-                  <span className="text-[11px] font-mono text-neutral-500">{factor.neighborhoods}</span>
+                  <span className="text-xs font-sans text-neutral-500">{factor.neighborhoods}</span>
                 </div>
                 <h3 className="text-base sm:text-lg font-display font-bold text-neutral-950">
                   {factor.zone}
                 </h3>
                 <div className="p-2.5 rounded-lg bg-neutral-100 border border-neutral-200">
-                  <p className="text-xs font-mono text-neutral-800">
+                  <p className="text-xs font-sans text-neutral-800">
                     <strong className="text-accent-700">Environmental Stressor:</strong> {factor.challenge}
                   </p>
                 </div>
@@ -368,7 +368,7 @@ export const AboutPageClient: React.FC = () => {
 
               <div className="pt-3 border-t border-neutral-200 bg-brand-100/50 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-2xl">
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0 mt-0.5" aria-hidden="true" />
                   <p className="text-xs text-neutral-900 leading-tight">
                     <strong className="text-brand-900">A1 Clinical Protocol:</strong> {factor.solution}
                   </p>
@@ -383,8 +383,8 @@ export const AboutPageClient: React.FC = () => {
       <section id="standards-dossier" className="w-full py-14 sm:py-20 bg-surface-muted border-y border-neutral-200 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
           <div className="max-w-3xl space-y-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
-              <DecryptedText text="PLANE UI TECHNICAL DOSSIER" />
+            <span className="text-xs text-brand-700 font-semibold block">
+              Plane UI Technical Dossier
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
               <SplitText text="The Four Pillars of Clinical Pest Management" as="span" />
@@ -405,9 +405,9 @@ export const AboutPageClient: React.FC = () => {
                   key={p.id}
                   type="button"
                   onClick={() => setActivePillar(p.id)}
-                  className={`px-4 py-2.5 rounded-t-xl font-display text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer border-t border-x ${
+                  className={`px-4 py-2.5 rounded-t-xl font-display text-xs sm:text-sm font-bold transition-colors duration-150 whitespace-nowrap cursor-pointer border-t border-x focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 active:scale-[0.98] disabled:opacity-50 ${
                     isSelected
-                      ? "bg-white text-brand-700 border-neutral-300 shadow-sm border-b-2 border-b-brand-700 -mb-[1px]"
+                      ? "bg-white text-brand-700 border-neutral-300 border-b-2 border-b-brand-700 -mb-[1px]"
                       : "bg-neutral-200/60 text-neutral-600 hover:text-neutral-950 border-transparent"
                   }`}
                 >
@@ -418,29 +418,29 @@ export const AboutPageClient: React.FC = () => {
           </div>
 
           {/* Active Pillar Card with Plane UI Density */}
-          <div className="rounded-2xl sm:rounded-3xl bg-white border border-neutral-300 p-5 sm:p-8 md:p-10 shadow-lg">
+          <div className="rounded-2xl bg-white border border-neutral-300 p-5 sm:p-8 md:p-10 shadow-sm">
             <div className="grid lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 space-y-5">
                 <div>
-                  <span className="text-xs font-mono font-bold text-accent-700 uppercase tracking-widest">
-                    {currentPillarData.subtitle}
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-display font-bold text-neutral-950 mt-1">
+                  <h3 className="text-xl sm:text-2xl font-display font-bold text-neutral-950">
                     {currentPillarData.title}
                   </h3>
+                  <p className="text-xs font-semibold text-accent-700 mt-1">
+                    {currentPillarData.subtitle}
+                  </p>
                   <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mt-2">
                     {currentPillarData.summary}
                   </p>
                 </div>
 
                 <div className="space-y-2.5">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-500 font-semibold">
+                  <h4 className="text-xs font-sans text-neutral-600 font-semibold">
                     Technical Directives &amp; Protocols:
                   </h4>
                   <ul className="space-y-2">
                     {currentPillarData.details.map((detail, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-800">
-                        <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0 mt-0.5" aria-hidden="true" />
                         <span>{detail}</span>
                       </li>
                     ))}
@@ -450,20 +450,20 @@ export const AboutPageClient: React.FC = () => {
 
               {/* Specs Rail (5 Cols) */}
               <div className="lg:col-span-5 bg-neutral-100 rounded-2xl p-4 sm:p-6 border border-neutral-200 space-y-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block border-b border-neutral-200 pb-2">
+                <span className="text-xs text-brand-700 font-bold block border-b border-neutral-200 pb-2">
                   Specification Metrics
                 </span>
                 <div className="space-y-3">
                   {currentPillarData.specs.map((spec, idx) => (
-                    <div key={idx} className="flex items-center justify-between text-xs py-1.5 border-b border-neutral-200/60 last:border-b-0">
-                      <span className="font-mono text-neutral-600">{spec.label}:</span>
-                      <span className="font-mono font-bold text-neutral-950">{spec.value}</span>
+                    <div key={idx} className="flex items-center justify-between text-xs py-1.5 border-b border-neutral-200/60 last:border-b-0 font-sans">
+                      <span className="text-neutral-600">{spec.label}:</span>
+                      <span className="font-bold text-neutral-950">{spec.value}</span>
                     </div>
                   ))}
                 </div>
 
                 <div className="pt-2">
-                  <p className="text-[11px] text-neutral-500 leading-relaxed">
+                  <p className="text-xs text-neutral-500 leading-relaxed">
                     Audited bi-annually under Government of India Central Insecticides Board &amp; Registration Committee (CIBRC) directives.
                   </p>
                 </div>
@@ -476,8 +476,8 @@ export const AboutPageClient: React.FC = () => {
       {/* 5. Zonal Operating Grid (Visakhapatnam Physical Depots) */}
       <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="max-w-3xl mb-8 sm:mb-12 space-y-2">
-          <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
-            <DecryptedText text="PHYSICAL INFRASTRUCTURE & ZONAL HUBS" />
+          <span className="text-xs text-brand-700 font-semibold block">
+            Physical Infrastructure &amp; Zonal Hubs
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-neutral-950 tracking-tight">
             <SplitText text="Four Physical Dispatch Depots Across Greater Visakhapatnam" as="span" />
@@ -497,12 +497,12 @@ export const AboutPageClient: React.FC = () => {
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-brand-700">
-                    <MapPin className="w-4 h-4 text-brand-700" />
-                    <span>DEPOT 0{idx + 1}</span>
+                  <div className="flex items-center gap-1.5 text-xs font-sans font-bold text-brand-700">
+                    <MapPin className="w-4 h-4 text-brand-700" aria-hidden="true" />
+                    <span>Depot 0{idx + 1}</span>
                   </div>
-                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-100 text-brand-900 font-semibold">
-                    {hub.response} Response
+                  <span className="text-xs font-sans px-2 py-0.5 rounded bg-brand-100 text-brand-900 font-medium">
+                    {hub.response} response
                   </span>
                 </div>
 
@@ -510,19 +510,19 @@ export const AboutPageClient: React.FC = () => {
                   {hub.hub}
                 </h3>
 
-                <p className="text-xs font-mono text-neutral-600">
+                <p className="text-xs text-neutral-600 font-sans">
                   {hub.address}
                 </p>
 
                 <div className="pt-2">
-                  <span className="text-[11px] font-mono uppercase text-neutral-500 block mb-1">
+                  <span className="text-xs text-neutral-500 font-sans block mb-1">
                     Coverage Localities:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {hub.coverage.map((loc, lIdx) => (
                       <span
                         key={lIdx}
-                        className="text-[11px] font-sans px-2 py-0.5 rounded bg-neutral-100 border border-neutral-200 text-neutral-800"
+                        className="text-xs font-sans px-2 py-0.5 rounded bg-neutral-100 border border-neutral-200 text-neutral-800"
                       >
                         {loc}
                       </span>
@@ -531,7 +531,7 @@ export const AboutPageClient: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-neutral-200 flex items-center justify-between text-xs font-mono text-neutral-600">
+              <div className="pt-3 border-t border-neutral-200 flex items-center justify-between text-xs font-sans text-neutral-600">
                 <span>Active Squad: <strong className="text-neutral-950">{hub.techs}</strong></span>
                 <span className="text-brand-700 font-semibold">Ready for Dispatch</span>
               </div>
@@ -545,8 +545,8 @@ export const AboutPageClient: React.FC = () => {
         <div className="bg-surface-card border border-neutral-300 rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 shadow-sm">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
-              <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
-                <DecryptedText text="GOVERNMENT OF INDIA ACCREDITATIONS" />
+              <span className="text-xs text-brand-700 font-semibold block">
+                Government of India Accreditations
               </span>
               <h2 className="text-2xl sm:text-3xl font-display font-bold text-neutral-950">
                 <SplitText text="Formally Licensed & Regulatory Audited" as="span" />
@@ -557,21 +557,21 @@ export const AboutPageClient: React.FC = () => {
                 className="text-xs sm:text-sm text-neutral-700 leading-relaxed"
               />
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-mono">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-sans">
                 <div className="p-3 bg-neutral-100 rounded-xl border border-neutral-200">
-                  <span className="text-neutral-500 block text-[10px]">CIBRC Central Registration:</span>
-                  <span className="font-bold text-neutral-950">AP/VSP/2010/8842-P</span>
+                  <span className="text-neutral-500 block text-xs">CIBRC Central Registration:</span>
+                  <span className="font-mono font-bold text-neutral-950">AP/VSP/2010/8842-P</span>
                 </div>
                 <div className="p-3 bg-neutral-100 rounded-xl border border-neutral-200">
-                  <span className="text-neutral-500 block text-[10px]">GSTIN Registration:</span>
-                  <span className="font-bold text-neutral-950">37AAHFA1892B1Z8</span>
+                  <span className="text-neutral-500 block text-xs">GSTIN Registration:</span>
+                  <span className="font-mono font-bold text-neutral-950">37AAHFA1892B1Z8</span>
                 </div>
                 <div className="p-3 bg-neutral-100 rounded-xl border border-neutral-200">
-                  <span className="text-neutral-500 block text-[10px]">Commercial Insecticide License:</span>
-                  <span className="font-bold text-neutral-950">DIS/VSP/PEST/2011/491</span>
+                  <span className="text-neutral-500 block text-xs">Commercial Insecticide License:</span>
+                  <span className="font-mono font-bold text-neutral-950">DIS/VSP/PEST/2011/491</span>
                 </div>
                 <div className="p-3 bg-neutral-100 rounded-xl border border-neutral-200">
-                  <span className="text-neutral-500 block text-[10px]">Formulation Partner:</span>
+                  <span className="text-neutral-500 block text-xs">Formulation Partner:</span>
                   <span className="font-bold text-brand-700">Bayer Environmental Science</span>
                 </div>
               </div>
@@ -579,10 +579,10 @@ export const AboutPageClient: React.FC = () => {
               <div className="pt-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-700 hover:bg-brand-900 text-white text-xs sm:text-sm font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-700 hover:bg-brand-900 active:scale-[0.98] text-white text-xs sm:text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
                 >
                   <span>Book Technician Consultation at Your Site</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
             </div>
@@ -593,7 +593,7 @@ export const AboutPageClient: React.FC = () => {
                 warrantyPeriod="5-YEAR STAMPED WARRANTY"
                 depotHub="Dwaraka Nagar / Srinagar Central Hub"
               />
-              <p className="text-[11px] font-mono text-neutral-500 text-center mt-3">
+              <p className="text-xs text-neutral-500 text-center mt-3 font-sans">
                 Official Stamped Certificate • Issued with Every Property Contract
               </p>
             </div>

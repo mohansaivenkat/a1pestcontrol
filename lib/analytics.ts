@@ -3,6 +3,8 @@
 export type AnalyticsEvent =
   | { name: "estimator_calculate"; pest: string; property: string; severity: string; priceMin: number; priceMax: number }
   | { name: "slot_picked"; slotTime: string; date: string; pest: string; locality: string }
+  | { name: "slot_booked"; pest?: string; locality?: string; slot?: string }
+  | { name: "emergency_sos_opened"; locality?: string }
   | { name: "emergency_sos_triggered"; locality: string; timestamp: number }
   | { name: "whatsapp_quote_clicked"; pest: string; property: string; locality: string }
   | { name: "locality_switched"; locality: string; eta: string }

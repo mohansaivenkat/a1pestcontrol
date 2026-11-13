@@ -91,50 +91,47 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
   const getPestIcon = (id: string) => {
     switch (id) {
       case "termites":
-        return <Drill className="w-4 h-4 sm:w-5 sm:h-5 text-brand-700" />;
+        return <Drill className="w-4 h-4 sm:w-5 sm:h-5 text-brand-700" aria-hidden="true" />;
       case "cockroaches":
-        return <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-brand-700" />;
+        return <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-brand-700" aria-hidden="true" />;
       case "bedbugs":
-        return <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-accent-700" />;
+        return <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-accent-700" aria-hidden="true" />;
       case "rodents":
-        return <BoxSelect className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-800" />;
+        return <BoxSelect className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-800" aria-hidden="true" />;
       case "mosquitoes":
-        return <Wind className="w-4 h-4 sm:w-5 sm:h-5 text-brand-700" />;
+        return <Wind className="w-4 h-4 sm:w-5 sm:h-5 text-brand-700" aria-hidden="true" />;
       case "woodborers":
-        return <Syringe className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-800" />;
+        return <Syringe className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-800" aria-hidden="true" />;
       case "annual-amc":
       default:
-        return <Award className="w-4 h-4 sm:w-5 sm:h-5 text-brand-700" />;
+        return <Award className="w-4 h-4 sm:w-5 sm:h-5 text-brand-700" aria-hidden="true" />;
     }
   };
 
   return (
-    <div
-      id="estimate-calculator"
-      className="relative w-full rounded-2xl sm:rounded-3xl bg-surface-card border border-neutral-300 shadow-2xl overflow-hidden scroll-mt-24"
-    >
+    <div id="estimate-calculator" className="relative w-full scroll-mt-24 space-y-6">
       {/* Top Architectural Header */}
-      <div className="bg-neutral-950 text-white px-3.5 sm:px-8 md:px-10 py-4 sm:py-6 border-b border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="bg-neutral-950 text-white rounded-2xl px-4 sm:px-8 md:px-10 py-5 sm:py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-brand-500 font-bold block mb-1">
-            <DecryptedText text="PLANE UI DIAGNOSTIC PANEL • VISAKHAPATNAM" />
+          <span className="text-xs text-brand-500 font-semibold block mb-1">
+            Plane UI Diagnostic Panel • Visakhapatnam
           </span>
-          <h2 className="text-lg sm:text-2xl md:text-3xl font-display font-extrabold text-white tracking-tight">
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-display font-bold text-white tracking-tight">
             <SplitText text="Instant Treatment Estimate Calculator" as="span" />
           </h2>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-neutral-900 border border-neutral-700 text-[11px] sm:text-xs font-mono text-neutral-300">
-            <span className="h-2 w-2 rounded-full bg-brand-500 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs text-neutral-300">
+            <span className="h-2 w-2 rounded-full bg-brand-500 motion-safe:animate-pulse motion-reduce:animate-none" />
             <span>Active Locality: <strong className="text-white">{currentLocality}</strong></span>
           </div>
           {onOpenSOS && (
             <button
               type="button"
               onClick={onOpenSOS}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg bg-accent-700 hover:bg-accent-800 text-white text-[11px] sm:text-xs font-mono font-bold transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-accent-700 hover:bg-accent-800 active:scale-[0.98] disabled:opacity-50 text-white text-xs font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
             >
-              <AlertTriangle className="h-3.5 w-3.5" />
+              <AlertTriangle className="h-3.5 w-3.5" aria-hidden="true" />
               <span>SOS Alert</span>
             </button>
           )}
@@ -142,13 +139,13 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
       </div>
 
       {/* Main Interactive Configuration Flow */}
-      <div className="p-3.5 sm:p-6 md:p-10 space-y-6 sm:space-y-10">
-        {/* Step 1: Pest Target (2x2 on Mobile, 4-col on XL) */}
-        <div className="space-y-3 sm:space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-neutral-200 pb-2 sm:pb-3">
+      <div className="space-y-6 sm:space-y-8">
+        {/* Step 1: Pest Target */}
+        <div className="space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-neutral-200 pb-2.5">
             <div>
-              <span className="text-[10px] sm:text-xs font-mono font-bold text-brand-700 uppercase tracking-widest block">
-                <DecryptedText text="STEP 01 • TARGET PROTOCOL" />
+              <span className="text-xs font-semibold text-brand-700 block">
+                Step 1: Target Protocol
               </span>
               <BlurText
                 text="Select Your Target Pest Problem"
@@ -156,12 +153,12 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                 className="text-sm sm:text-lg font-display font-bold text-neutral-950"
               />
             </div>
-            <span className="text-[11px] sm:text-xs text-neutral-600 font-mono">
-              7 Clinical Protocols
+            <span className="text-xs text-neutral-600 font-sans">
+              7 clinical protocols available
             </span>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3.5">
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-3.5">
             {PEST_CATALOG.map((p) => {
               const isSelected = selectedPest === p.id;
               return (
@@ -169,37 +166,37 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                   key={p.id}
                   type="button"
                   onClick={() => handlePestChange(p.id)}
-                  className={`p-2.5 sm:p-4 rounded-xl border text-left transition-all duration-200 flex flex-col justify-between gap-2 cursor-pointer min-w-0 ${
+                  className={`p-3 sm:p-4 rounded-xl border text-left transition-colors duration-150 flex flex-col justify-between gap-2 cursor-pointer min-w-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 active:scale-[0.98] disabled:opacity-50 ${
                     isSelected
-                      ? "bg-brand-100/70 border-brand-700 ring-2 ring-brand-700 shadow-md"
+                      ? "bg-brand-100/70 border-brand-700 ring-2 ring-brand-700"
                       : "bg-surface-card hover:bg-neutral-100/80 border-neutral-300 text-neutral-900"
                   }`}
                 >
                   <div className="flex items-start justify-between gap-1.5 min-w-0">
-                    <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
-                      <div className={`p-1.5 sm:p-2 rounded-lg shrink-0 ${isSelected ? "bg-white shadow-sm" : "bg-neutral-100"}`}>
+                    <div className="flex items-center gap-2 min-w-0">
+                      <div className={`p-1.5 sm:p-2 rounded-lg shrink-0 ${isSelected ? "bg-white" : "bg-neutral-100"}`}>
                         {getPestIcon(p.id)}
                       </div>
                       <div className="min-w-0">
                         <h4 className="text-xs sm:text-sm font-display font-bold text-neutral-950 leading-snug truncate">
                           {p.name.split(" (")[0]}
                         </h4>
-                        <span className="text-[10px] sm:text-xs font-mono text-neutral-600 block">
+                        <span className="text-xs font-mono text-neutral-600 block">
                           {p.code}
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-[11px] sm:text-xs text-neutral-700 leading-tight line-clamp-1 sm:line-clamp-2">
+                  <p className="text-xs text-neutral-700 leading-tight line-clamp-1 sm:line-clamp-2">
                     {p.subtitle}
                   </p>
 
-                  <div className="flex flex-col xs:flex-row xs:items-center justify-between text-[11px] pt-1 border-t border-neutral-200/80 gap-0.5">
-                    <span className="font-mono text-[11px] sm:text-xs font-bold text-neutral-950">
-                      Starts ₹{p.basePrice.toLocaleString("en-IN")}
+                  <div className="flex flex-col xs:flex-row xs:items-center justify-between text-xs pt-1 border-t border-neutral-200/80 gap-0.5">
+                    <span className="text-xs font-sans font-bold text-neutral-950">
+                      Starts <span className="font-mono">₹{p.basePrice.toLocaleString("en-IN")}</span>
                     </span>
-                    <span className={`text-[9px] sm:text-[10px] font-mono px-1.5 py-0.5 rounded font-semibold self-start xs:self-auto ${
+                    <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium self-start xs:self-auto ${
                       p.id === "bedbugs" ? "bg-accent-100 text-accent-700" : "bg-brand-100 text-brand-900"
                     }`}>
                       {p.safetyProfile.split(" / ")[0]}
@@ -211,12 +208,12 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
           </div>
         </div>
 
-        {/* Step 2: Property Type & Size (2x2 on Mobile, 4-col on MD) */}
-        <div className="space-y-3 sm:space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-neutral-200 pb-2 sm:pb-3">
+        {/* Step 2: Property Type & Size */}
+        <div className="space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-neutral-200 pb-2.5">
             <div>
-              <span className="text-[10px] sm:text-xs font-mono font-bold text-brand-700 uppercase tracking-widest block">
-                <DecryptedText text="STEP 02 • ARCHITECTURE" />
+              <span className="text-xs font-semibold text-brand-700 block">
+                Step 2: Property Architecture
               </span>
               <BlurText
                 text="Property Architecture & Square Footage"
@@ -224,12 +221,12 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                 className="text-sm sm:text-lg font-display font-bold text-neutral-950"
               />
             </div>
-            <span className="text-[11px] sm:text-xs text-neutral-600 font-mono">
-              Calibrated For Vizag Layouts
+            <span className="text-xs text-neutral-600 font-sans">
+              Calibrated for Vizag layouts
             </span>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3.5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3.5">
             {PROPERTY_OPTIONS.map((prop) => {
               const isSelected = selectedProperty === prop.id;
               return (
@@ -237,17 +234,17 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                   key={prop.id}
                   type="button"
                   onClick={() => handlePropertyChange(prop.id)}
-                  className={`p-2.5 sm:p-4 rounded-xl border text-left transition-all duration-200 cursor-pointer min-w-0 ${
+                  className={`p-3 sm:p-4 rounded-xl border text-left transition-colors duration-150 cursor-pointer min-w-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 active:scale-[0.98] disabled:opacity-50 ${
                     isSelected
-                      ? "bg-brand-100/70 border-brand-700 ring-2 ring-brand-700 shadow-md"
+                      ? "bg-brand-100/70 border-brand-700 ring-2 ring-brand-700"
                       : "bg-surface-card hover:bg-neutral-100/80 border-neutral-300 text-neutral-900"
                   }`}
                 >
                   <p className="text-xs sm:text-sm font-display font-bold text-neutral-950 leading-snug truncate">
                     {prop.name}
                   </p>
-                  <p className="text-[10px] sm:text-xs font-mono text-neutral-600 mt-0.5">
-                    ~{prop.sqftEstimate} Sq. Ft.
+                  <p className="text-xs font-sans text-neutral-600 mt-0.5">
+                    ~{prop.sqftEstimate} sq ft
                   </p>
                 </button>
               );
@@ -255,12 +252,12 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
           </div>
         </div>
 
-        {/* Step 3: Infestation Severity (3 columns on Tablet/Desktop, 1 on Mobile) */}
-        <div className="space-y-3 sm:space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-neutral-200 pb-2 sm:pb-3">
+        {/* Step 3: Infestation Severity */}
+        <div className="space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-neutral-200 pb-2.5">
             <div>
-              <span className="text-[10px] sm:text-xs font-mono font-bold text-brand-700 uppercase tracking-widest block">
-                <DecryptedText text="STEP 03 • INFESTATION LEVEL" />
+              <span className="text-xs font-semibold text-brand-700 block">
+                Step 3: Infestation Severity Level
               </span>
               <BlurText
                 text="Infestation Severity Level"
@@ -268,12 +265,12 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                 className="text-sm sm:text-lg font-display font-bold text-neutral-950"
               />
             </div>
-            <span className="text-[11px] sm:text-xs text-neutral-600 font-mono">
-              Sets Chemical Dosage & Depth
+            <span className="text-xs text-neutral-600 font-sans">
+              Sets chemical dosage and visit depth
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5">
             {SEVERITY_OPTIONS.map((sev) => {
               const isSelected = selectedSeverity === sev.id;
               const isSevere = sev.id === "severe";
@@ -282,26 +279,26 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                   key={sev.id}
                   type="button"
                   onClick={() => handleSeverityChange(sev.id)}
-                  className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl border text-left transition-all duration-200 cursor-pointer min-w-0 ${
+                  className={`p-4 rounded-xl border text-left transition-colors duration-150 cursor-pointer min-w-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 active:scale-[0.98] disabled:opacity-50 ${
                     isSelected
                       ? isSevere
-                        ? "bg-accent-100 border-accent-700 ring-2 ring-accent-700 shadow-md"
-                        : "bg-brand-100 border-brand-700 ring-2 ring-brand-700 shadow-md"
+                        ? "bg-accent-100 border-accent-700 ring-2 ring-accent-700"
+                        : "bg-brand-100 border-brand-700 ring-2 ring-brand-700"
                       : "bg-surface-card hover:bg-neutral-100/80 border-neutral-300 text-neutral-900"
                   }`}
                 >
-                  <div className="flex items-center justify-between mb-1 sm:mb-2">
+                  <div className="flex items-center justify-between mb-1.5">
                     <span className="text-xs sm:text-base font-display font-bold text-neutral-950">
                       {sev.level} Severity
                     </span>
                     {sev.pulseAlert && (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-mono text-accent-700 bg-accent-100 px-1.5 py-0.5 rounded font-bold">
-                        <AlertTriangle className="w-3 h-3 text-accent-700" />
+                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-accent-700 bg-accent-100 px-2 py-0.5 rounded">
+                        <AlertTriangle className="w-3 h-3 text-accent-700" aria-hidden="true" />
                         SOS SLA
                       </span>
                     )}
                   </div>
-                  <p className="text-[11px] sm:text-xs text-neutral-700 leading-relaxed">
+                  <p className="text-xs text-neutral-700 leading-relaxed">
                     {sev.description}
                   </p>
                 </button>
@@ -311,25 +308,25 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
         </div>
 
         {/* High-Contrast Interactive Output Box */}
-        <div className="rounded-xl sm:rounded-2xl bg-neutral-950 text-white p-3.5 sm:p-8 shadow-2xl border border-neutral-800 overflow-hidden">
+        <div className="rounded-2xl bg-neutral-950 text-white p-4 sm:p-8 border border-neutral-800">
           {isCalculating ? (
             <PriceSkeleton />
           ) : (
             <div className="space-y-4 sm:space-y-6">
               {/* Top Summary Bar */}
-              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-800 pb-3 sm:pb-5">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-800 pb-3 sm:pb-4">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider px-2 sm:px-2.5 py-0.5 rounded bg-brand-700 text-white font-bold">
+                  <span className="text-xs px-2.5 py-0.5 rounded bg-brand-700 text-white font-medium">
                     Official Fixed Estimate
                   </span>
-                  <span className="text-[11px] sm:text-xs font-mono text-neutral-300">
-                    Duration: <strong className="text-white">{quote.durationMinutes} Mins</strong>
+                  <span className="text-xs text-neutral-300 font-sans">
+                    Duration: <strong className="text-white">{quote.durationMinutes} mins</strong>
                   </span>
-                  <span className="text-[11px] sm:text-xs font-mono text-neutral-300">
-                    Visits: <strong className="text-white">{quote.visitsIncluded} Service</strong>
+                  <span className="text-xs text-neutral-300 font-sans">
+                    Visits: <strong className="text-white">{quote.visitsIncluded} service</strong>
                   </span>
                 </div>
-                <span className="text-[11px] sm:text-xs font-mono text-brand-400 font-semibold">
+                <span className="text-xs text-brand-400 font-medium">
                   {quote.pest.warrantyStandard}
                 </span>
               </div>
@@ -337,36 +334,36 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
               {/* Price & Spec Highlight Split */}
               <div className="grid lg:grid-cols-12 gap-5 sm:gap-8 items-center">
                 {/* Left: Prominent Price & Chemical Spec (7 Cols) */}
-                <div className="lg:col-span-7 space-y-3 sm:space-y-4 min-w-0">
+                <div className="lg:col-span-7 space-y-3 min-w-0">
                   <div>
-                    <span className="text-[10px] sm:text-xs font-mono text-neutral-400 uppercase tracking-widest block mb-1">
-                      Calculated Price Range (All-Inclusive GST)
+                    <span className="text-xs text-neutral-400 font-medium block mb-1">
+                      Calculated price range (all-inclusive GST)
                     </span>
                     <div className="flex items-baseline gap-2">
                       <span className="font-mono text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tabular-nums tracking-tight break-words">
-                        ₹{quote.minPrice.toLocaleString("en-IN")} – ₹{quote.maxPrice.toLocaleString("en-IN")}
+                        ₹{quote.minPrice.toLocaleString("en-IN")} to ₹{quote.maxPrice.toLocaleString("en-IN")}
                       </span>
                     </div>
-                    <p className="text-[11px] sm:text-xs text-neutral-400 mt-1">
+                    <p className="text-xs text-neutral-400 mt-1">
                       Zero surprise add-ons. Price locked prior to dispatch with stamped certificate.
                     </p>
                   </div>
 
-                  <div className="p-3 sm:p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-1.5 sm:space-y-2 text-xs">
+                  <div className="p-3 sm:p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-1.5 text-xs">
                     <div className="flex items-start gap-2">
-                      <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-500 shrink-0 mt-0.5" />
-                      <p className="text-neutral-200 text-[11px] sm:text-xs">
+                      <ShieldCheck className="w-4 h-4 text-brand-500 shrink-0 mt-0.5" aria-hidden="true" />
+                      <p className="text-neutral-200">
                         <strong className="text-white">Chemical Formula:</strong> {quote.pest.chemicalFormula} ({quote.pest.formulationMaker})
                       </p>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-500 shrink-0 mt-0.5" />
-                      <p className="text-neutral-200 text-[11px] sm:text-xs">
-                        <strong className="text-white">Safety Profile:</strong> {quote.pest.safetyProfile} — {quote.pest.preparationAdvice}
+                      <CheckCircle2 className="w-4 h-4 text-brand-500 shrink-0 mt-0.5" aria-hidden="true" />
+                      <p className="text-neutral-200">
+                        <strong className="text-white">Safety Profile:</strong> {quote.pest.safetyProfile}, {quote.pest.preparationAdvice}
                       </p>
                     </div>
-                    <div className="flex items-start gap-2 text-brand-300 font-mono text-[10px] sm:text-[11px] pt-0.5">
-                      <FileCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-brand-400 shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2 text-brand-300 text-xs pt-0.5">
+                      <FileCheck className="w-3.5 h-3.5 text-brand-400 shrink-0 mt-0.5" aria-hidden="true" />
                       <span className="truncate">{quote.pest.protocolNotice}</span>
                     </div>
                   </div>
@@ -377,23 +374,23 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                   <button
                     type="button"
                     onClick={() => setIsSlotModalOpen(true)}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 sm:py-4 px-4 sm:px-6 rounded-xl bg-accent-700 hover:bg-accent-800 text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-lg hover:shadow-xl cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 sm:py-4 px-4 sm:px-6 rounded-xl bg-accent-700 hover:bg-accent-800 active:scale-[0.98] disabled:opacity-50 text-white font-display text-xs sm:text-sm font-semibold transition-colors shadow-sm cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
                   >
-                    <Calendar className="w-4 h-4" />
-                    <span>Lock Price &amp; Pick Slot</span>
+                    <Calendar className="w-4 h-4" aria-hidden="true" />
+                    <span>Lock price and pick slot</span>
                   </button>
 
                   <a
                     href={serializeWhatsAppQuote(quote, currentLocality)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-2.5 sm:py-3.5 px-4 sm:px-6 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold transition-colors"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 sm:py-3.5 px-4 sm:px-6 rounded-xl bg-whatsapp hover:bg-whatsapp-hover active:scale-[0.98] text-white text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
                   >
-                    <MessageSquare className="w-4 h-4" />
-                    <span>Send Quote to WhatsApp</span>
+                    <MessageSquare className="w-4 h-4" aria-hidden="true" />
+                    <span>Send quote to WhatsApp</span>
                   </a>
 
-                  <p className="text-[10px] sm:text-[11px] text-neutral-400 text-center font-mono pt-0.5">
+                  <p className="text-xs text-neutral-400 text-center font-sans pt-0.5">
                     Direct dispatch from {currentLocality} depot • Guaranteed 60-min SLA
                   </p>
                 </div>

@@ -25,7 +25,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5 mb-3">
               <div className="h-8 w-8 rounded-lg bg-neutral-950 flex items-center justify-center p-1 border border-neutral-800">
-                <svg viewBox="0 0 48 48" fill="none" className="h-full w-full">
+                <svg viewBox="0 0 48 48" fill="none" className="h-full w-full" aria-hidden="true">
                   <path d="M24 6L38 14V34L24 42L10 34V14L24 6Z" stroke="#2D5A27" strokeWidth="2.5" strokeLinejoin="round"/>
                   <path d="M16 34L22 16" stroke="#FAF8F5" strokeWidth="3.5" strokeLinecap="round"/>
                   <path d="M18.5 27H27.5" stroke="#2D5A27" strokeWidth="3" strokeLinecap="round"/>
@@ -38,7 +38,7 @@ export function Footer() {
                 A1 Pest Control
               </h3>
             </div>
-            <p className="text-sm text-neutral-700 leading-relaxed">
+            <p className="text-sm text-neutral-700 leading-relaxed font-sans">
               Professional, odorless pest control services in Visakhapatnam.
               CIBRC-certified technicians using genuine Bayer products with up
               to 5-year written warranty.
@@ -47,7 +47,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-neutral-950 uppercase tracking-wider">
+            <h4 className="text-sm font-semibold text-neutral-950 font-sans">
               Quick Links
             </h4>
             <ul className="mt-3 space-y-2">
@@ -55,7 +55,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-neutral-700 hover:text-brand-700 transition-colors"
+                    className="text-sm text-neutral-700 hover:text-brand-700 transition-colors duration-150 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 rounded"
                   >
                     {link.label}
                   </Link>
@@ -66,7 +66,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-semibold text-neutral-950 uppercase tracking-wider">
+            <h4 className="text-sm font-semibold text-neutral-950 font-sans">
               Services
             </h4>
             <ul className="mt-3 space-y-2">
@@ -80,7 +80,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-sm font-semibold text-neutral-950 uppercase tracking-wider">
+            <h4 className="text-sm font-semibold text-neutral-950 font-sans">
               Contact Us
             </h4>
             <address className="mt-3 not-italic space-y-2 text-sm text-neutral-700">

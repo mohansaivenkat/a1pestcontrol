@@ -28,10 +28,10 @@ export const PriorityBadge: React.FC<PriorityBadgeProps> = ({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider font-semibold border transition-all duration-200",
+        "inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-sans font-semibold border transition-colors duration-150",
         isLow && "bg-botanical-100 text-botanical-900 border-botanical-700/30",
         isMed && "bg-amber-50 text-amber-900 border-amber-600/30",
-        isUrgent && "bg-crimson-100 text-crimson-900 border-crimson-700/40 animate-pulse",
+        isUrgent && "bg-crimson-100 text-crimson-900 border-crimson-700/40 motion-safe:animate-pulse motion-reduce:animate-none",
         className
       )}
     >
@@ -41,7 +41,7 @@ export const PriorityBadge: React.FC<PriorityBadgeProps> = ({
           {isMed && <AlertTriangle className="w-3.5 h-3.5 text-amber-700" />}
           {isUrgent && (
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-crimson-700 opacity-75" />
+              <span className="motion-safe:animate-ping motion-reduce:animate-none absolute inline-flex h-full w-full rounded-full bg-crimson-700 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-crimson-700" />
             </span>
           )}

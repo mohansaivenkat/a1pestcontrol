@@ -55,7 +55,7 @@ export const TrustVaultSection: React.FC = () => {
               warrantyPeriod="5-YEAR STAMPED WARRANTY"
               depotHub="Dwaraka Nagar / Srinagar Central Hub"
             />
-            <p className="text-[11px] font-mono text-neutral-600 text-center mt-3">
+            <p className="text-xs font-sans text-neutral-600 text-center mt-3">
               Official CIBRC Government Certification • Stamped with Every Dispatch
             </p>
           </div>
@@ -75,13 +75,13 @@ export const TrustVaultSection: React.FC = () => {
                 <h3 className="text-sm sm:text-base font-display font-bold text-neutral-950">
                   Material Safety Data Sheets (MSDS) Public Vault
                 </h3>
-                <span className="text-xs text-neutral-500 font-mono">
+                <span className="text-xs text-neutral-500 font-sans">
                   Standard Toxicology and Active Compound Disclosures
                 </span>
               </div>
             </div>
-            <span className="text-xs font-mono text-brand-700 font-semibold self-start sm:self-auto">
-              <DecryptedText text="100% CIBRC APPROVED" />
+            <span className="text-xs font-sans text-brand-700 font-semibold self-start sm:self-auto">
+              <DecryptedText text="100% CIBRC Approved" />
             </span>
           </div>
 
@@ -91,17 +91,17 @@ export const TrustVaultSection: React.FC = () => {
                 key={sheet.code}
                 type="button"
                 onClick={() => handleDownloadMSDS(sheet.name)}
-                className="p-3 rounded-xl border border-neutral-200 hover:border-brand-700/50 bg-neutral-100 hover:bg-brand-100/50 transition-colors text-left flex items-center justify-between group cursor-pointer"
+                className="p-3 rounded-xl border border-neutral-200 hover:border-brand-700/50 bg-neutral-100 hover:bg-brand-100/50 transition-colors duration-150 text-left flex items-center justify-between group cursor-pointer focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 active:scale-[0.98]"
               >
                 <div className="min-w-0 pr-2">
-                  <span className="text-[10px] font-mono text-neutral-500 block">
+                  <span className="text-xs font-mono text-neutral-500 block">
                     {sheet.code}
                   </span>
-                  <p className="text-xs font-semibold text-neutral-950 truncate">
+                  <p className="text-xs font-semibold text-neutral-950 truncate font-sans">
                     {sheet.name}
                   </p>
                 </div>
-                <Download className="w-4 h-4 text-neutral-400 group-hover:text-brand-700 transition-colors shrink-0" />
+                <Download className="w-4 h-4 text-neutral-400 group-hover:text-brand-700 transition-colors duration-150 shrink-0" />
               </button>
             ))}
           </div>

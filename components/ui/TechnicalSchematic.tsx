@@ -212,7 +212,7 @@ export const TechnicalSchematic: React.FC<TechnicalSchematicProps> = ({
             ULV COLD GENERATOR
           </text>
           <text x="120" y="105" fill="#2D6A4F" fontSize="7.5" fontFamily="monospace" fontWeight="600">
-            5–15µm AEROSOL CLOUD
+            5 to 15µm AEROSOL CLOUD
           </text>
           <text x="145" y="125" fill="#5C3D2E" fontSize="7" fontFamily="monospace">
             6-WK SURFACE RESIDUAL

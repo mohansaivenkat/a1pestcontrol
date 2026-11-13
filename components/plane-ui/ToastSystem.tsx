@@ -55,7 +55,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           <div
             key={toast.id}
             role="status"
-            className="pointer-events-auto flex items-start gap-3 p-3.5 bg-surface-card text-neutral-900 rounded-lg border border-neutral-200 shadow-xl transition-all duration-300 animate-in fade-in slide-in-from-bottom-3"
+            className="pointer-events-auto flex items-start gap-3 p-3.5 bg-surface-card text-neutral-900 rounded-lg border border-neutral-200 shadow-xl transition-colors duration-150 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-3 motion-reduce:animate-none"
           >
             {toast.variant === "alert" ? (
               <AlertCircle className="w-5 h-5 text-accent-700 shrink-0 mt-0.5" />
@@ -64,9 +64,9 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             )}
 
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-semibold tracking-tight text-neutral-950">{toast.title}</p>
+              <p className="text-xs font-semibold tracking-tight text-neutral-950 font-sans">{toast.title}</p>
               {toast.description && (
-                <p className="text-[11px] text-neutral-600 mt-0.5 line-clamp-2">
+                <p className="text-xs text-neutral-600 mt-0.5 line-clamp-2 font-sans">
                   {toast.description}
                 </p>
               )}
@@ -79,7 +79,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                   toast.onUndo?.();
                   dismissToast(toast.id);
                 }}
-                className="inline-flex items-center gap-1 px-2 py-1 text-xs font-mono font-medium text-brand-700 bg-brand-100 hover:bg-brand-100/80 border border-brand-500/20 rounded transition-colors"
+                className="inline-flex items-center gap-1 px-2 py-1 text-xs font-sans font-medium text-brand-700 bg-brand-100 hover:bg-brand-100/80 border border-brand-500/20 rounded transition-colors duration-150 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 active:scale-[0.98]"
               >
                 <RotateCcw className="w-3 h-3" />
                 <span>{toast.undoLabel}</span>
@@ -89,7 +89,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             <button
               type="button"
               onClick={() => dismissToast(toast.id)}
-              className="text-neutral-400 hover:text-neutral-700 p-0.5 rounded transition-colors"
+              className="text-neutral-400 hover:text-neutral-700 p-0.5 rounded transition-colors duration-150 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 active:scale-[0.98]"
               aria-label="Dismiss toast"
             >
               <X className="w-3.5 h-3.5" />

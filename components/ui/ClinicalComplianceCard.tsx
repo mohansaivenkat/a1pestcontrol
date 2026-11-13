@@ -24,7 +24,7 @@ export const ClinicalComplianceCard: React.FC<ClinicalComplianceCardProps> = ({
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: `repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 10px)`,
+          backgroundImage: `repeating-linear-gradient(45deg, var(--color-timber-950) 0, var(--color-timber-950) 1px, transparent 0, transparent 10px)`,
         }}
         aria-hidden="true"
       />
@@ -36,44 +36,44 @@ export const ClinicalComplianceCard: React.FC<ClinicalComplianceCardProps> = ({
             <Award className="h-5 w-5" />
           </div>
           <div>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-brand-700 font-bold block">
-              Govt. Central Insecticides Board
-            </span>
             <h3 className="text-sm font-display font-bold text-neutral-950">
               CIBRC Compliance Certificate
             </h3>
+            <p className="text-xs font-sans text-brand-700 font-medium">
+              Govt. Central Insecticides Board
+            </p>
           </div>
         </div>
-        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-700 border border-neutral-200 shrink-0 font-semibold">
-          OFFICIAL DOC
+        <span className="text-xs font-sans px-2 py-0.5 rounded bg-neutral-100 text-neutral-700 border border-neutral-200 shrink-0 font-medium">
+          Official document
         </span>
       </div>
 
       {/* Document Specification Rows */}
-      <div className="relative z-10 space-y-3 text-xs">
+      <div className="relative z-10 space-y-3 text-xs font-sans">
         <div className="flex items-center justify-between border-b border-neutral-200/60 pb-2">
-          <span className="text-neutral-500 font-mono">REGISTRATION CODE:</span>
+          <span className="text-neutral-600 font-sans">Registration code:</span>
           <span className="font-mono font-bold text-neutral-950">{licenseNumber}</span>
         </div>
 
         <div className="flex items-center justify-between border-b border-neutral-200/60 pb-2">
-          <span className="text-neutral-500 font-mono">AUTHORIZED FORMULATIONS:</span>
-          <span className="font-semibold text-brand-900">Bayer Premise &amp; Maxforce</span>
+          <span className="text-neutral-600 font-sans">Authorized formulations:</span>
+          <span className="font-semibold text-brand-900 font-sans">Bayer Premise and Maxforce</span>
         </div>
 
         <div className="flex items-center justify-between border-b border-neutral-200/60 pb-2">
-          <span className="text-neutral-500 font-mono">WARRANTY STANDARD:</span>
-          <span className="font-mono font-bold text-accent-700">{warrantyPeriod}</span>
+          <span className="text-neutral-600 font-sans">Warranty standard:</span>
+          <span className="font-sans font-bold text-accent-700">{warrantyPeriod}</span>
         </div>
 
         <div className="flex items-center justify-between border-b border-neutral-200/60 pb-2">
-          <span className="text-neutral-500 font-mono">DISPATCH HEADQUARTERS:</span>
-          <span className="font-medium text-neutral-950">{depotHub}</span>
+          <span className="text-neutral-600 font-sans">Dispatch headquarters:</span>
+          <span className="font-medium text-neutral-950 font-sans">{depotHub}</span>
         </div>
       </div>
 
       {/* Quality Assurance Guarantees */}
-      <div className="relative z-10 p-3 rounded-xl bg-neutral-100 border border-neutral-200 space-y-1.5 text-xs text-neutral-700">
+      <div className="relative z-10 p-3 rounded-xl bg-neutral-100 border border-neutral-200 space-y-1.5 text-xs text-neutral-700 font-sans">
         <div className="flex items-center gap-2">
           <CheckCircle2 className="h-4 w-4 text-brand-700 shrink-0" />
           <span className="font-medium text-neutral-900">Zero Toxic Agricultural Fogging</span>
@@ -89,10 +89,10 @@ export const ClinicalComplianceCard: React.FC<ClinicalComplianceCardProps> = ({
       </div>
 
       {/* Official Stamp & Signatory Footer */}
-      <div className="relative z-10 pt-2 flex items-center justify-between">
+      <div className="relative z-10 pt-2 flex items-center justify-between font-sans">
         <div>
-          <span className="text-[9px] font-mono uppercase tracking-widest text-neutral-600 block">
-            VISAKHAPATNAM METROPOLITAN
+          <span className="text-xs font-sans text-neutral-600 block">
+            Visakhapatnam Metropolitan Hub
           </span>
           <span className="text-xs font-bold text-neutral-950">
             A1 Pest Control Services
@@ -100,10 +100,10 @@ export const ClinicalComplianceCard: React.FC<ClinicalComplianceCardProps> = ({
         </div>
 
         {/* Realistic Verification Stamp */}
-        <div className="h-14 w-14 rounded-full border-2 border-brand-700 border-dashed flex flex-col items-center justify-center text-center p-1 text-brand-700 bg-brand-100/30 rotate-[-4deg]">
-          <span className="text-[8px] font-mono font-bold tracking-tight uppercase leading-none">VERIFIED</span>
-          <span className="text-[7px] font-mono uppercase leading-tight font-extrabold text-neutral-900">CIBRC</span>
-          <span className="text-[6px] font-mono text-brand-700">2026-AP</span>
+        <div className="h-14 w-14 rounded-full border-2 border-brand-700 border-dashed flex flex-col items-center justify-center text-center p-1 text-brand-700 bg-brand-100/30">
+          <span className="text-[10px] font-sans font-bold leading-none">Verified</span>
+          <span className="text-[9px] font-sans font-bold text-neutral-900 leading-none">CIBRC</span>
+          <span className="text-[8px] font-mono text-brand-700 leading-none">2026-AP</span>
         </div>
       </div>
     </div>

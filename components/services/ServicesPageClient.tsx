@@ -190,9 +190,9 @@ export const ServicesPageClient: React.FC = () => {
                   <img
                     src={svc.image}
                     alt={svc.name}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="h-full w-full object-cover"
                   />
-                  <div className="absolute top-2.5 right-2.5 bg-neutral-950/85 backdrop-blur-sm text-white text-[11px] sm:text-xs font-mono font-semibold px-2.5 py-1 rounded-md border border-white/20">
+                  <div className="absolute top-2.5 right-2.5 bg-neutral-950/85 text-white text-xs font-sans font-semibold px-2.5 py-1 rounded-md border border-white/20">
                     Starts {svc.startingPrice}
                   </div>
                 </div>
@@ -206,9 +206,9 @@ export const ServicesPageClient: React.FC = () => {
                       height="100%"
                     />
                   </div>
-                  <div className="flex items-center justify-between pt-1.5 px-1 text-[10px] font-mono text-neutral-500">
-                    <span>CLINICAL SCHEMATIC</span>
-                    <span>
+                  <div className="flex items-center justify-between pt-1.5 px-1 text-xs font-sans text-neutral-500">
+                    <span>Clinical schematic</span>
+                    <span className="font-mono">
                       <DecryptedText text={svc.cibrcCode.split("-")[0]} />
                     </span>
                   </div>
@@ -255,7 +255,7 @@ export const ServicesPageClient: React.FC = () => {
               <div className="p-4 sm:p-6 pt-0">
                 <Link
                   href={`/contact?service=${svc.id}`}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brand-700 hover:bg-brand-900 text-white text-xs sm:text-sm font-semibold transition-colors shadow-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brand-700 hover:bg-brand-900 text-white text-xs sm:text-sm font-semibold transition-colors duration-150 shadow-sm focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 active:scale-[0.98]"
                 >
                   <span>Book Inspection</span>
                   <ArrowRight className="h-3.5 w-3.5" />
@@ -272,8 +272,8 @@ export const ServicesPageClient: React.FC = () => {
           <div className="bg-neutral-100 border border-neutral-300 rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 shadow-sm">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-accent-700 font-bold block">
-                  <DecryptedText text="ANNUAL MAINTENANCE CONTRACTS (AMC)" />
+                <span className="text-xs font-sans text-accent-700 font-semibold block">
+                  <DecryptedText text="Annual Maintenance Contracts (AMC)" />
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-display font-bold text-neutral-950">
                   <SplitText text="Year-Round Protection for Homes, Restaurants & Warehouses" as="span" />
@@ -281,7 +281,7 @@ export const ServicesPageClient: React.FC = () => {
                 <BlurText
                   text="Avoid recurring infestations with our 3-visit or 4-visit annual service plans. Includes emergency callback visits at zero extra charge, free monsoon defense treatments, and priority scheduling."
                   as="p"
-                  className="text-xs sm:text-sm text-neutral-700 leading-relaxed"
+                  className="text-xs sm:text-sm text-neutral-700 leading-relaxed font-sans"
                 />
                 <div className="space-y-2 pt-2 text-xs sm:text-sm text-neutral-800">
                   <div className="flex items-center gap-2">
@@ -329,3 +329,4 @@ export const ServicesPageClient: React.FC = () => {
     </div>
   );
 };
+

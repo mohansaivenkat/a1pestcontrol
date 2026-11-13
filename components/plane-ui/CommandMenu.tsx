@@ -168,7 +168,7 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
       role="dialog"
       aria-modal="true"
       aria-label="Command Menu"
-      className="fixed inset-0 z-50 flex items-start justify-center pt-16 md:pt-28 px-4 bg-timber-950/70 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-start justify-center pt-16 md:pt-28 px-4 bg-timber-950/70 backdrop-blur-sm motion-safe:animate-in motion-safe:fade-in motion-reduce:animate-none duration-150"
       onClick={onClose}
     >
       <div
@@ -182,15 +182,15 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
           <input
             autoFocus
             type="text"
-            placeholder="Search Vizag localities (530017, MVP Colony), treatments, MSDS..."
+            placeholder="Search Vizag localities (530017, MVP Colony), treatments, MSDS…"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
               setSelectedIndex(0);
             }}
-            className="w-full bg-transparent text-sm font-sans text-timber-950 placeholder:text-timber-700/50 outline-none"
+            className="w-full bg-transparent text-sm font-sans text-timber-950 placeholder:text-timber-700/50 outline-none focus-visible:ring-1 focus-visible:ring-brand-700 rounded"
           />
-          <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-mono text-timber-700 bg-surface-travertine rounded border border-surface-hairline">
+          <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 text-xs font-sans text-timber-700 bg-surface-travertine rounded border border-surface-hairline">
             ESC
           </kbd>
         </div>
@@ -198,7 +198,7 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         {/* Results List */}
         <div className="flex-1 overflow-y-auto p-2 divide-y divide-surface-hairline/30">
           {items.length === 0 ? (
-            <div className="py-12 text-center text-xs font-mono text-timber-700/60">
+            <div className="py-12 text-center text-xs font-sans text-timber-700/60">
               No clinical treatments or Vizag zones matching &quot;{query}&quot;
             </div>
           ) : (
@@ -210,7 +210,7 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
                   type="button"
                   onClick={item.action}
                   onMouseEnter={() => setSelectedIndex(idx)}
-                  className={`w-full text-left px-3.5 py-2.5 rounded-lg flex items-center justify-between transition-colors ${
+                  className={`w-full text-left px-3.5 py-2.5 rounded-lg flex items-center justify-between transition-colors duration-150 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 active:scale-[0.98] ${
                     isSelected ? "bg-botanical-100 text-botanical-900" : "hover:bg-surface-travertine/60 text-timber-950"
                   }`}
                 >
@@ -233,12 +233,12 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
                       )}
                     </div>
                     <div className="truncate">
-                      <p className="text-xs font-semibold leading-tight">{item.title}</p>
-                      <p className="text-[11px] text-timber-700/70 truncate mt-0.5">{item.subtitle}</p>
+                      <p className="text-xs font-semibold leading-tight font-sans">{item.title}</p>
+                      <p className="text-xs text-timber-700/70 truncate mt-0.5 font-sans">{item.subtitle}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
-                    <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-surface-travertine border border-surface-hairline text-timber-700">
+                    <span className="text-xs font-sans px-2 py-0.5 rounded bg-surface-travertine border border-surface-hairline text-timber-700">
                       {item.badge}
                     </span>
                     {isSelected && <ArrowRight className="w-3.5 h-3.5 text-botanical-700" />}

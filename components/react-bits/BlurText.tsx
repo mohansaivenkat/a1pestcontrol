@@ -47,7 +47,7 @@ export const BlurText: React.FC<BlurTextProps> = ({
       {words.map((word, index) => (
         <span
           key={index}
-          className="inline-block transition-all duration-700 ease-out mr-[0.25em]"
+          className="inline-block transition-opacity transition-transform duration-700 ease-out motion-reduce:transition-none motion-reduce:transform-none mr-[0.25em]"
           style={{
             filter: inView ? "blur(0px)" : "blur(10px)",
             opacity: inView ? 1 : 0,

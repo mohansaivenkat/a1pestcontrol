@@ -21,9 +21,9 @@ export function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="h-9 w-9 rounded-lg bg-neutral-950 flex items-center justify-center p-1.5 shadow-sm border border-neutral-800 group-hover:border-brand-700 transition-colors">
-              <svg viewBox="0 0 48 48" fill="none" className="h-full w-full">
+          <Link href="/" className="flex items-center gap-3 group focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 rounded-lg">
+            <div className="h-9 w-9 rounded-lg bg-neutral-950 flex items-center justify-center p-1.5 shadow-sm border border-neutral-800 group-hover:border-brand-700 transition-colors duration-150">
+              <svg viewBox="0 0 48 48" fill="none" className="h-full w-full" aria-hidden="true">
                 <path d="M24 6L38 14V34L24 42L10 34V14L24 6Z" stroke="#2D5A27" strokeWidth="2.5" strokeLinejoin="round"/>
                 <path d="M16 34L22 16" stroke="#FAF8F5" strokeWidth="3.5" strokeLinecap="round"/>
                 <path d="M18.5 27H27.5" stroke="#2D5A27" strokeWidth="3" strokeLinecap="round"/>
@@ -36,7 +36,7 @@ export function Navbar() {
               <span className="text-lg font-display font-bold text-neutral-950 leading-tight block tracking-tight">
                 A1 Pest Control
               </span>
-              <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 leading-none">
+              <span className="text-xs font-sans text-neutral-500 leading-none">
                 Visakhapatnam
               </span>
             </div>

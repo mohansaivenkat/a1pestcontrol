@@ -138,8 +138,8 @@ export const ReviewsAndFaqSection: React.FC = () => {
         {/* Clinical FAQ Accordion */}
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8 space-y-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-accent-700 font-bold block">
-              <DecryptedText text="CLINICAL KNOWLEDGE BASE" />
+            <span className="text-xs font-sans text-accent-700 font-semibold block">
+              <DecryptedText text="Clinical Knowledge Base" />
             </span>
             <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-neutral-950">
               <SplitText text="Frequently Asked Questions & Treatment Protocols" as="span" />
@@ -147,7 +147,7 @@ export const ReviewsAndFaqSection: React.FC = () => {
             <BlurText
               text="Everything you need to know about preparation, chemical safety, and warranties."
               as="p"
-              className="text-xs sm:text-sm text-neutral-600"
+              className="text-xs sm:text-sm text-neutral-600 font-sans"
             />
           </div>
 
@@ -157,15 +157,15 @@ export const ReviewsAndFaqSection: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-neutral-300 bg-surface-card overflow-hidden shadow-sm transition-colors"
+                  className="rounded-2xl border border-neutral-300 bg-surface-card overflow-hidden shadow-sm transition-colors duration-150"
                 >
                   <button
                     type="button"
                     onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                    className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer"
+                    className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 active:scale-[0.98]"
                   >
                     <div className="space-y-1 pr-2">
-                      <span className="text-[10px] font-mono text-brand-700 font-semibold uppercase tracking-wider block">
+                      <span className="text-xs font-sans text-brand-700 font-semibold block">
                         {faq.category}
                       </span>
                       <h4 className="text-sm sm:text-base font-display font-bold text-neutral-950">
@@ -173,14 +173,14 @@ export const ReviewsAndFaqSection: React.FC = () => {
                       </h4>
                     </div>
                     <ChevronDown
-                      className={`w-5 h-5 text-neutral-500 shrink-0 transition-transform duration-200 ${
+                      className={`w-5 h-5 text-neutral-500 shrink-0 motion-safe:transition-transform motion-reduce:transition-none duration-150 ${
                         isOpen ? "rotate-180 text-brand-700" : ""
                       }`}
                     />
                   </button>
 
                   {isOpen && (
-                    <div className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-neutral-700 leading-relaxed border-t border-neutral-100 bg-neutral-50/50">
+                    <div className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-neutral-700 leading-relaxed border-t border-neutral-100 bg-neutral-50/50 font-sans">
                       <p>{faq.answer}</p>
                     </div>
                   )}

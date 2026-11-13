@@ -73,7 +73,7 @@ export const ScrollStack: React.FC = () => {
         return (
           <div
             key={step.step}
-            className={`sticky rounded-2xl border ${step.borderAccent} shadow-md p-6 md:p-8 transition-all duration-300 bg-white`}
+            className={`sticky rounded-2xl border ${step.borderAccent} shadow-md p-6 md:p-8 transition-colors duration-150 bg-white`}
             style={{
               top: `${96 + index * 24}px`, // Progressive sticky stack cascade offset
             }}
@@ -85,7 +85,7 @@ export const ScrollStack: React.FC = () => {
                     {step.step}
                   </span>
                   <span
-                    className={`text-[10px] font-mono tracking-widest uppercase px-2.5 py-0.5 rounded-full font-bold ${
+                    className={`text-xs font-sans px-2.5 py-0.5 rounded-full font-semibold ${
                       index === 0
                         ? "bg-surface-travertine text-timber-900 border border-timber-700/20"
                         : index === 1

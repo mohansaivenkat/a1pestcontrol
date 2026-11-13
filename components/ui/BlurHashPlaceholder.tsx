@@ -28,7 +28,7 @@ export const BlurHashPlaceholder: React.FC<BlurHashPlaceholderProps> = ({
   return (
     <div
       className={cn(
-        "relative overflow-hidden bg-gradient-to-br transition-all duration-700 backdrop-blur-md",
+        "relative overflow-hidden bg-gradient-to-br transition-opacity duration-300",
         gradients[colorScheme],
         className
       )}
@@ -37,12 +37,12 @@ export const BlurHashPlaceholder: React.FC<BlurHashPlaceholderProps> = ({
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-multiply"
         style={{
-          backgroundImage: `radial-gradient(#261811 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(var(--color-timber-950) 1px, transparent 1px)`,
           backgroundSize: "8px 8px",
         }}
       />
       {label && (
-        <span className="absolute bottom-2 right-2 text-[10px] font-mono tracking-widest text-timber-700/60 uppercase">
+        <span className="absolute bottom-2 right-2 text-xs font-sans text-timber-700/60">
           {label}
         </span>
       )}

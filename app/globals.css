@@ -27,6 +27,10 @@
   --color-surface-card: #FFFFFF;
   --color-surface-muted: #F5F0EB;
 
+  /* Communication tokens */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #20BD5A;
+
   /* Legacy aliases for ToastSystem compatibility */
   --color-timber-950: #1C1210;
   --color-timber-900: #2C1E18;
