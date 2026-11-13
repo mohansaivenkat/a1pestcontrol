@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { SplitText } from "@/components/react-bits/SplitText";
 import { BlurText } from "@/components/react-bits/BlurText";
 import { DecryptedText } from "@/components/react-bits/DecryptedText";
-import { Star, ShieldCheck, ChevronDown, CheckCircle2, MessageSquare } from "lucide-react";
+import { Star, ChevronDown } from "lucide-react";
 
 interface FAQItem {
   question: string;

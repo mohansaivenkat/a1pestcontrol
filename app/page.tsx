@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { TopographyCanvas } from "@/components/react-bits/TopographyCanvas";
 import { SplitText } from "@/components/react-bits/SplitText";
 import { BlurText } from "@/components/react-bits/BlurText";
@@ -19,7 +18,6 @@ import { SlotBookingModal } from "@/components/estimator/SlotBookingModal";
 import { calculateQuote } from "@/components/estimator/pricingData";
 import { VIZAG_LOCALITIES } from "@/lib/sitemap-data";
 import {
-  ShieldCheck,
   Star,
   Clock,
   Sparkles,
@@ -27,10 +25,6 @@ import {
   MapPin,
   Award,
   ArrowRight,
-  AlertTriangle,
-  Play,
-  Layers,
-  CheckCircle2,
 } from "lucide-react";
 
 export default function HomePage() {

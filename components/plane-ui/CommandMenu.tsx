@@ -1,18 +1,13 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import {
   Search,
   Shield,
   MapPin,
-  FileText,
   AlertTriangle,
   ArrowRight,
-  Phone,
-  Clock,
-  Sparkles,
-  Command as CommandIcon,
 } from "lucide-react";
 import { PEST_CATALOG } from "@/components/estimator/pricingData";
 import { VIZAG_LOCALITIES } from "@/lib/sitemap-data";
@@ -35,12 +30,14 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
   const router = useRouter();
 
   // Reset search when opened
-  useEffect(() => {
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
+  if (isOpen !== prevIsOpen) {
+    setPrevIsOpen(isOpen);
     if (isOpen) {
       setQuery("");
       setSelectedIndex(0);
     }
-  }, [isOpen]);
+  }
 
   // Global keydown handler for Cmd+K and Esc
   useEffect(() => {

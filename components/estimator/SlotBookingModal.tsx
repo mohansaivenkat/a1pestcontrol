@@ -5,13 +5,10 @@ import { CalculatedQuote, serializeWhatsAppQuote } from "./pricingData";
 import {
   Calendar,
   Clock,
-  ShieldCheck,
   Send,
   X,
   CheckCircle2,
-  Lock,
   ArrowRight,
-  AlertCircle,
 } from "lucide-react";
 import { analytics } from "@/lib/analytics";
 
@@ -43,10 +40,13 @@ export const SlotBookingModal: React.FC<SlotBookingModalProps> = ({
   const [otp, setOtp] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isConfirmed, setIsConfirmed] = useState(false);
-  const [idempotencyKey, setIdempotencyKey] = useState("A1-SLOT-PENDING");
+  const [idempotencyKey, setIdempotencyKey] = useState("A1-SLOT-STANDBY");
 
   React.useEffect(() => {
-    setIdempotencyKey(`A1-SLOT-${Math.random().toString(36).substring(2, 8).toUpperCase()}`);
+    const timer = setTimeout(() => {
+      setIdempotencyKey(`A1-SLOT-${Math.random().toString(36).substring(2, 8).toUpperCase()}`);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   // Swipe-to-dismiss states

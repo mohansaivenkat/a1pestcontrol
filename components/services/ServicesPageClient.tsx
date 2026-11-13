@@ -3,14 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import {
-  ShieldCheck,
   CheckCircle2,
-  Clock,
   AlertCircle,
   ArrowRight,
   Phone,
-  Layers,
-  Sparkles,
 } from "lucide-react";
 import { TechnicalSchematic, SchematicType } from "@/components/ui/TechnicalSchematic";
 import { SplitText } from "@/components/react-bits/SplitText";

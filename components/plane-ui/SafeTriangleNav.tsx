@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Shield, Award, MapPin, AlertTriangle, FileText } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 interface SubmenuItem {
   title: string;

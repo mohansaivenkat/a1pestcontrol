@@ -1,5 +1,5 @@
 import React from "react";
-import { AlertCircle, Droplets, Waves, ShieldCheck } from "lucide-react";
+import { Waves } from "lucide-react";
 
 export const CoastalAlertBanner: React.FC = () => {
   return (

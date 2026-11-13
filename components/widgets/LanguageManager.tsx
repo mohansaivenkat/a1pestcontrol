@@ -4,9 +4,26 @@ import React, { useState, useEffect } from "react";
 import Script from "next/script";
 import { Globe, Check, X, Languages } from "lucide-react";
 
+interface GoogleTranslateInstance {
+  TranslateElement: new (
+    options: {
+      pageLanguage: string;
+      includedLanguages: string;
+      autoDisplay: boolean;
+      layout?: unknown;
+    },
+    elementId: string
+  ) => void;
+  InlineLayout?: {
+    SIMPLE: unknown;
+  };
+}
+
 declare global {
   interface Window {
-    google?: any;
+    google?: {
+      translate?: GoogleTranslateInstance;
+    };
     googleTranslateElementInit?: () => void;
   }
 }
@@ -16,26 +33,7 @@ export function LanguageManager() {
   const [showFirstLoadModal, setShowFirstLoadModal] = useState(false);
   const [isSwitcherOpen, setIsSwitcherOpen] = useState(false);
 
-  useEffect(() => {
-    // 1. Check if user already set their preference
-    try {
-      const savedLang = localStorage.getItem("a1_language_preference") as "en" | "te" | null;
-      if (!savedLang) {
-        // Show first load selection modal after a brief delay
-        const timer = setTimeout(() => setShowFirstLoadModal(true), 600);
-        return () => clearTimeout(timer);
-      } else {
-        setCurrentLang(savedLang);
-        if (savedLang === "te") {
-          applyGoogleTranslation("te", false);
-        }
-      }
-    } catch {
-      // In private browsing mode
-    }
-  }, []);
-
-  const applyGoogleTranslation = (lang: "en" | "te", reloadIfNeeded = true) => {
+  const applyGoogleTranslation = React.useCallback((lang: "en" | "te", reloadIfNeeded = true) => {
     try {
       localStorage.setItem("a1_language_preference", lang);
     } catch {}
@@ -58,7 +56,28 @@ export function LanguageManager() {
     } else if (reloadIfNeeded) {
       window.location.reload();
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    // 1. Check if user already set their preference
+    try {
+      const savedLang = localStorage.getItem("a1_language_preference") as "en" | "te" | null;
+      if (!savedLang) {
+        // Show first load selection modal after a brief delay
+        const timer = setTimeout(() => setShowFirstLoadModal(true), 600);
+        return () => clearTimeout(timer);
+      } else {
+        requestAnimationFrame(() => {
+          setCurrentLang(savedLang);
+          if (savedLang === "te") {
+            applyGoogleTranslation("te", false);
+          }
+        });
+      }
+    } catch {
+      // In private browsing mode
+    }
+  }, [applyGoogleTranslation]);
 
   const handleSelectLanguage = (lang: "en" | "te") => {
     setShowFirstLoadModal(false);

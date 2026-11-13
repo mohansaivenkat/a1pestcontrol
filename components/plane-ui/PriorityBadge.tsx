@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { ShieldCheck, AlertCircle, AlertTriangle } from "lucide-react";
+import { ShieldCheck, AlertTriangle } from "lucide-react";
 
 export type PriorityLevel = "low" | "mild" | "medium" | "moderate" | "urgent" | "severe";
 

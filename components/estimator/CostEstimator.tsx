@@ -11,17 +11,12 @@ import {
 import { SlotBookingModal } from "./SlotBookingModal";
 import { PriceSkeleton } from "@/components/ui/SkeletonLoader";
 import { analytics } from "@/lib/analytics";
-import { SplitText } from "@/components/react-bits/SplitText";
 import { BlurText } from "@/components/react-bits/BlurText";
-import { DecryptedText } from "@/components/react-bits/DecryptedText";
 import {
   ShieldCheck,
-  Clock,
-  Sparkles,
   Calendar,
   AlertTriangle,
   Award,
-  ChevronRight,
   Flame,
   Wind,
   Drill,
@@ -44,16 +39,15 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
   onOpenSOS,
 }) => {
   const [selectedPest, setSelectedPest] = useState(defaultPestId);
+  const [prevDefaultPestId, setPrevDefaultPestId] = useState(defaultPestId);
+  if (defaultPestId !== prevDefaultPestId) {
+    setPrevDefaultPestId(defaultPestId);
+    setSelectedPest(defaultPestId);
+  }
   const [selectedProperty, setSelectedProperty] = useState("2bhk");
   const [selectedSeverity, setSelectedSeverity] = useState("mild");
   const [isCalculating, setIsCalculating] = useState(false);
   const [isSlotModalOpen, setIsSlotModalOpen] = useState(false);
-
-  useEffect(() => {
-    if (defaultPestId) {
-      setSelectedPest(defaultPestId);
-    }
-  }, [defaultPestId]);
 
   const quote = useMemo(() => {
     return calculateQuote(selectedPest, selectedProperty, selectedSeverity);

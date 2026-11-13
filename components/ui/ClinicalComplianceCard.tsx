@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ShieldCheck, Award, FileCheck, CheckCircle2, Lock } from "lucide-react";
+import { Award, CheckCircle2 } from "lucide-react";
 
 interface ClinicalComplianceCardProps {
   className?: string;

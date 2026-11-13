@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2, Shield, Calendar, Sparkles, FileText, ArrowRight } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 interface ProcessStep {
   step: string;

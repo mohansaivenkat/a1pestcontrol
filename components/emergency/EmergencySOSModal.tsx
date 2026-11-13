@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { AlertTriangle, Phone, Send, X, Clock, ShieldAlert } from "lucide-react";
+import { Phone, Send, X, Clock, ShieldAlert } from "lucide-react";
 import { analytics } from "@/lib/analytics";
 
 interface EmergencySOSModalProps {

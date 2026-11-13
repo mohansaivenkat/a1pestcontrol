@@ -9,7 +9,7 @@ import { PEST_CATALOG } from "@/components/estimator/pricingData";
 import { SplitText } from "@/components/react-bits/SplitText";
 import { BlurText } from "@/components/react-bits/BlurText";
 import { DecryptedText } from "@/components/react-bits/DecryptedText";
-import { Shield, ShieldCheck, ArrowRight, CheckCircle2, Award, Calendar, Sparkles, MessageSquare } from "lucide-react";
+import { ShieldCheck, ArrowRight, CheckCircle2, Calendar, MessageSquare } from "lucide-react";
 
 interface ServiceShowcaseSectionProps {
   onSelectPestForEstimator: (pestId: string) => void;
@@ -25,24 +25,24 @@ const SERVICE_IMAGES: Record<string, string> = {
   woodborers: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80",
 };
 
+const SIDEBAR_ITEMS = [
+  { id: "termites", index: "01", label: "Termites", badge: "5-Yr War" },
+  { id: "cockroaches", index: "02", label: "Cockroach Gel", badge: "Odorless" },
+  { id: "rodents", index: "03", label: "Rodents & Rats", badge: "Locked" },
+  { id: "mosquitoes", index: "04", label: "Mosquitoes", badge: "Cold ULV" },
+  { id: "bedbugs", index: "05", label: "Bed Bugs", badge: "180°F Heat" },
+  { id: "woodborers", index: "06", label: "Wood Borers", badge: "Syringe" },
+  { id: "annual-amc", index: "07", label: "Whole Home AMC", badge: "365-Day" },
+];
+
 export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
   onSelectPestForEstimator,
   onOpenBooking,
 }) => {
   const [activeSidebarId, setActiveSidebarId] = useState("termites");
 
-  const sidebarItems = [
-    { id: "termites", index: "01", label: "Termites", badge: "5-Yr War" },
-    { id: "cockroaches", index: "02", label: "Cockroach Gel", badge: "Odorless" },
-    { id: "rodents", index: "03", label: "Rodents & Rats", badge: "Locked" },
-    { id: "mosquitoes", index: "04", label: "Mosquitoes", badge: "Cold ULV" },
-    { id: "bedbugs", index: "05", label: "Bed Bugs", badge: "180°F Heat" },
-    { id: "woodborers", index: "06", label: "Wood Borers", badge: "Syringe" },
-    { id: "annual-amc", index: "07", label: "Whole Home AMC", badge: "365-Day" },
-  ];
-
   useEffect(() => {
-    const cardIds = sidebarItems.map((item) => item.id);
+    const cardIds = SIDEBAR_ITEMS.map((item) => item.id);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -106,7 +106,7 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
           <div className="hidden lg:block w-1/4 shrink-0 sticky top-24 z-20 self-start">
             <div className="space-y-4">
               <LineSidebar
-                items={sidebarItems}
+                items={SIDEBAR_ITEMS}
                 activeId={activeSidebarId}
                 onSelectItem={handleSelectService}
               />
@@ -252,8 +252,9 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
             <div id="service-card-annual-amc" className="mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-xl overflow-hidden">
               <div className="grid md:grid-cols-12 gap-4 sm:gap-6 items-center">
                 <div className="p-4 sm:p-6 md:p-8 md:col-span-8 space-y-2.5 sm:space-y-3">
-                  <span className="text-xs font-sans text-emerald-400 font-medium bg-emerald-950/80 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded border border-emerald-800 inline-block">
-                    <DecryptedText text="FSSAI & Factory Audit Compliance" />
+                  <span className="text-xs font-sans text-accent-100 font-semibold bg-accent-800/90 px-2.5 py-1 rounded-full border border-accent-500/30 inline-flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
+                    <span>FSSAI &amp; Factory Audit Compliance</span>
                   </span>
                   <h3 className="text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-display font-bold text-white">
                     Commercial AMC for Vizag Restaurants, Pharma &amp; Gajuwaka Warehouses

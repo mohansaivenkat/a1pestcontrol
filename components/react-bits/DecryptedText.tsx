@@ -15,7 +15,6 @@ const DEFAULT_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_•-";
 export const DecryptedText: React.FC<DecryptedTextProps> = ({
   text,
   speed = 35,
-  maxIterations = 10,
   className = "",
   characters = DEFAULT_CHARS,
 }) => {
@@ -50,9 +49,7 @@ export const DecryptedText: React.FC<DecryptedTextProps> = ({
     if (!inView) return;
 
     let iteration = 0;
-    let interval: NodeJS.Timeout;
-
-    interval = setInterval(() => {
+    const interval: NodeJS.Timeout = setInterval(() => {
       setDisplayText(() =>
         text
           .split("")

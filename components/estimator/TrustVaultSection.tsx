@@ -6,7 +6,7 @@ import { ComparisonTable } from "@/components/plane-ui/ComparisonTable";
 import { SplitText } from "@/components/react-bits/SplitText";
 import { BlurText } from "@/components/react-bits/BlurText";
 import { DecryptedText } from "@/components/react-bits/DecryptedText";
-import { ShieldCheck, Award, FileText, Download, CheckCircle2, Lock } from "lucide-react";
+import { ShieldCheck, FileText, Download } from "lucide-react";
 import { analytics } from "@/lib/analytics";
 
 export const TrustVaultSection: React.FC = () => {

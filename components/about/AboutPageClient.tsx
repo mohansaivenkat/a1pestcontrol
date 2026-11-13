@@ -9,23 +9,10 @@ import { ScrollReveal } from "@/components/react-bits/ScrollReveal";
 import { SpecularButton } from "@/components/react-bits/SpecularButton";
 import { ClinicalComplianceCard } from "@/components/ui/ClinicalComplianceCard";
 import {
-  ShieldCheck,
-  Award,
   CheckCircle2,
   ArrowRight,
   MapPin,
-  FileText,
-  Clock,
-  Sparkles,
   Phone,
-  AlertTriangle,
-  Beaker,
-  Compass,
-  Building,
-  Microscope,
-  Layers,
-  ChevronRight,
-  ShieldAlert,
 } from "lucide-react";
 
 interface OperatingZone {

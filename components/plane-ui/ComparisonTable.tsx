@@ -1,5 +1,5 @@
 import React from "react";
-import { Check, X, ShieldAlert, Award, AlertCircle } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 interface ComparisonRow {
   parameter: string;
