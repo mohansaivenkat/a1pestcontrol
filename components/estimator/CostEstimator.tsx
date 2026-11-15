@@ -358,9 +358,9 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                   <button
                     type="button"
                     onClick={() => setIsSlotModalOpen(true)}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 sm:py-4 px-4 sm:px-6 rounded-xl bg-accent-700 hover:bg-accent-800 active:scale-[0.98] disabled:opacity-50 text-white font-display text-xs sm:text-sm font-semibold transition-colors shadow-sm cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 sm:py-4 px-4 sm:px-6 rounded-[30px] bg-gold-500 hover:bg-gold-600 active:scale-[0.98] disabled:opacity-50 text-navy-950 font-display text-xs sm:text-sm font-bold transition-colors shadow-xs cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-950"
                   >
-                    <Calendar className="w-4 h-4" aria-hidden="true" />
+                    <Calendar className="w-4 h-4 text-navy-950" aria-hidden="true" />
                     <span>Lock price and pick slot</span>
                   </button>
 
@@ -368,7 +368,7 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
                     href={serializeWhatsAppQuote(quote, currentLocality)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 sm:py-3.5 px-4 sm:px-6 rounded-xl bg-whatsapp hover:bg-whatsapp-hover active:scale-[0.98] text-white text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 sm:py-3.5 px-4 sm:px-6 rounded-[30px] bg-whatsapp hover:bg-whatsapp-hover active:scale-[0.98] text-white text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp"
                   >
                     <MessageSquare className="w-4 h-4" aria-hidden="true" />
                     <span>Send quote to WhatsApp</span>

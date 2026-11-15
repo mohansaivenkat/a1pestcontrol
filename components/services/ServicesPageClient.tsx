@@ -251,10 +251,10 @@ export const ServicesPageClient: React.FC = () => {
               <div className="p-4 sm:p-6 pt-0">
                 <Link
                   href={`/contact?service=${svc.id}`}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brand-700 hover:bg-brand-900 text-white text-xs sm:text-sm font-semibold transition-colors duration-150 shadow-sm focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-brand-700 active:scale-[0.98]"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-[30px] bg-navy-950 hover:bg-navy-900 text-white text-xs sm:text-sm font-semibold transition-colors duration-150 shadow-xs focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-navy-950 active:scale-[0.98]"
                 >
                   <span>Book Inspection</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
+                  <ArrowRight className="h-3.5 w-3.5 text-gold-500" />
                 </Link>
               </div>
             </div>
@@ -296,16 +296,16 @@ export const ServicesPageClient: React.FC = () => {
                 <div className="pt-4 flex flex-wrap gap-3">
                   <Link
                     href="/contact?type=amc"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-700 hover:bg-brand-900 text-white text-xs sm:text-sm font-semibold transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[30px] bg-gold-500 hover:bg-gold-600 text-navy-950 text-xs sm:text-sm font-bold transition-colors shadow-xs active:scale-[0.98]"
                   >
                     <span>Inquire About AMC Plans</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 text-navy-950" />
                   </Link>
                   <a
                     href="tel:+919494281100"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-neutral-300 text-neutral-800 hover:border-brand-700 hover:text-brand-700 bg-white text-xs sm:text-sm font-semibold transition-colors shadow-sm"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-[30px] border border-neutral-200 text-navy-950 hover:border-brand-900 bg-white text-xs sm:text-sm font-semibold transition-colors shadow-xs active:scale-[0.98]"
                   >
-                    <Phone className="h-4 w-4 text-brand-700" />
+                    <Phone className="h-4 w-4 text-brand-900" />
                     <span>Speak with Senior Specialist</span>
                   </a>
                 </div>

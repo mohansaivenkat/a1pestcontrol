@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { TopographyCanvas } from "@/components/react-bits/TopographyCanvas";
 import { SplitText } from "@/components/react-bits/SplitText";
 import { BlurText } from "@/components/react-bits/BlurText";
@@ -25,6 +26,7 @@ import {
   MapPin,
   Award,
   ArrowRight,
+  ShieldCheck,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -32,17 +34,6 @@ export default function HomePage() {
   const [isSOSOpen, setIsSOSOpen] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [activePestForEstimator, setActivePestForEstimator] = useState("cockroaches");
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-
-  React.useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      videoRef.current.play().catch(() => {
-        // Autoplay policy handled gracefully
-      });
-    }
-  }, []);
 
   // Rotating telemetry items for TextLoop
   const tickerItems = Object.values(VIZAG_LOCALITIES).map((loc) => ({
@@ -56,173 +47,162 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-surface-main text-neutral-900 font-body relative">
-      {/* Hero Section: 55/45 Split Desktop Grid with 60fps Pest Control Video */}
-      <section className="relative w-full py-8 sm:py-12 md:py-16 lg:py-20 px-3 sm:px-6 lg:px-8">
+      {/* Hero Section: Full Background Fit to Screen with Terminix High-Trust Layout */}
+      <section className="relative w-full min-h-[85vh] lg:min-h-[92vh] flex items-center py-12 sm:py-16 md:py-20 lg:py-24 px-3 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Full-Screen Fit-to-Screen Responsive Background Photos */}
+        <picture className="absolute inset-0 w-full h-full pointer-events-none z-0">
+          <source media="(min-width: 768px)" srcSet="/images/hero_desktop.png" />
+          <img
+            src="/images/hero_mobile.png"
+            alt="A1 Pest Control Visakhapatnam Clinical Exterminator Services"
+            className="w-full h-full object-cover object-right md:object-center"
+          />
+        </picture>
+
+        {/* Terminix High-Legibility Gradient Scrim */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 via-50% to-white/20 lg:to-transparent z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-transparent to-white/85 sm:hidden z-0 pointer-events-none" />
+
         {/* Subtle Mathematical Topography Background Contour Lines */}
-        <TopographyCanvas lineColor="#8C7365" opacity={0.06} />
+        <TopographyCanvas lineColor="#8C7365" opacity={0.04} />
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column (7 Cols): Clinical Value Proposition */}
-            <div className="lg:col-span-7 space-y-5 sm:space-y-6 pt-2">
-              {/* H1 Headline with Masked SplitText Reveal */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.25rem] xl:text-[2.5rem] font-display font-extrabold text-neutral-950 tracking-tight leading-[1.14] lg:leading-[1.18]">
-                <SplitText
-                  text="Clinical-Grade, Odorless Pest Control for Vizag Homes—Dispatched in 60 Minutes."
-                  as="span"
-                  highlightWords={["Clinical-Grade,", "Odorless", "60", "Minutes."]}
-                />
-              </h1>
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6 pt-2">
+            
 
-              {/* Subheadline with BlurText Reveal */}
-              <div className="max-w-2xl">
-                <BlurText
-                  text="Zero generic chemical fogging. Safe for infants, asthmatic elders, and indoor pets. Powered by genuine WHO-prequalified Bayer & Syngenta chemistry with up to 5-year stamped written warranties across Visakhapatnam."
-                  as="p"
-                  className="text-sm md:text-base lg:text-lg text-neutral-700 leading-relaxed font-sans"
-                />
+            {/* H1 Headline with Masked SplitText Reveal (Terminix 56.5px / 700 / #001457) */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-display font-bold text-[#001457] tracking-[-0.96px] leading-[1.12] lg:leading-[1.14]">
+              <SplitText
+                text="Clinical-Grade, Odorless Pest Control for Vizag Homes—Dispatched in 60 Minutes."
+                as="span"
+                highlightWords={["Clinical-Grade,", "Odorless", "60", "Minutes."]}
+              />
+            </h1>
+
+            {/* Subheadline with BlurText Reveal */}
+            <div className="max-w-2xl">
+              <BlurText
+                text="Zero generic chemical fogging. Safe for infants, asthmatic elders, and indoor pets. Powered by genuine WHO-prequalified Bayer & Syngenta chemistry with up to 5-year stamped written warranties across Visakhapatnam."
+                as="p"
+                className="text-base sm:text-lg lg:text-xl text-[#36393D] font-medium leading-[26px] font-sans"
+              />
+            </div>
+
+            {/* 2x2 Responsive Trust Metrics Grid with DecryptedText */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 lg:gap-4 pt-1 max-w-2xl">
+              <div className="p-3 sm:p-4 lg:p-4.5 rounded-[20px] bg-white/95 backdrop-blur-sm border border-[#EAEBE5] shadow-xs">
+                <div className="flex items-center gap-1.5 text-xs font-mono text-[#115439] font-bold uppercase tracking-wider">
+                  <Star className="w-3.5 h-3.5 fill-[#F7BE00] text-[#F7BE00]" />
+                  <span>RATING</span>
+                </div>
+                <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-[#001457] mt-1 tabular-nums">
+                  <DecryptedText text="4.9 / 5.0" />
+                </p>
+                <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
+                  1,840+ Local Reviews
+                </span>
               </div>
 
-              {/* 2x2 Responsive Trust Metrics Grid with DecryptedText */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 lg:gap-4 pt-1 max-w-2xl">
-                <div className="p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-brand-700 font-bold uppercase tracking-wider">
-                    <Star className="w-3.5 h-3.5 fill-brand-700 text-brand-700" />
-                    <span>RATING</span>
-                  </div>
-                  <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
-                    <DecryptedText text="4.9 / 5.0" />
-                  </p>
-                  <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
-                    1,840+ Local Reviews
-                  </span>
+              <div className="p-3 sm:p-4 lg:p-4.5 rounded-[20px] bg-white/95 backdrop-blur-sm border border-[#EAEBE5] shadow-xs">
+                <div className="flex items-center gap-1.5 text-xs font-mono text-[#1DAA4C] font-bold uppercase tracking-wider">
+                  <Sparkles className="w-3.5 h-3.5 text-[#1DAA4C]" />
+                  <span>ODORLESS</span>
                 </div>
-
-                <div className="p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-brand-700 font-bold uppercase tracking-wider">
-                    <Sparkles className="w-3.5 h-3.5 text-brand-700" />
-                    <span>ODORLESS</span>
-                  </div>
-                  <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
-                    <DecryptedText text="100% GEL" />
-                  </p>
-                  <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
-                    Kitchen Intact
-                  </span>
-                </div>
-
-                <div className="p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-accent-700 font-bold uppercase tracking-wider">
-                    <Award className="w-3.5 h-3.5 text-accent-700" />
-                    <span>WARRANTY</span>
-                  </div>
-                  <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
-                    <DecryptedText text="5-YEAR" />
-                  </p>
-                  <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
-                    Written Stamped Card
-                  </span>
-                </div>
-
-                <div className="p-3 sm:p-4 lg:p-4.5 rounded-xl sm:rounded-2xl bg-surface-card border border-neutral-300 shadow-sm">
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-brand-700 font-bold uppercase tracking-wider">
-                    <Clock className="w-3.5 h-3.5 text-brand-700" />
-                    <span>DISPATCH</span>
-                  </div>
-                  <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-neutral-950 mt-1 tabular-nums">
-                    <DecryptedText text="60 MIN" />
-                  </p>
-                  <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
-                    Direct Zonal Team
-                  </span>
-                </div>
+                <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-[#001457] mt-1 tabular-nums">
+                  <DecryptedText text="100% GEL" />
+                </p>
+                <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
+                  Kitchen Intact
+                </span>
               </div>
 
-              {/* Live Locality Dispatch Ticker with React Bits TextLoop */}
-              <div className="p-3 sm:p-3.5 lg:p-4 rounded-xl sm:rounded-2xl bg-neutral-100 border border-neutral-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-3 max-w-2xl">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-brand-700 shrink-0" />
-                  <span className="text-xs lg:text-sm font-mono text-neutral-700 uppercase font-semibold">
-                    Live Zonal Dispatch:
-                  </span>
+              <div className="p-3 sm:p-4 lg:p-4.5 rounded-[20px] bg-white/95 backdrop-blur-sm border border-[#EAEBE5] shadow-xs">
+                <div className="flex items-center gap-1.5 text-xs font-mono text-[#B8332A] font-bold uppercase tracking-wider">
+                  <Award className="w-3.5 h-3.5 text-[#F7BE00]" />
+                  <span>WARRANTY</span>
                 </div>
-                <TextLoop
-                  items={tickerItems}
-                  onSelectLocality={(loc) => setSelectedLocality(loc)}
-                />
+                <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-[#001457] mt-1 tabular-nums">
+                  <DecryptedText text="5-YEAR" />
+                </p>
+                <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
+                  Written Stamped Card
+                </span>
               </div>
 
-              {/* Action Buttons with SpecularButton */}
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
-                <SpecularButton
-                  variant="botanical"
-                  size="md"
-                  onClick={() => {
-                    const estimatorEl = document.getElementById("estimate-calculator");
-                    if (estimatorEl) {
-                      estimatorEl.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  <span>Launch Estimate Calculator</span>
-                  <ArrowRight className="w-4 h-4" />
-                </SpecularButton>
-
-                <a
-                  href="tel:+919494281100"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-neutral-300 hover:border-brand-700 bg-white text-xs md:text-sm font-semibold text-neutral-800 transition-colors shadow-sm"
-                >
-                  <Phone className="w-4 h-4 text-brand-700" />
-                  <span>Call Hotline: +91 94942 81100</span>
-                </a>
+              <div className="p-3 sm:p-4 lg:p-4.5 rounded-[20px] bg-white/95 backdrop-blur-sm border border-[#EAEBE5] shadow-xs">
+                <div className="flex items-center gap-1.5 text-xs font-mono text-[#001457] font-bold uppercase tracking-wider">
+                  <Clock className="w-3.5 h-3.5 text-[#001457]" />
+                  <span>DISPATCH</span>
+                </div>
+                <p className="font-mono text-xl sm:text-2xl lg:text-xl xl:text-2xl font-extrabold text-[#001457] mt-1 tabular-nums">
+                  <DecryptedText text="60 MIN" />
+                </p>
+                <span className="text-[11px] sm:text-xs lg:text-sm text-neutral-700 font-sans block mt-0.5">
+                  Direct Zonal Team
+                </span>
               </div>
             </div>
 
-            {/* Right Column (5 Cols): 60fps High-Frame-Rate Video Container */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-neutral-300 shadow-2xl bg-neutral-950 group">
-                {/* 60fps HTML5 Loop Video */}
-                <video
-                  ref={videoRef}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  poster="/videos/pest-control-hero-poster.jpg"
-                  className="w-full h-[320px] sm:h-[420px] lg:h-[480px] object-cover"
-                >
-                  <source src="/videos/pest-control-hero.mp4" type="video/mp4" />
-                </video>
-
-                {/* Video Overlay Vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-transparent to-neutral-950/20 pointer-events-none" />
-
-                {/* Bottom Video Legend with DecryptedText */}
-                <div className="absolute bottom-4 left-4 right-4 z-10 text-white pointer-events-none space-y-1">
-                  <p className="text-xs font-mono text-emerald-400 uppercase tracking-widest font-semibold">
-                    <DecryptedText text="ACTIVE SUBTERRANEAN TERMITE DETECTION • 60 FPS" />
-                  </p>
-                  <p className="text-sm lg:text-base font-display font-bold leading-tight drop-shadow-sm">
-                    Direct Zonal Colony Tracking · Non-Repellent Chemical Eradication
-                  </p>
-                </div>
+            {/* Live Locality Dispatch Ticker with React Bits TextLoop */}
+            <div className="p-3 sm:p-3.5 lg:p-4 rounded-[30px] sm:rounded-2xl bg-white/90 backdrop-blur-sm border border-[#EAEBE5] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-3 max-w-2xl shadow-xs">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-[#115439] shrink-0" />
+                <span className="text-xs lg:text-sm font-mono text-neutral-700 uppercase font-semibold">
+                  Live Zonal Dispatch:
+                </span>
               </div>
+              <TextLoop
+                items={tickerItems}
+                onSelectLocality={(loc) => setSelectedLocality(loc)}
+              />
+            </div>
+
+            {/* Action Buttons with Terminix 30px Pill Recipes */}
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <SpecularButton
+                variant="botanical"
+                size="md"
+                onClick={() => {
+                  const estimatorEl = document.getElementById("estimate-calculator");
+                  if (estimatorEl) {
+                    estimatorEl.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="!rounded-[30px] !px-6 !py-3.5"
+              >
+                <span>Launch Estimate Calculator</span>
+                <ArrowRight className="w-4 h-4 text-[#F7BE00]" />
+              </SpecularButton>
+
+              <a
+                href="tel:+919494281100"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-[30px] border border-[#EAEBE5] hover:border-[#115439] bg-white hover:bg-neutral-50 text-xs md:text-sm font-semibold text-[#115439] transition-all shadow-xs active:scale-[0.98]"
+              >
+                <Phone className="w-4 h-4 text-[#1DAA4C]" />
+                <span>Call Hotline: +91 94942 81100</span>
+              </a>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-1.5 px-5 py-3.5 rounded-[30px] bg-[#F7BE00] hover:bg-[#F5C518] text-[#001457] text-xs md:text-sm font-bold transition-all shadow-xs active:scale-[0.98]"
+              >
+                <span>Get Free Quote</span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Section Manifesto Headline with React Bits ScrollReveal */}
-      <section className="py-12 md:py-16 px-4 md:px-6 bg-surface-card border-y border-neutral-200">
+      <section className="py-12 md:py-16 px-4 md:px-6 bg-surface-card border-y border-[#EAEBE5]">
         <div className="max-w-4xl mx-auto text-center space-y-3">
-          <span className="text-xs font-mono uppercase tracking-widest text-brand-700 font-bold block">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#115439] font-bold block">
             <DecryptedText text="THE A1 CLINICAL DIFFERENCE" />
           </span>
           <ScrollReveal
             text="We replaced diesel mixtures, vague ₹499 directory pricing, and unvetted daily labor with scientific pest eradication calibrated for Visakhapatnam's coastal architecture."
-            highlightColor="#2D5A27"
-            className="text-xl md:text-3xl lg:text-2xl xl:text-[1.75rem] font-bold tracking-tight text-neutral-950"
+            highlightColor="#1DAA4C"
+            className="text-xl md:text-3xl lg:text-2xl xl:text-[1.75rem] font-bold tracking-tight text-[#001457]"
           />
         </div>
       </section>

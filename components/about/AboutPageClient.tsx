@@ -244,9 +244,9 @@ export const AboutPageClient: React.FC = () => {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-neutral-300 hover:border-brand-700 bg-white text-xs sm:text-sm font-semibold text-neutral-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 active:scale-[0.98]"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-[30px] border border-neutral-200 hover:border-brand-900 bg-white text-xs sm:text-sm font-semibold text-navy-950 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-950 active:scale-[0.98] shadow-xs"
               >
-                <Phone className="h-4 w-4 text-brand-700" aria-hidden="true" />
+                <Phone className="h-4 w-4 text-brand-900" aria-hidden="true" />
                 <span>Contact Headquarters</span>
               </Link>
             </div>
@@ -554,10 +554,10 @@ export const AboutPageClient: React.FC = () => {
               <div className="pt-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-700 hover:bg-brand-900 active:scale-[0.98] text-white text-xs sm:text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-[30px] bg-gold-500 hover:bg-gold-600 active:scale-[0.98] text-navy-950 text-xs sm:text-sm font-bold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-950 shadow-xs"
                 >
                   <span>Book Technician Consultation at Your Site</span>
-                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  <ArrowRight className="w-4 h-4 text-navy-950" aria-hidden="true" />
                 </Link>
               </div>
             </div>

@@ -1,48 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand greens */
-  --color-brand-900: #1A3A1A;
-  --color-brand-700: #2D5A27;
-  --color-brand-500: #3A6B4C;
-  --color-brand-100: #E8F0E6;
+  /* Terminix Navy Palette */
+  --color-navy-950: #001457;
+  --color-navy-900: #002F47;
+  --color-navy-800: #0D2640;
 
-  /* Accent reds */
+  /* Terminix Brand Greens */
+  --color-brand-900: #115439;
+  --color-brand-700: #1DAA4C;
+  --color-brand-500: #20AA4D;
+  --color-brand-100: #A9EFC0;
+
+  /* Terminix Accent Gold & Warning Yellow */
+  --color-gold-600: #F5C518;
+  --color-gold-500: #F7BE00;
+  --color-gold-100: #FFF9E6;
+
+  /* Secondary Accent Reds */
   --color-accent-800: #9B2C1F;
   --color-accent-700: #B8332A;
   --color-accent-500: #C84B31;
   --color-accent-100: #FBEAE6;
 
-  /* Neutral browns */
-  --color-neutral-950: #1C1210;
-  --color-neutral-900: #2C1E18;
-  --color-neutral-700: #5C4A40;
-  --color-neutral-500: #8C7365;
-  --color-neutral-300: #C4B5A8;
-  --color-neutral-200: #E6DFD5;
-  --color-neutral-100: #F2EDE8;
+  /* Terminix Neutrals & Slate */
+  --color-neutral-950: #001457;
+  --color-neutral-900: #36393D;
+  --color-neutral-700: #414042;
+  --color-neutral-500: #86888B;
+  --color-neutral-300: #CCCCCC;
+  --color-neutral-200: #EAEBE5;
+  --color-neutral-100: #F9F9FA;
 
   /* Surfaces */
-  --color-surface-main: #FAF8F5;
+  --color-surface-main: #FFFFFF;
   --color-surface-card: #FFFFFF;
-  --color-surface-muted: #F5F0EB;
+  --color-surface-muted: #F3F3F2;
 
   /* Communication tokens */
   --color-whatsapp: #25D366;
   --color-whatsapp-hover: #20BD5A;
 
   /* Legacy aliases for ToastSystem compatibility */
-  --color-timber-950: #1C1210;
-  --color-timber-900: #2C1E18;
-  --color-timber-700: #5C4A40;
-  --color-botanical-700: #2D5A27;
+  --color-timber-950: #001457;
+  --color-timber-900: #36393D;
+  --color-timber-700: #414042;
+  --color-botanical-700: #115439;
   --color-crimson-700: #B8332A;
-  --color-surface-parchment: #FAF8F5;
-  --color-surface-travertine: #F5F0EB;
+  --color-surface-parchment: #FFFFFF;
+  --color-surface-travertine: #F9F9FA;
 
-  /* Typography */
-  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-body: "DM Sans", system-ui, sans-serif;
+  /* Typography matching Terminix Design Reference */
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
 
