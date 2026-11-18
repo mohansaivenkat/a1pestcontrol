@@ -11,7 +11,6 @@ import {
 import { SlotBookingModal } from "./SlotBookingModal";
 import { PriceSkeleton } from "@/components/ui/SkeletonLoader";
 import { analytics } from "@/lib/analytics";
-import { BlurText } from "@/components/react-bits/BlurText";
 import {
   ShieldCheck,
   Calendar,
@@ -131,11 +130,9 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
               <span className="text-xs font-semibold text-brand-700 block">
                 Step 1: Target Protocol
               </span>
-              <BlurText
-                text="Select Your Target Pest Problem"
-                as="h3"
-                className="text-sm sm:text-lg font-display font-bold text-neutral-950"
-              />
+              <h3 className="text-sm sm:text-lg font-display font-bold text-neutral-950">
+                Select Your Target Pest Problem
+              </h3>
             </div>
             <span className="text-xs text-neutral-600 font-sans">
               7 clinical protocols available
@@ -199,11 +196,9 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
               <span className="text-xs font-semibold text-brand-700 block">
                 Step 2: Property Architecture
               </span>
-              <BlurText
-                text="Property Architecture & Square Footage"
-                as="h3"
-                className="text-sm sm:text-lg font-display font-bold text-neutral-950"
-              />
+              <h3 className="text-sm sm:text-lg font-display font-bold text-neutral-950">
+                Property Architecture &amp; Square Footage
+              </h3>
             </div>
             <span className="text-xs text-neutral-600 font-sans">
               Calibrated for Vizag layouts
@@ -243,11 +238,9 @@ export const CostEstimator: React.FC<CostEstimatorProps> = ({
               <span className="text-xs font-semibold text-brand-700 block">
                 Step 3: Infestation Severity Level
               </span>
-              <BlurText
-                text="Infestation Severity Level"
-                as="h3"
-                className="text-sm sm:text-lg lg:text-base font-display font-bold text-neutral-950"
-              />
+              <h3 className="text-sm sm:text-lg lg:text-base font-display font-bold text-neutral-950">
+                Infestation Severity Level
+              </h3>
             </div>
             <span className="text-xs text-neutral-600 font-sans">
               Sets chemical dosage and visit depth

@@ -17,12 +17,12 @@ interface ServiceShowcaseSectionProps {
 }
 
 const SERVICE_IMAGES: Record<string, string> = {
-  termites: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80",
-  cockroaches: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
-  bedbugs: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
-  rodents: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-  mosquitoes: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
-  woodborers: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80",
+  termites: "/images/pests/termites.jpg",
+  cockroaches: "/images/pests/cockroaches.jpg",
+  bedbugs: "/images/pests/bedbugs.jpg",
+  rodents: "/images/pests/rodents.jpg",
+  mosquitoes: "/images/pests/mosquitoes.jpg",
+  woodborers: "/images/pests/woodborers.jpg",
 };
 
 const SIDEBAR_ITEMS = [
@@ -88,7 +88,7 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
               <DecryptedText text="CLINICAL ERADICATION CATALOG • VIZAG" />
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
             <SplitText text="Six Specialized Protocols. Zero Generic AI Emptiness." as="span" />
           </h2>
           <div className="max-w-2xl">
@@ -256,7 +256,7 @@ export const ServiceShowcaseSection: React.FC<ServiceShowcaseSectionProps> = ({
                     <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
                     <span>FSSAI &amp; Factory Audit Compliance</span>
                   </span>
-                  <h3 className="text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-display font-bold text-white">
+                  <h3 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-display font-bold text-white">
                     Commercial AMC for Vizag Restaurants, Pharma &amp; Gajuwaka Warehouses
                   </h3>
                   <p className="text-xs sm:text-sm lg:text-base text-neutral-300 leading-relaxed font-sans">

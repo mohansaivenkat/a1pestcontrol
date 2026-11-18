@@ -1,18 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { SplitText } from "@/components/react-bits/SplitText";
-import { BlurText } from "@/components/react-bits/BlurText";
-import { DecryptedText } from "@/components/react-bits/DecryptedText";
-import { ScrollReveal } from "@/components/react-bits/ScrollReveal";
-import { SpecularButton } from "@/components/react-bits/SpecularButton";
-import { ClinicalComplianceCard } from "@/components/ui/ClinicalComplianceCard";
 import {
-  CheckCircle2,
   ArrowRight,
   MapPin,
   Phone,
+  ShieldCheck,
+  Clock,
+  Sparkles,
+  Building2,
+  Check,
 } from "lucide-react";
 
 interface OperatingZone {
@@ -54,524 +52,274 @@ const ZONAL_HUBS: OperatingZone[] = [
   },
 ];
 
-interface PillarStandard {
-  id: string;
-  title: string;
-  subtitle: string;
-  summary: string;
-  details: string[];
-  specs: { label: string; value: string }[];
-}
-
-const PILLARS: PillarStandard[] = [
+const CORE_STANDARDS = [
   {
-    id: "chemistry",
-    title: "Formulation Purity",
+    title: "1. Formulation Purity",
     subtitle: "Zero Unlabeled Agricultural Repacks",
-    summary:
-      "We strictly ban organophosphates, kerosene distillates, and unbranded mystery chemicals commonly used by unorganized local sprayers in Visakhapatnam. Every chemical batch is factory-sealed from Bayer Environmental Science or Syngenta India with verified batch certificates.",
-    details: [
-      "Exclusive use of Bayer Premise (Imidacloprid 30.5% SC) for non-repellent structural termite barriers",
-      "Bayer Maxforce Indoxacarb 0.6% odorless cockroach gel matrices for kitchen cabinet treatments",
-      "Syngenta Talon & Bromadiolone 0.005% rodenticide baits housed inside keyed tamper-resistant stations",
-      "Water-based Deltamethrin 2.5% Flow for cold ULV mosquito fogging—zero oily petroleum residues on walls",
-    ],
-    specs: [
-      { label: "Mammalian Safety", value: "WHO Class-U / Class-III" },
-      { label: "VOC Emissions", value: "0% Indoor Hydrocarbons" },
-      { label: "Regulatory Gate", value: "100% CIBRC Registered" },
+    desc: "We strictly ban organophosphates, kerosene distillates, and unbranded mystery chemicals commonly used by unorganized sprayers in Vizag. Every chemical batch is factory-sealed from Bayer Environmental Science or Syngenta India with verified batch certificates.",
+    points: [
+      "Bayer Premise (Imidacloprid 30.5% SC) for 5-year termite barriers",
+      "Bayer Maxforce Indoxacarb odorless gel for kitchen cabinets",
+      "Syngenta Talon & Bromadiolone inside keyed tamper-resistant stations",
+      "Water-based Deltamethrin 2.5% Flow for cold ULV mosquito fogging",
     ],
   },
   {
-    id: "hardware",
-    title: "Calibrated Hardware",
+    title: "2. Calibrated Equipment",
     subtitle: "Hospital-Grade Injection & Atomization",
-    summary:
-      "A pesticide is only as effective as the pressure and droplet spectrum used to deliver it. We retired leaky brass hand pumps in favor of precision German-engineered injection and motorized cold atomization equipment.",
-    details: [
-      "Bosch Professional rotary hammer drills with integrated depth-stop limiters to protect structural rebar",
-      "B&G stainless-steel commercial sprayers with Dripless Extenda-Bans for exact milliliter dosage control",
-      "Curtis Dyna-Fog electric cold ULV atomizers producing 15–30 micron droplets that stay suspended to intercept flying vectors",
-      "High-pressure hydraulic termite injectors delivering 150 PSI saturation deep beneath foundation slabs",
-    ],
-    specs: [
-      { label: "Droplet Micron Spectrum", value: "15 to 30 Microns" },
-      { label: "Drill Precision", value: "6mm Micro-Perforations" },
-      { label: "Pump Pressure Calibration", value: "Bi-Monthly Testing" },
+    desc: "A pesticide is only as effective as the equipment delivering it. We retired manual brass pumps in favor of precision German-engineered injection and motorized cold atomization equipment.",
+    points: [
+      "Bosch Professional rotary hammer drills with depth-stop limiters",
+      "High-pressure hydraulic termite injectors delivering 150 PSI saturation",
+      "Curtis Dyna-Fog electric cold ULV atomizers for 15–30 micron droplets",
+      "Color-matched non-shrink polymer hole capping for invisible floor finish",
     ],
   },
   {
-    id: "entomology",
-    title: "Entomological Vetting",
+    title: "3. Certified Entomological Staff",
     subtitle: "Biologist-Trained Technical Staff",
-    summary:
-      "Every A1 applicator undergoes 120 hours of mandatory training in structural entomology, pest behavior, and chemical toxicology before visiting a client property. No daily-wage casual laborers are ever dispatched to your home.",
-    details: [
-      "Certified handlers licensed under the Insecticides Act, 1968 and CIBRC standards",
-      "Comprehensive background verification and bi-annual biometric health and toxicology checkups",
-      "Mandatory PPE: Nitrile gloves, 3M organic vapor respirators, and splash goggles for commercial treatments",
-      "Direct oversight by graduate entomologists who formulate custom treatment dossiers for complex sites",
+    desc: "Every A1 applicator undergoes 120 hours of mandatory training in structural entomology, pest behavior, and chemical toxicology before visiting a client property. No daily-wage casual laborers are ever dispatched to your home.",
+    points: [
+      "Certified handlers licensed under the Insecticides Act, 1968",
+      "100% police background verification and health checkups",
+      "Full PPE: Nitrile gloves, 3M organic vapor respirators, and eye protection",
+      "Direct oversight by graduate entomologists for complex sites",
     ],
-    specs: [
-      { label: "Initial Training", value: "120 Classroom + Field Hours" },
-      { label: "Re-Certification", value: "Bi-Annual Exam" },
-      { label: "Background Audit", value: "100% Police Verified" },
-    ],
-  },
-  {
-    id: "warranty",
-    title: "Legal Warranty",
-    subtitle: "Stamped Stored Physical Certificates",
-    summary:
-      "Local directory vendors disappear when pests return after a week. Our warranties are legal contracts with physical stamped certificates, unique serialized job numbers, and guaranteed callback appointments within 24 hours.",
-    details: [
-      "Up to 5-Year Stamped Written Warranty for Subterranean Termite barrier treatments",
-      "180-Day Comprehensive Retreatment Guarantee for Bed Bug thermal and chemical eradications",
-      "Zero-argument callback policy: if target pests survive beyond the protocol window, we retreat at zero cost",
-      "Digital service record backed up on our server with complete chemical dosage and technician logs",
-    ],
-    specs: [
-      { label: "Termite Warranty", value: "Up to 5 Years Stamped" },
-      { label: "Bed Bug Warranty", value: "180 Days Written" },
-      { label: "Callback SLA", value: "Within 24 Hours Guaranteed" },
-    ],
-  },
-];
-
-const LOCAL_FACTORS = [
-  {
-    zone: "Bay of Bengal Coastal Strip",
-    neighborhoods: "RK Beach, MVP Colony, Sagar Nagar, Rushikonda",
-    challenge: "High marine salinity and 85%+ atmospheric moisture",
-    impact:
-      "Sea air corrodes superficial pesticide dusts rapidly. High coastal humidity speeds up dampwood termite fungal decomposition and encourages drain-fly nesting.",
-    solution:
-      "Micro-encapsulated polymers that resist salt oxidation and do not break down under continuous coastal salt-spray exposure.",
-  },
-  {
-    zone: "Red Loam Foundation Corridor",
-    neighborhoods: "Dwaraka Nagar, Seethammadhara, Maddilapalem, Resapuvanipalem",
-    challenge: "Moisture-retaining iron-rich clay soils",
-    impact:
-      "Dense red loam creates deep underground moisture veins where subterranean termites (Odontotermes obesus) thrive and tunnel into concrete foundation cracks.",
-    solution:
-      "High-pressure 150 PSI subterranean soil drenching using non-repellent Imidacloprid to establish an invisible lethal zone around the structural perimeter.",
-  },
-  {
-    zone: "High-Rise Apartment Shafts",
-    neighborhoods: "Madhurawada, Yendada, Kommadi, IT SEZ",
-    challenge: "Shared plumbing ducts and centralized utility shafts",
-    impact:
-      "German cockroaches migrate vertically between floors through ductwork and electrical conduits. Standard surface sprays only scatter them to neighbor flats.",
-    solution:
-      "Cascade domino-effect Indoxacarb gel baiting that cockroaches ingest and carry back to communal hidden nesting voids behind ductwork.",
-  },
-  {
-    zone: "Industrial and Food Logistics Belt",
-    neighborhoods: "Gajuwaka, Auto Nagar, Kurmannapalem, Industrial Estate",
-    challenge: "Grain depots, pharma warehouses, and high rodent pressure",
-    impact:
-      "Rats gnaw electrical cables, causing industrial downtime and contaminating commercial grain and packaging lots under FSSAI scrutiny.",
-    solution:
-      "Heavy-duty keyed tamper-resistant rodent stations with weather-resistant anticoagulant blocks and automated tamper logs.",
   },
 ];
 
 export const AboutPageClient: React.FC = () => {
-  const [activePillar, setActivePillar] = useState("chemistry");
-  const currentPillarData = PILLARS.find((p) => p.id === activePillar) || PILLARS[0];
-
   return (
-    <div className="w-full bg-surface-main text-neutral-900 font-body py-8 sm:py-12 md:py-16">
-      {/* 1. Hero Section: Prestige Botanical Narrative */}
-      <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 mb-12 sm:mb-16">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
-            
+    <div className="w-full bg-surface-main text-neutral-900 font-body">
+      {/* 1. Hero Section: Clean Background Photo with High-Contrast Text */}
+      <section className="relative w-full min-h-[75vh] lg:min-h-[82vh] flex items-center py-12 sm:py-16 md:py-20 px-3 sm:px-6 lg:px-8 overflow-hidden border-b border-neutral-200">
+        <picture className="absolute inset-0 w-full h-full pointer-events-none z-0">
+          <source media="(min-width: 768px)" srcSet="/images/About_us.png" />
+          <img
+            src="/images/Mobile-aboutus.png"
+            alt="A1 Pest Control Visakhapatnam Team and Operations"
+            className="w-full h-full object-cover object-right md:object-center"
+          />
+        </picture>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-4xl font-display font-extrabold text-neutral-950 tracking-tight leading-[1.14]">
-              <SplitText text="Engineered for Visakhapatnam’s Coastal Micro-Climates." as="span" />
+        {/* High-Legibility Gradient Scrim */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 via-55% to-white/30 lg:to-transparent z-0 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-transparent to-white/90 sm:hidden z-0 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-5">
+            {/* Status Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#A9EFC0]/70 border border-[#115439]/30 text-[#115439] text-xs font-semibold shadow-xs">
+              <ShieldCheck className="h-4 w-4 text-[#115439] shrink-0" />
+              <span className="font-mono text-xs uppercase font-bold tracking-wide">
+                Established 2010 • Visakhapatnam Headquarters
+              </span>
+            </div>
+
+            {/* Clear Plain H1 Headline */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] font-display font-bold text-[#001457] leading-[1.16] tracking-tight">
+              About A1 Pest Control Services Visakhapatnam
             </h1>
 
-            <div className="max-w-2xl">
-              <BlurText
-                text="From Seethammadhara to Gajuwaka: Why coastal salinity, red loam soil, and monsoon humidity require scientific chemistry—not uncalibrated toxic spraying."
-                as="p"
-                className="text-sm sm:text-base lg:text-lg text-neutral-700 leading-relaxed font-sans"
-              />
+            {/* Plain Text Subheadline */}
+            <p className="text-sm sm:text-base lg:text-lg text-[#36393D] leading-relaxed max-w-2xl font-sans">
+              Founded in 2010. Over 14 years of certified, odorless pest eradication for 14,000+ homes, villas, restaurants, and industrial warehouses across Visakhapatnam.
+            </p>
+
+            {/* 4 Clean Metric Badges */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-1 max-w-2xl">
+              <div className="p-3 rounded-xl bg-white/95 border border-[#EAEBE5] shadow-xs">
+                <div className="flex items-center gap-1.5 text-xs text-[#115439] font-bold">
+                  <Clock className="w-4 h-4 text-[#115439]" />
+                  <span>Founded</span>
+                </div>
+                <p className="text-base sm:text-lg font-bold text-[#001457] mt-0.5">2010</p>
+                <span className="text-xs text-[#86888B]">14+ Years in Vizag</span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-white/95 border border-[#EAEBE5] shadow-xs">
+                <div className="flex items-center gap-1.5 text-xs text-[#115439] font-bold">
+                  <ShieldCheck className="w-4 h-4 text-[#115439]" />
+                  <span>Licensing</span>
+                </div>
+                <p className="text-base sm:text-lg font-bold text-[#115439] mt-0.5">CIBRC</p>
+                <span className="text-xs text-[#86888B]">Govt of India</span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-white/95 border border-[#EAEBE5] shadow-xs">
+                <div className="flex items-center gap-1.5 text-xs text-[#115439] font-bold">
+                  <Building2 className="w-4 h-4 text-[#115439]" />
+                  <span>Properties</span>
+                </div>
+                <p className="text-base sm:text-lg font-bold text-[#001457] mt-0.5">14,000+</p>
+                <span className="text-xs text-[#86888B]">Protected Sites</span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-white/95 border border-[#EAEBE5] shadow-xs">
+                <div className="flex items-center gap-1.5 text-xs text-[#115439] font-bold">
+                  <Sparkles className="w-4 h-4 text-[#1DAA4C]" />
+                  <span>Odor</span>
+                </div>
+                <p className="text-base sm:text-lg font-bold text-[#001457] mt-0.5">0% Smell</p>
+                <span className="text-xs text-[#86888B]">100% Odorless Gel</span>
+              </div>
             </div>
 
-            {/* High-Density Telemetry Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 pt-2">
-              <div className="p-3 rounded-xl bg-surface-card border border-neutral-300">
-                <span className="text-xs font-sans text-neutral-500 block">Founded</span>
-                <span className="font-mono text-base font-bold text-neutral-950">
-                  <DecryptedText text="2010 VIZAG" />
-                </span>
-              </div>
-              <div className="p-3 rounded-xl bg-surface-card border border-neutral-300">
-                <span className="text-xs font-sans text-neutral-500 block">Licensing</span>
-                <span className="font-mono text-base font-bold text-brand-700">
-                  <DecryptedText text="CIBRC GOVT" />
-                </span>
-              </div>
-              <div className="p-3 rounded-xl bg-surface-card border border-neutral-300">
-                <span className="text-xs font-sans text-neutral-500 block">Properties</span>
-                <span className="font-mono text-base font-bold text-neutral-950">
-                  <DecryptedText text="14,000+ SITES" />
-                </span>
-              </div>
-              <div className="p-3 rounded-xl bg-surface-card border border-neutral-300">
-                <span className="text-xs font-sans text-neutral-500 block">Organophosphates</span>
-                <span className="font-mono text-base font-bold text-accent-700">
-                  <DecryptedText text="0% BANNED" />
-                </span>
-              </div>
-            </div>
-
-            <div className="pt-2 flex flex-wrap items-center gap-3">
-              <SpecularButton
-                variant="botanical"
-                size="md"
-                onClick={() => {
-                  const dossierEl = document.getElementById("standards-dossier");
-                  if (dossierEl) dossierEl.scrollIntoView({ behavior: "smooth" });
-                }}
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="#zonal-hubs"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#001457] hover:bg-[#002F47] text-white text-sm font-semibold transition-colors shadow-sm"
               >
-                <span>Inspect Clinical Standards Dossier</span>
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </SpecularButton>
+                <span>View Our 4 Vizag Hubs</span>
+                <ArrowRight className="w-4 h-4 text-[#F7BE00]" />
+              </a>
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-[30px] border border-neutral-200 hover:border-brand-900 bg-white text-xs sm:text-sm font-semibold text-navy-950 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-950 active:scale-[0.98] shadow-xs"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-[#EAEBE5] hover:border-[#115439] bg-white text-sm font-semibold text-[#001457] transition-colors shadow-xs"
               >
-                <Phone className="h-4 w-4 text-brand-900" aria-hidden="true" />
+                <Phone className="w-4 h-4 text-[#115439]" />
                 <span>Contact Headquarters</span>
               </Link>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Right Hero Image Card with Authentic Technical Detail */}
-          <div className="lg:col-span-5 relative">
-            <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-neutral-300 bg-white relative">
-              <div className="aspect-[4/3] w-full relative">
-                <img
-                  src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
-                  alt="Certified A1 pest control technician inspecting property"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent" />
-                
-                <div className="absolute bottom-4 left-4 right-4 text-white space-y-1">
-                  <h4 className="text-sm sm:text-base font-display font-bold leading-tight">
-                    Calibrated Micro-Injection & Odorless Gel Protocol
-                  </h4>
-                  <p className="text-xs text-neutral-300 font-sans">
-                    Zero aerosol dispersion in food preparation spaces
-                  </p>
-                </div>
-              </div>
-
-              {/* Sub-card with CIBRC License Info */}
-              <div className="p-4 bg-surface-card border-t border-neutral-200 flex items-center justify-between text-xs font-sans">
-                <div className="text-left">
-                  <span className="text-neutral-500 block text-xs">Central Depot:</span>
-                  <span className="font-bold text-brand-700">Dwaraka Nagar, Vizag</span>
-                </div>
-              </div>
-            </div>
+      {/* 2. Founding Mission: Plain, Honest Story */}
+      <section className="py-12 sm:py-16 px-3 sm:px-6 lg:px-8 bg-white border-b border-neutral-200">
+        <div className="max-w-4xl mx-auto space-y-4">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#115439] font-bold block">
+            OUR FOUNDING STORY
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-[#001457]">
+            Why We Started A1 Pest Control in 2010
+          </h2>
+          <div className="text-sm sm:text-base text-[#36393D] leading-relaxed space-y-3 font-sans">
+            <p>
+              In 2010, the majority of pest control in Visakhapatnam was handled by unorganized street sprayers who bought cheap, agricultural-grade pesticides and diluted them with kerosene or diesel. Families were forced to evacuate their homes for 6 to 8 hours, returning to toxic fumes that made children cough and gave elders headaches.
+            </p>
+            <p>
+              Worse, these generic sprays only scattered cockroaches to neighboring flats without destroying the nesting colony. Pests returned within weeks, and the sprayers never answered warranty calls.
+            </p>
+            <p>
+              We established <strong>A1 Pest Control Services</strong> to bring scientific, hospital-grade, odorless pest eradication to Visakhapatnam. We invest exclusively in factory-sealed chemistry from world leaders like Bayer and Syngenta. Our gel baiting requires zero kitchen emptying, has zero fumes, and is completely safe for infants, asthma patients, and domestic pets.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 2. Manifesto Section with React Bits ScrollReveal */}
-      <section className="bg-surface-card border-y border-neutral-200 py-12 sm:py-16 mb-14 sm:mb-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center space-y-3">
-          <span className="text-xs text-brand-700 font-semibold block">
-            The Founding Clinical Mandate
-          </span>
-          <ScrollReveal
-            text="We founded A1 Pest Control Services in 2010 with a singular mission: to eradicate pests from Visakhapatnam homes and commercial facilities using hospital-grade, odorless science—protecting families, infants, and pets from the dangerous toxic fogs of unorganized local sprayers."
-            highlightColor="#2D5A27"
-            className="text-lg sm:text-2xl md:text-3xl font-display font-bold text-neutral-950"
-          />
-        </div>
-      </section>
-
-      {/* 3. Visakhapatnam Coastal Geography & Entomological Realities */}
-      <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 mb-16 sm:mb-24">
-        <div className="max-w-3xl mb-8 sm:mb-12 space-y-2">
-          <span className="text-xs text-brand-700 font-semibold block">
-            Local Geological &amp; Climatic Entomology
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
-            <SplitText text="Why Generic Pest Spraying Fails in Visakhapatnam" as="span" />
-          </h2>
-          <BlurText
-            text="Visakhapatnam’s narrow geography between the Eastern Ghats and the Bay of Bengal creates four micro-zones that render one-size-fits-all treatments completely useless."
-            as="p"
-            className="text-xs sm:text-sm lg:text-base text-neutral-600 lg:text-neutral-700"
-          />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          {LOCAL_FACTORS.map((factor, idx) => (
-            <div
-              key={idx}
-              className="rounded-2xl bg-surface-card border border-neutral-300 p-5 sm:p-6 shadow-sm flex flex-col justify-between space-y-4"
-            >
-              <div className="space-y-2">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-xs font-sans font-bold text-accent-700 bg-accent-100 px-2 py-0.5 rounded">
-                    Zone 0{idx + 1}
-                  </span>
-                  <span className="text-xs font-sans text-neutral-500">{factor.neighborhoods}</span>
-                </div>
-                <h3 className="text-base sm:text-lg lg:text-base font-display font-bold text-neutral-950">
-                  {factor.zone}
-                </h3>
-                <div className="p-2.5 rounded-lg bg-neutral-100 border border-neutral-200">
-                  <p className="text-xs lg:text-sm font-sans text-neutral-800">
-                    <strong className="text-accent-700">Environmental Stressor:</strong> {factor.challenge}
-                  </p>
-                </div>
-                <p className="text-xs sm:text-sm lg:text-base text-neutral-700 leading-relaxed">
-                  {factor.impact}
-                </p>
-              </div>
-
-              <div className="pt-3 border-t border-neutral-200 bg-brand-100/50 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-2xl">
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0 mt-0.5" aria-hidden="true" />
-                  <p className="text-xs text-neutral-900 leading-tight">
-                    <strong className="text-brand-900">A1 Clinical Protocol:</strong> {factor.solution}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. Interactive Plane UI Component: "Our Four Pillar Operating Standards Dossier" */}
-      <section id="standards-dossier" className="w-full py-14 sm:py-20 bg-surface-muted border-y border-neutral-200 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
-          <div className="max-w-3xl space-y-2">
-            <span className="text-xs text-brand-700 font-semibold block">
-              Plane UI Technical Dossier
+      {/* 3. The 4 Physical Zonal Hubs in Visakhapatnam */}
+      <section id="zonal-hubs" className="py-12 sm:py-16 px-3 sm:px-6 lg:px-8 bg-neutral-50/70 border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#115439] font-bold block">
+              PHYSICAL INFRASTRUCTURE
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
-              <SplitText text="The Four Pillars of Clinical Pest Management" as="span" />
+            <h2 className="text-2xl sm:text-3xl font-display font-bold text-[#001457]">
+              Four Zonal Dispatch Depots in Visakhapatnam
             </h2>
-            <BlurText
-              text="Examine the exact specifications, chemical purity requirements, and hardware calibrations behind every dispatch."
-              as="p"
-              className="text-xs sm:text-sm lg:text-base text-neutral-600 lg:text-neutral-700"
-            />
+            <p className="text-sm text-[#86888B] leading-relaxed">
+              We operate 4 physical offices across Greater Vizag to ensure quick 60-minute dispatch to any neighborhood.
+            </p>
           </div>
 
-          {/* Plane UI Tab Strip (Horizontal Scrollable on Mobile) */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none border-b border-neutral-300">
-            {PILLARS.map((p) => {
-              const isSelected = p.id === activePillar;
-              return (
-                <button
-                  key={p.id}
-                  type="button"
-                  onClick={() => setActivePillar(p.id)}
-                  className={`px-4 py-2.5 rounded-t-xl font-display text-xs sm:text-sm font-bold transition-colors duration-150 whitespace-nowrap cursor-pointer border-t border-x focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-700 active:scale-[0.98] disabled:opacity-50 ${
-                    isSelected
-                      ? "bg-white text-brand-700 border-neutral-300 border-b-2 border-b-brand-700 -mb-[1px]"
-                      : "bg-neutral-200/60 text-neutral-600 hover:text-neutral-950 border-transparent"
-                  }`}
-                >
-                  {p.title}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Active Pillar Card with Plane UI Density */}
-          <div className="rounded-2xl bg-white border border-neutral-300 p-5 sm:p-8 md:p-10 shadow-sm">
-            <div className="grid lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div>
-                  <h3 className="text-xl sm:text-2xl lg:text-xl font-display font-bold text-neutral-950">
-                    {currentPillarData.title}
-                  </h3>
-                  <p className="text-xs font-semibold text-accent-700 mt-1">
-                    {currentPillarData.subtitle}
-                  </p>
-                  <p className="text-xs sm:text-sm lg:text-base text-neutral-700 leading-relaxed mt-2">
-                    {currentPillarData.summary}
-                  </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+            {ZONAL_HUBS.map((hub, idx) => (
+              <div
+                key={idx}
+                className="p-5 sm:p-6 rounded-xl bg-white border border-[#EAEBE5] shadow-xs space-y-3"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <h3 className="text-base sm:text-lg font-display font-bold text-[#001457]">
+                      {hub.hub}
+                    </h3>
+                    <p className="text-xs text-[#86888B] mt-0.5 flex items-center gap-1">
+                      <MapPin className="h-3.5 w-3.5 text-[#115439] shrink-0" />
+                      <span>{hub.address}</span>
+                    </p>
+                  </div>
+                  <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-[#A9EFC0]/70 text-[#115439] shrink-0">
+                    {hub.response}
+                  </span>
                 </div>
 
-                <div className="space-y-2.5">
-                  <h4 className="text-xs font-sans text-neutral-600 font-semibold">
-                    Technical Directives &amp; Protocols:
-                  </h4>
-                  <ul className="space-y-2">
-                    {currentPillarData.details.map((detail, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm lg:text-base text-neutral-800">
-                        <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0 mt-0.5" aria-hidden="true" />
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="pt-2 border-t border-[#EAEBE5] space-y-2 text-xs">
+                  <div className="text-[#36393D]">
+                    <span className="font-semibold text-[#001457]">Areas Covered: </span>
+                    <span>{hub.coverage.join(", ")}</span>
+                  </div>
+                  <div className="text-[#36393D]">
+                    <span className="font-semibold text-[#001457]">Active Capacity: </span>
+                    <span>{hub.techs}</span>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              {/* Specs Rail (5 Cols) */}
-              <div className="lg:col-span-5 bg-neutral-100 rounded-2xl p-4 sm:p-6 border border-neutral-200 space-y-4">
-                <span className="text-xs text-brand-700 font-bold block border-b border-neutral-200 pb-2">
-                  Specification Metrics
-                </span>
-                <div className="space-y-3">
-                  {currentPillarData.specs.map((spec, idx) => (
-                    <div key={idx} className="flex items-center justify-between text-xs py-1.5 border-b border-neutral-200/60 last:border-b-0 font-sans">
-                      <span className="text-neutral-600">{spec.label}:</span>
-                      <span className="font-bold text-neutral-950">{spec.value}</span>
-                    </div>
+      {/* 4. Core Standards */}
+      <section className="py-12 sm:py-16 px-3 sm:px-6 lg:px-8 bg-white border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#115439] font-bold block">
+              OPERATING STANDARDS
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold text-[#001457]">
+              Our Three Clinical Pillars
+            </h2>
+            <p className="text-sm text-[#86888B] leading-relaxed">
+              Chemistry purity, calibrated hardware, and verified personnel.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {CORE_STANDARDS.map((std, i) => (
+              <div key={i} className="p-6 rounded-xl border border-[#EAEBE5] bg-neutral-50/50 space-y-3">
+                <h3 className="text-lg font-display font-bold text-[#001457]">{std.title}</h3>
+                <p className="text-xs font-semibold text-[#115439]">{std.subtitle}</p>
+                <p className="text-xs sm:text-sm text-[#36393D] leading-relaxed">{std.desc}</p>
+                <ul className="space-y-1.5 pt-2 border-t border-[#EAEBE5]">
+                  {std.points.map((pt, j) => (
+                    <li key={j} className="flex items-start gap-2 text-xs text-[#36393D]">
+                      <Check className="h-3.5 w-3.5 text-[#115439] shrink-0 mt-0.5" />
+                      <span>{pt}</span>
+                    </li>
                   ))}
-                </div>
-
-                <div className="pt-2">
-                  <p className="text-xs text-neutral-500 leading-relaxed">
-                    Audited bi-annually under Government of India Central Insecticides Board &amp; Registration Committee (CIBRC) directives.
-                  </p>
-                </div>
+                </ul>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 5. Zonal Operating Grid (Visakhapatnam Physical Depots) */}
-      <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 py-16 sm:py-24">
-        <div className="max-w-3xl mb-8 sm:mb-12 space-y-2">
-          <span className="text-xs text-brand-700 font-semibold block">
-            Physical Infrastructure &amp; Zonal Hubs
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl xl:text-3xl font-display font-extrabold text-neutral-950 tracking-tight">
-            <SplitText text="Four Physical Dispatch Depots Across Greater Visakhapatnam" as="span" />
+      {/* 5. Contact CTA */}
+      <section className="py-10 sm:py-12 px-3 sm:px-6 lg:px-8 bg-[#001457] text-white">
+        <div className="max-w-4xl mx-auto text-center space-y-4">
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-white">
+            Have Questions About Our Treatment Methods?
           </h2>
-          <BlurText
-            text="We do not operate as an internet-only aggregator. Our technicians and motorized equipment are stationed permanently at four key geographic hubs for rapid response."
-            as="p"
-            className="text-xs sm:text-sm lg:text-base text-neutral-600 lg:text-neutral-700"
-          />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          {ZONAL_HUBS.map((hub, idx) => (
-            <div
-              key={idx}
-              className="rounded-2xl bg-surface-card border border-neutral-300 p-5 sm:p-6 shadow-sm flex flex-col justify-between space-y-4"
+          <p className="text-sm text-neutral-300 max-w-xl mx-auto leading-relaxed">
+            Speak directly with our senior technical staff in Dwaraka Nagar or MVP Colony. We provide free property inspections and transparent written quotes.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <a
+              href="tel:+919494281100"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#F7BE00] hover:bg-[#F5C518] text-[#001457] text-sm font-bold transition-colors shadow-sm"
             >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-1.5 text-xs font-sans font-bold text-brand-700">
-                    <MapPin className="w-4 h-4 text-brand-700" aria-hidden="true" />
-                    <span>Depot 0{idx + 1}</span>
-                  </div>
-                  <span className="text-xs font-sans px-2 py-0.5 rounded bg-brand-100 text-brand-900 font-medium">
-                    {hub.response} response
-                  </span>
-                </div>
-
-                <h3 className="text-base sm:text-lg lg:text-base font-display font-bold text-neutral-950">
-                  {hub.hub}
-                </h3>
-
-                <p className="text-xs lg:text-sm text-neutral-600 font-sans">
-                  {hub.address}
-                </p>
-
-                <div className="pt-2">
-                  <span className="text-xs text-neutral-500 font-sans block mb-1">
-                    Coverage Localities:
-                  </span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {hub.coverage.map((loc, lIdx) => (
-                      <span
-                        key={lIdx}
-                        className="text-xs font-sans px-2 py-0.5 rounded bg-neutral-100 border border-neutral-200 text-neutral-800"
-                      >
-                        {loc}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-3 border-t border-neutral-200 flex items-center justify-between text-xs font-sans text-neutral-600">
-                <span>Active Squad: <strong className="text-neutral-950">{hub.techs}</strong></span>
-                <span className="text-brand-700 font-semibold">Ready for Dispatch</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 6. Clinical Accreditations & Licensing Vault */}
-      <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 pb-12 sm:pb-16">
-        <div className="bg-surface-card border border-neutral-300 rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 shadow-sm">
-          <div className="grid lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 space-y-4">
-              <span className="text-xs text-brand-700 font-semibold block">
-                Government of India Accreditations
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-2xl font-display font-bold text-neutral-950">
-                <SplitText text="Formally Licensed & Regulatory Audited" as="span" />
-              </h2>
-              <BlurText
-                text="Every technician on our squad carries verifiable hazardous chemical handling certification under the Insecticides Act. We carry comprehensive general liability coverage and issue stamped CIBRC documentation with every contract."
-                as="p"
-                className="text-xs sm:text-sm lg:text-base text-neutral-700 leading-relaxed font-sans"
-              />
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-sans">
-                <div className="p-3 bg-neutral-100 rounded-xl border border-neutral-200">
-                  <span className="text-neutral-500 block text-xs">CIBRC Central Registration:</span>
-                  <span className="font-mono font-bold text-neutral-950">AP/VSP/2010/8842-P</span>
-                </div>
-                <div className="p-3 bg-neutral-100 rounded-xl border border-neutral-200">
-                  <span className="text-neutral-500 block text-xs">GSTIN Registration:</span>
-                  <span className="font-mono font-bold text-neutral-950">37AAHFA1892B1Z8</span>
-                </div>
-                <div className="p-3 bg-neutral-100 rounded-xl border border-neutral-200">
-                  <span className="text-neutral-500 block text-xs">Commercial Insecticide License:</span>
-                  <span className="font-mono font-bold text-neutral-950">DIS/VSP/PEST/2011/491</span>
-                </div>
-                <div className="p-3 bg-neutral-100 rounded-xl border border-neutral-200">
-                  <span className="text-neutral-500 block text-xs">Formulation Partner:</span>
-                  <span className="font-bold text-brand-700">Bayer Environmental Science</span>
-                </div>
-              </div>
-
-              <div className="pt-3">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-[30px] bg-gold-500 hover:bg-gold-600 active:scale-[0.98] text-navy-950 text-xs sm:text-sm font-bold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-950 shadow-xs"
-                >
-                  <span>Book Technician Consultation at Your Site</span>
-                  <ArrowRight className="w-4 h-4 text-navy-950" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5 flex flex-col items-center justify-center">
-              <ClinicalComplianceCard
-                licenseNumber="CIBRC-AP/VSP/2010/8842-P"
-                warrantyPeriod="5-YEAR STAMPED WARRANTY"
-                depotHub="Dwaraka Nagar / Srinagar Central Hub"
-              />
-              <p className="text-xs text-neutral-500 text-center mt-3 font-sans">
-                Official Stamped Certificate • Issued with Every Property Contract
-              </p>
-            </div>
+              <Phone className="h-4 w-4 text-[#001457]" />
+              <span>Call: +91 94942 81100</span>
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-white/20 hover:bg-white/10 text-white text-sm font-semibold transition-colors"
+            >
+              <span>Schedule Inspection</span>
+            </Link>
           </div>
         </div>
       </section>

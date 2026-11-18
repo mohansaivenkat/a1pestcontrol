@@ -77,101 +77,197 @@ body {
 }
 
 /* ==========================================================================
-   Global Base Paragraph Typography - Increased Readability
-   Applies to all paragraphs both inside and outside cards and containers
+   Mobile Screens Only (< 768px) - Reduced Proportional Typography
+   Compact, crisp text sizing preventing awkward line-breaks and oversized blocks
    ========================================================================== */
-p,
-article p,
-section p,
-main p {
-  font-size: 1.0625rem;
-  line-height: 1.68;
-}
+@media (max-width: 767px) {
+  /* Remove unnecessary side gutters on mobile screen edges */
+  html,
+  body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 
-/* Paragraphs inside cards, containers, and elevated modules */
-.bg-surface-card p,
-.bg-surface-main p,
-.bg-white p,
-.rounded-lg p,
-.rounded-xl p,
-.rounded-2xl p,
-.rounded-3xl p,
-[class*="border"] p {
-  font-size: 1.0625rem;
-  line-height: 1.65;
-}
+  /* Lean container side padding on mobile */
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl,
+  .max-w-4xl {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
 
-/* Compact paragraphs inside cards & badges */
-p.text-xs,
-.bg-surface-card p.text-xs,
-.rounded-xl p.text-xs,
-.rounded-2xl p.text-xs,
-[class*="border"] p.text-xs {
-  font-size: 0.9375rem !important;
-  line-height: 1.55 !important;
-}
-
-p.text-sm,
-.bg-surface-card p.text-sm,
-.rounded-xl p.text-sm,
-.rounded-2xl p.text-sm,
-[class*="border"] p.text-sm {
-  font-size: 1.0625rem !important;
-  line-height: 1.65 !important;
-}
-
-p.text-base,
-.bg-surface-card p.text-base {
-  font-size: 1.125rem !important;
-  line-height: 1.68 !important;
-}
-
-p.text-lg {
-  font-size: 1.25rem !important;
-  line-height: 1.7 !important;
-}
-
-p.text-\[10px\],
-p.text-\[11px\],
-.text-\[11px\] {
-  font-size: 0.875rem !important;
-  line-height: 1.5 !important;
-}
-
-/* ==========================================================================
-   Tablet Screens Only (768px to 1023px) - Refined Proportions
-   Reduces titles and subtitles, and increases paragraphs & body text
-   inside cards and containers specifically in tablet view.
-   ========================================================================== */
-@media (min-width: 768px) and (max-width: 1023px) {
-  /* Reduce title sizes on tablet */
+  /* Titles on mobile — increased only a little bit for confident hierarchy */
   h1,
   .font-display.text-3xl,
   .font-display.text-4xl,
-  .font-display.text-5xl {
-    font-size: 1.875rem !important;
-    line-height: 1.2 !important;
+  .font-display.text-5xl,
+  .font-display.text-\[3\.25rem\],
+  .font-display.text-\[3\.5rem\] {
+    font-size: 1.75rem !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.02em !important;
   }
 
   h2,
   .font-display.text-2xl,
   .font-display.text-3xl {
-    font-size: 1.5rem !important;
+    font-size: 1.425rem !important;
     line-height: 1.25 !important;
   }
 
   h3,
   .font-display.text-xl,
   .font-display.text-2xl {
-    font-size: 1.25rem !important;
+    font-size: 1.1875rem !important;
     line-height: 1.3 !important;
   }
 
+  h4,
+  .font-display.text-lg {
+    font-size: 1.025rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Subtitles & lead text on mobile */
+  p.text-lg,
+  p.text-xl,
+  .font-display.text-lg {
+    font-size: 0.9375rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* General paragraphs on mobile */
+  p,
+  article p,
+  section p,
+  main p {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Paragraphs and text inside cards and containers for mobile */
+  .bg-surface-card p,
+  .bg-white p,
+  .rounded-lg p,
+  .rounded-xl p,
+  .rounded-2xl p,
+  .rounded-3xl p,
+  [class*="border"] p {
+    font-size: 0.8125rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Standard text-base on mobile */
+  p.text-base,
+  .bg-surface-card p.text-base {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Compact text-sm on mobile */
+  p.text-sm,
+  .bg-surface-card p.text-sm,
+  .rounded-xl p.text-sm,
+  .rounded-2xl p.text-sm,
+  [class*="border"] p.text-sm {
+    font-size: 0.8125rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Extra compact text-xs on mobile */
+  p.text-xs,
+  .bg-surface-card p.text-xs,
+  .rounded-xl p.text-xs,
+  .rounded-2xl p.text-xs,
+  [class*="border"] p.text-xs {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Badges & micro text on mobile */
+  p.text-\[10px\],
+  p.text-\[11px\],
+  .text-\[10px\],
+  .text-\[11px\] {
+    font-size: 0.6875rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* ── Card & Container Dimension Reduction on Mobile ── */
+  /* Shrink border-radius so cards feel compact */
+  .rounded-2xl { border-radius: 10px !important; }
+  .rounded-3xl { border-radius: 14px !important; }
+  .rounded-\[24px\] { border-radius: 10px !important; }
+  .rounded-\[30px\] { border-radius: 14px !important; }
+
+  /* Reduce padding inside surface cards without affecting outer page containers */
+  .bg-surface-card:not(header):not(nav),
+  div.bg-white[class*="border"],
+  div.bg-white[class*="rounded"] {
+    padding: 0.875rem !important;
+  }
+
+  /* Reduce grid gaps on mobile */
+  .gap-6 { gap: 0.75rem !important; }
+  .gap-8 { gap: 1rem !important; }
+  .gap-10 { gap: 1.25rem !important; }
+  .gap-12 { gap: 1.5rem !important; }
+
+  /* Reduce section vertical padding on mobile */
+  section.py-16,
+  section.py-20,
+  section.py-24 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* ==========================================================================
+   Tablet Screens Only (768px to 1023px) - Reduced Proportions
+   Refined typography scaled cleanly for intermediate viewports
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Reduce title sizes on tablet */
+  h1,
+  .font-display.text-3xl,
+  .font-display.text-4xl,
+  .font-display.text-5xl,
+  .font-display.text-\[3\.25rem\],
+  .font-display.text-\[3\.5rem\] {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  h2,
+  .font-display.text-2xl,
+  .font-display.text-3xl {
+    font-size: 1.4rem !important;
+    line-height: 1.25 !important;
+  }
+
+  h3,
+  .font-display.text-xl,
+  .font-display.text-2xl {
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h4,
+  .font-display.text-lg {
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
+  }
+
   /* Subtitles & lead text on tablet */
-  .font-display.text-lg,
-  p.text-lg {
-    font-size: 1.25rem !important;
-    line-height: 1.65 !important;
+  p.text-lg,
+  p.text-xl,
+  .font-display.text-lg {
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
   }
 
   /* General paragraphs on tablet */
@@ -179,8 +275,8 @@ p.text-\[11px\],
   article p, 
   section p,
   main p {
-    font-size: 1.125rem !important;
-    line-height: 1.7 !important;
+    font-size: 0.9375rem !important;
+    line-height: 1.55 !important;
   }
 
   /* Paragraphs and text inside cards and containers for tablet */
@@ -192,30 +288,44 @@ p.text-\[11px\],
   .rounded-2xl p,
   .rounded-3xl p,
   [class*="border"] p {
-    font-size: 1.075rem !important;
-    line-height: 1.65 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
   }
 
-  .bg-surface-card p.text-xs,
-  .rounded-xl p.text-xs,
-  .rounded-2xl p.text-xs,
-  p.text-xs,
-  .text-\[11px\] {
-    font-size: 1rem !important;
+  /* Standard text-base on tablet */
+  p.text-base,
+  .bg-surface-card p.text-base {
+    font-size: 0.9375rem !important;
     line-height: 1.55 !important;
   }
 
+  /* Compact text-sm on tablet */
   p.text-sm,
   .bg-surface-card p.text-sm,
   .rounded-xl p.text-sm,
-  .rounded-2xl p.text-sm {
-    font-size: 1.075rem !important;
-    line-height: 1.65 !important;
+  .rounded-2xl p.text-sm,
+  [class*="border"] p.text-sm {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
   }
 
-  p.text-base {
-    font-size: 1.15rem !important;
-    line-height: 1.7 !important;
+  /* Extra compact text-xs on tablet */
+  p.text-xs,
+  .bg-surface-card p.text-xs,
+  .rounded-xl p.text-xs,
+  .rounded-2xl p.text-xs,
+  [class*="border"] p.text-xs {
+    font-size: 0.75rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Badges & micro text on tablet */
+  p.text-\[10px\],
+  p.text-\[11px\],
+  .text-\[10px\],
+  .text-\[11px\] {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
   }
 }
 
@@ -225,20 +335,22 @@ p.text-\[11px\],
    including inside cards and containers specifically for laptop viewports.
    ========================================================================== */
 @media (min-width: 1024px) {
-  /* Title calibration for laptops */
+  /* Title calibration for laptops — reduced only by a little bit as requested */
   h1 {
-    font-size: clamp(2rem, 2.3vw, 2.375rem) !important;
-    line-height: 1.16 !important;
+    font-size: clamp(2.15rem, 2.65vw, 2.85rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.025em !important;
   }
 
   h2 {
-    font-size: clamp(1.5rem, 1.8vw, 1.875rem) !important;
-    line-height: 1.22 !important;
+    font-size: clamp(1.75rem, 2.1vw, 2.25rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
   }
 
   h3 {
-    font-size: clamp(1.2rem, 1.35vw, 1.375rem) !important;
-    line-height: 1.28 !important;
+    font-size: clamp(1.3rem, 1.55vw, 1.65rem) !important;
+    line-height: 1.26 !important;
   }
 
   /* Body & paragraph text scaling: Enhances reading comfort */
@@ -300,18 +412,28 @@ p.text-\[11px\],
   }
 }
 
-/* Google Translate Clean Styling (Suppresses default clunky banner) */
+/* Google Translate Clean Styling & Top Gap Prevention */
 .goog-te-banner-frame,
 .goog-te-balloon-frame,
 #goog-gt-tt,
 .goog-tooltip,
-.goog-tooltip:hover {
+.goog-tooltip:hover,
+.skiptranslate:has(iframe),
+body > .skiptranslate,
+iframe.skiptranslate {
   display: none !important;
   visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
+html,
 body {
   top: 0px !important;
+  margin-top: 0px !important;
+  position: static !important;
 }
 
 .goog-text-highlight {
@@ -319,21 +441,6 @@ body {
   box-shadow: none !important;
 }
 
-/* Warm Animated Cream Gradient for Protocols Showcase */
-@keyframes warmMeshShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .bg-warm-animated-gradient {
-  background: linear-gradient(-45deg, #FAF8F5, #F5EDE4, #FDF9F3, #ECE4D8, #FAF8F5);
-  background-size: 400% 400%;
-  animation: warmMeshShift 18s ease infinite;
+  background-color: #FBF9F6;
 }

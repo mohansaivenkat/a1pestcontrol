@@ -13,9 +13,6 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { useToast } from "@/components/plane-ui/ToastSystem";
-import { SplitText } from "@/components/react-bits/SplitText";
-import { BlurText } from "@/components/react-bits/BlurText";
-import { DecryptedText } from "@/components/react-bits/DecryptedText";
 
 const localities = [
   "Dwaraka Nagar / Srinagar (Central Hub)",
@@ -81,22 +78,22 @@ export default function ContactPage() {
   );
 
   return (
-    <div className="py-8 sm:py-12 md:py-16">
-      {/* Header with React Bits Animations */}
-      <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 mb-10 sm:mb-14 text-center space-y-3">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-[30px] bg-[#A9EFC0]/60 border border-[#115439]/20 text-[#115439] text-xs font-semibold shadow-xs">
+    <div className="pt-4 sm:pt-6 pb-14 sm:pb-20">
+      {/* Header */}
+      <section className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 mb-8 sm:mb-10 text-center space-y-3">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#A9EFC0]/70 border border-[#115439]/30 text-[#115439] text-xs font-semibold shadow-xs">
           <ShieldCheck className="h-4 w-4 text-[#115439] shrink-0" />
-          <DecryptedText text="RAPID DISPATCH HOTLINE • 60-MIN SLA" />
+          <span className="font-mono text-xs uppercase font-bold tracking-wide">
+            RAPID DISPATCH HOTLINE • 60-MIN SLA
+          </span>
         </div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-display font-bold text-[#001457] tracking-[-0.96px] leading-[1.12]">
-          <SplitText text="Get a Fast, Transparent Quote in Visakhapatnam" as="span" />
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-display font-bold text-[#001457] tracking-tight leading-[1.16]">
+          Get a Fast, Transparent Quote in Visakhapatnam
         </h1>
         <div className="max-w-2xl mx-auto">
-          <BlurText
-            text="Fill out the form below for an immediate callback or reach out directly via WhatsApp for rapid 60-minute emergency dispatch."
-            as="p"
-            className="text-base sm:text-lg text-[#36393D] font-medium leading-[26px] font-sans"
-          />
+          <p className="text-sm sm:text-base text-[#36393D] font-medium leading-relaxed font-sans">
+            Fill out the form below for an immediate callback or reach out directly via WhatsApp for rapid 60-minute emergency dispatch.
+          </p>
         </div>
       </section>
 
@@ -106,7 +103,7 @@ export default function ContactPage() {
           {/* Form Column (7 Cols) */}
           <div className="lg:col-span-7">
             <div className="bg-white border border-[#EAEBE5] rounded-[24px] sm:rounded-[30px] p-5 sm:p-8 shadow-xs">
-              <h2 className="text-xl sm:text-2xl font-display font-bold text-[#001457] mb-1">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-display font-bold text-[#001457] mb-1">
                 Schedule an Inspection
               </h2>
               <p className="text-xs sm:text-sm text-[#86888B] mb-6 font-mono">
@@ -292,7 +289,7 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-6">
             {/* Contact Card */}
             <div className="bg-white border border-[#EAEBE5] rounded-[24px] sm:rounded-[30px] p-5 sm:p-8 space-y-6 shadow-xs">
-              <h2 className="text-xl sm:text-2xl font-display font-bold text-[#001457]">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-display font-bold text-[#001457]">
                 Direct Contact Information
               </h2>
 
@@ -321,7 +318,7 @@ export default function ContactPage() {
                         href="tel:+919494281100"
                         className="text-[#115439] font-semibold hover:underline"
                       >
-                        <DecryptedText text="+91 94942 81100" />
+                        +91 94942 81100
                       </a>{" "}
                       / 0891-2784401
                     </p>
